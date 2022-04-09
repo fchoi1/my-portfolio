@@ -28,10 +28,13 @@ function NavBar() {
   useEffect(() => {
     if (isBig) {
       setOpenMenu(true);
+    } else {
+      setOpenMenu(false);
     }
   }, [isBig]);
 
   console.log(theme.palette.yaleBlue.dark);
+  console.log(isBig);
 
   const pages = ['About', 'History', 'Projects', 'Contact'];
 
@@ -64,7 +67,7 @@ function NavBar() {
                     </IconButton>
                   </Box>
                 </Grid>
-                <Grid item>
+                <Grid item sm={4}>
                   <Typography
                     variant="h5"
                     noWrap
@@ -77,9 +80,13 @@ function NavBar() {
 
                 <Grid
                   item
-                  sx={{ display: 'flex', alignItems: 'center' }}
+                  sx={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: { xs: 'flex-start', sm: 'flex-end' }
+                  }}
                   xs={12}
-                  sm="auto"
+                  sm={8}
                 >
                   <Collapse in={openMenu} orientation="vertical">
                     <Grid container>
