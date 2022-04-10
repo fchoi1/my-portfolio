@@ -4,10 +4,12 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import { Box } from '@mui/system';
 
+import { useProfileContext } from '../../contexts/ProfileProvider';
+
 import './footer.css';
 
 function Footer(props) {
-  const { profile } = props;
+  const { profile, setProfile } = useProfileContext();
   return (
     <footer className="footer--pin">
       <div className="icon-wrapper">

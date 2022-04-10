@@ -83,12 +83,13 @@ function NavBar() {
                   sx={{
                     display: 'flex',
                     alignItems: 'center',
-                    justifyContent: { xs: 'flex-start', sm: 'flex-end' }
+                    justifyContent: { xs: 'flex-start', sm: 'flex-end' },
+                    
                   }}
                   xs={12}
                   sm={8}
                 >
-                  <Collapse in={openMenu} orientation="vertical">
+                  <Collapse in={openMenu} orientation="vertical" sx={{width: { xs: '100%', sm: 'auto' }}}>
                     <Grid container>
                       {pages &&
                         pages.map((page) => (

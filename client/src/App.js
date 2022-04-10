@@ -1,6 +1,9 @@
 import './App.css';
 import NavBar from './components/Nav';
+
+// Contexts
 import MuiThemeProvider from './contexts/MuiThemeProvider';
+import { ProfileProvider } from './contexts/ProfileProvider';
 
 import { Switch, Route, Redirect } from 'react-router-dom';
 
@@ -13,21 +16,17 @@ import Contact from './pages/Contact';
 import Footer from './components/Footer';
 
 function App() {
-  const profile = {
-    github: 'fchoi1',
-    linkedin: 'https://www.linkedin.com/in/fchoi1/',
-    instagram: 'https://www.instagram.com/w4ng0/'
-  };
   return (
     <div className="App">
       <MuiThemeProvider>
-        <NavBar></NavBar>
-        <About />
-        <History />
-        <Projects />
-        <Contact />
-
-        <Footer profile={profile} />
+        <ProfileProvider>
+          <NavBar />
+          <About />
+          <History />
+          <Projects />
+          <Contact />
+          <Footer />
+        </ProfileProvider>
       </MuiThemeProvider>
     </div>
   );

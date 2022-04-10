@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/fchoi1/my-portfolio/issues"
   },
-  "homepage": "https://github.com/fchoi1/my-portfolio#readme"
+  "homepage": "https://github.com/fchoi1/my-portfolio#readme",
+  "dependencies": {
+    "react-router-hash-link": "^2.4.3"
+  }
 }
