@@ -2,9 +2,11 @@ import React from 'react';
 
 function Projects(props) {
   return (
-    <div id="Projects" style={{ height: '100vh' }}>
-      Project Sections
-    </div>
+    <section id="Projects">
+      <div id="Projects" style={{ height: '100vh' }}>
+        Project Sections
+      </div>
+    </section>
   );
 }
 

@@ -37,6 +37,14 @@ const theme = createTheme({
       dark: '#685446',
       contrastText: '#FFFFFF'
     }
+  },
+  mixins: {
+    toolbar: {
+      minHeight: '64px',
+      '@media (max-width:600px) ': {
+        minHeight: '48px'
+      }
+    }
   }
 });
 

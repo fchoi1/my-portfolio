@@ -1,33 +1,30 @@
 import './App.css';
+
 import NavBar from './components/Nav';
+import MainPage from './pages';
 
 // Contexts
 import MuiThemeProvider from './contexts/MuiThemeProvider';
 import { ProfileProvider } from './contexts/ProfileProvider';
 
-import { Switch, Route, Redirect } from 'react-router-dom';
-
-//pages
-import About from './pages/About';
-import History from './pages/History';
-import Projects from './pages/Projects';
-import Contact from './pages/Contact';
+import { Routes, Route, BrowserRouter } from 'react-router-dom';
 
 import Footer from './components/Footer';
 
 function App() {
   return (
     <div className="App">
-      <MuiThemeProvider>
-        <ProfileProvider>
-          <NavBar />
-          <About />
-          <History />
-          <Projects />
-          <Contact />
-          <Footer />
-        </ProfileProvider>
-      </MuiThemeProvider>
+      <BrowserRouter>
+        <MuiThemeProvider>
+          <ProfileProvider>
+            <NavBar />
+            <Routes>
+              <Route exact path="/" element={<MainPage />} />
+            </Routes>
+            <Footer />
+          </ProfileProvider>
+        </MuiThemeProvider>
+      </BrowserRouter>
     </div>
   );
 }
