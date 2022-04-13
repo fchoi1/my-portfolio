@@ -7,7 +7,7 @@ import {
   Box,
   Typography,
   Fab,
-  MenuItem,
+  Button,
   Grid,
   Collapse,
   ClickAwayListener,
@@ -17,62 +17,83 @@ import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 
-import { useTheme } from '@mui/material/styles';
+import { useTheme, styled } from '@mui/material/styles';
 
 import { ScrollTop, HideOnScroll } from '../Scroll';
 
-import { NavHashLink, HashLink } from 'react-router-hash-link';
-import { useSearchParams } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
+import { useLocation } from 'react-router-dom';
 
 import './nav.css';
 
 function NavBar() {
   const [openMenu, setOpenMenu] = useState(true);
+  const [currPage, setCurrPage] = useState('');
+  const [headerHeight, setHeaderHeight] = useState(0);
+
+  let location = useLocation();
   const topRef = useRef(null);
+  const headerRef = useRef(null);
 
   const theme = useTheme();
+  // console.log(theme);
+  // console.log(theme.palette.atomicTangerine);
+
+  useEffect(() => {
+    setCurrPage(location.hash.replace('#', ''));
+  }, [location]);
+
+  useEffect(() => {
+    setHeaderHeight(headerRef.current.clientHeight * -1);
+  }, [headerRef, setHeaderHeight]);
+
+  console.log(headerHeight, headerRef.current?.clientHeight);
+  console.log(openMenu);
+
   const isBig = useMediaQuery(theme.breakpoints.up('sm'));
   useEffect(() => {
-    if (isBig) {
-      setOpenMenu(true);
-    } else {
-      setOpenMenu(false);
-    }
+    isBig ? setOpenMenu(true) : setOpenMenu(false);
   }, [isBig]);
-
-  console.log(theme);
-
-  let [searchParams, setSearchParams] = useSearchParams();
-
-  console.log(searchParams, searchParams.getAll(''));
 
   const pages = ['About', 'History', 'Projects', 'Contact'];
 
   // for mobile
   const handleOpenMenu = () => setOpenMenu((value) => !value);
 
-  const handleClickAway = () => {
+  const handleClickAway = (el) => {
     if (!isBig) setOpenMenu(false);
   };
 
   const scrollWithOffset = (el) => {
     let yOffset = 0;
+    console.log(el);
 
-    if (el.nodeName === 'BODY' && !isBig) {
-      yOffset = -48;
-    } else if (el.nodeName === 'BODY') {
-      yOffset = -64;
-    }
+    if (el.nodeName === 'BODY') yOffset = headerHeight;
+
     const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset;
+    console.log('yoff', yOffset, yCoordinate, yCoordinate + yOffset);
     window.scrollTo({ top: yCoordinate + yOffset, behavior: 'smooth' });
   };
+
+  const NavButton = styled(Button)(({ theme }) => ({
+    '&.MuiButton-root': {
+      borderRadius: '10px'
+    },
+    '&:hover, &.Mui-focusVisible': {
+      color: theme.palette.mediumChampagne.light
+    }
+  }));
 
   return (
     <>
       <HideOnScroll setOpenMenu={setOpenMenu}>
         <AppBar color="yaleBlue">
           <ClickAwayListener onClickAway={handleClickAway}>
-            <Toolbar disableGutters sx={{ px: { xs: 2, sm: 0 } }}>
+            <Toolbar
+              disableGutters
+              sx={{ px: { xs: 2, sm: 0 } }}
+              ref={headerRef}
+            >
               <Grid container spacing={0}>
                 <Grid item>
                   <Box>
@@ -87,25 +108,23 @@ function NavBar() {
                     </IconButton>
                   </Box>
                 </Grid>
-                <Grid item sm={4}>
+
+                <Grid item sm="auto">
                   <Typography
                     variant="h5"
                     noWrap
                     component="div"
                     sx={{ ml: { sm: 2 }, py: 1 }}
                   >
-                    <NavHashLink
-                      smooth
+                    <HashLink
                       to={`/#`}
-                      className={({ isActive }) => {
-                        return `${isActive ? 'isActive ' : ''}`;
-                      }}
-                 
                       scroll={(el) => scrollWithOffset(el)}
                       onClick={handleClickAway}
                     >
-                      Fabio's Portfolio
-                    </NavHashLink>
+                      <Box sx={{ fontSize: { md: '50px' } }}>
+                        Fabio C.
+                      </Box>
+                    </HashLink>
                   </Typography>
                 </Grid>
                 <Grid
@@ -113,10 +132,11 @@ function NavBar() {
                   sx={{
                     display: 'flex',
                     alignItems: 'center',
-                    justifyContent: { xs: 'flex-start', sm: 'flex-end' }
+                    justifyContent: { xs: 'flex-start', sm: 'flex-end' },
+                    marginLeft: 'auto'
                   }}
                   xs={12}
-                  sm={8}
+                  sm="auto"
                 >
                   <Collapse
                     in={openMenu}
@@ -128,15 +148,25 @@ function NavBar() {
                         pages.map((page) => (
                           <Grid item key={page} xs={12} sm="auto">
                             <HashLink
-                              smooth
                               to={`/#${page}`}
                               scroll={(el) => scrollWithOffset(el)}
                               onClick={handleClickAway}
-                              className="hashLink"
                             >
-                              <MenuItem sx={{ minHeight: '10px' }}>
+                              <NavButton
+                                sx={{
+                                  minHeight: '10px',
+                                  fontSize: { md: '20px', sm: '15px' }
+                                }}
+                                variant="text"
+                                focusRipple
+                                color={
+                                  currPage === page
+                                    ? 'mediumChampagne'
+                                    : 'liverChestnut'
+                                }
+                              >
                                 {page}
-                              </MenuItem>
+                              </NavButton>
                             </HashLink>
                           </Grid>
                         ))}
@@ -148,7 +178,12 @@ function NavBar() {
           </ClickAwayListener>
         </AppBar>
       </HideOnScroll>
-      <Box sx={{ mt: { xs: 6, sm: 8 } }} ref={topRef}></Box>
+
+      <Box sx={{ py: { xs: 1, sm: 2, md: 1 } }} ref={topRef}>
+        <Typography variant="h5" component="div">
+          <Box sx={{ fontSize: { md: '50px' } }}>Blah</Box>
+        </Typography>
+      </Box>
 
       <ScrollTop topRef={topRef}>
         <Fab color="darkSkyBlue" size="small" aria-label="scroll back to top">

@@ -1,0 +1,42 @@
+.hero-container {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: 20vh repeat(5, auto) auto;
+}
+
+.hero-intro-wrapper {
+  text-align: left;
+  grid-area: 2 / 2 / 2 / 3;
+  align-self: center;
+}
+
+.hero-intro {
+  text-align: left;
+}
+
+.hero-name-wrapper {
+  grid-area: 3 / 2 / 3 / 6;
+}
+
+.title-wrapper {
+  grid-area: 4 / 2 / 4/ 6;
+}
+
+@media only screen and (max-width: 1200px) {
+}
+
+@media only screen and (max-width: 900px) {
+  .hero-intro-wrapper {
+    grid-area: 2 / 2 / 2 / 6;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .container {
+    grid-template-columns: 10vw repeat(4, 1fr) 5vw;
+    grid-template-rows: 15vh repeat(5, auto) auto;
+  }
+  .hero-comment {
+    font-size: 7vw;
+  }
+}

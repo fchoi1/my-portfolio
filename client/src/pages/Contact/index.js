@@ -3,7 +3,7 @@ import ContactForm from '../../components/ContactForm';
 
 function Contact(props) {
   return (
-    <div style={{ height: '100vh' }}>
+    <div className="section-wrapper">
       Contact Section
       <ContactForm />
     </div>

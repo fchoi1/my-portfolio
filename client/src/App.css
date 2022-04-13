@@ -8,3 +8,116 @@ a:any-link {
   color: inherit;
   text-decoration: none;
 }
+
+/* Declare text styles */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span,
+p,
+.section-name {
+  /* Font minimum, preferred and maximum value */
+  font-size: clamp(var(--min), var(--val), var(--max));
+  margin: clamp(var(--margin-min), var(--margin-reg), var(--margin-max)) 0;
+}
+
+h1 {
+  --min: 2.75rem;
+  --val: 7vw;
+  --max: 5rem;
+  --margin-min: 1rem;
+  --margin-reg: 4vw;
+  --margin-max: 1.1rem;
+}
+
+h2 {
+  --min: 2.25rem;
+  --val: 6vw;
+  --max: 4rem;
+  --margin-min: 0.5rem;
+  --margin-reg: 4vw;
+  --margin-max: 1rem;
+}
+
+h3 {
+  --min: 2rem;
+  --val: 5vw;
+  --max: 3.25rem;
+  --margin-min: 0.6rem;
+  --margin-reg: 4vw;
+  --margin-max: 0.8rem;
+}
+
+h4 {
+  --min: 1.75rem;
+  --val: 4vw;
+  --max: 3rem;
+  --margin-min: 0.3rem;
+  --margin-reg: 4vw;
+  --margin-max: 0.8rem;
+}
+
+h5 {
+  --min: 1.5rem;
+  --val: 3vw;
+  --max: 2.75rem;
+  --margin-min: 0.2rem;
+  --margin-reg: 4vw;
+  --margin-max: 0.8rem;
+}
+h6 {
+  --min: 1.25rem;
+  --val: 2.5vw;
+  --max: 2.5rem;
+  --margin-min: 0.1rem;
+  --margin-reg: 3vw;
+  --margin-max: 0.8rem;
+}
+
+span {
+  --min: 1rem;
+  --val: 2vw;
+  --max: 2rem;
+  --margin-min: 0.1rem;
+  --margin-reg: 4vw;
+  --margin-max: 0.4rem;
+}
+p {
+  --min: 1em;
+  --val: 2vw;
+  --max: 2em;
+  --margin-min: 0.1rem;
+  --margin-reg: 4vw;
+  --margin-max: 0.4rem;
+}
+
+.section-wrapper {
+  height: 100vh;
+}
+
+.section-name {
+  --min: 2rem;
+  --val: 5vw;
+  --max: 3.25rem; 
+}
+
+@media (max-height: 700px) {
+  .section-wrapper {
+    height: 600px;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+}
+
+@media only screen and (max-width: 900px) {
+}
+
+@media only screen and (max-width: 600px) {
+  .section-wrapper {
+    height: 80vh;
+  }
+}
