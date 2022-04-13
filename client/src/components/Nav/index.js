@@ -47,8 +47,8 @@ function NavBar() {
     setHeaderHeight(headerRef.current.clientHeight * -1);
   }, [headerRef, setHeaderHeight]);
 
-  console.log(headerHeight, headerRef.current?.clientHeight);
-  console.log(openMenu);
+  // console.log(headerHeight, headerRef.current?.clientHeight);
+  // console.log(openMenu);
 
   const isBig = useMediaQuery(theme.breakpoints.up('sm'));
   useEffect(() => {
@@ -66,12 +66,10 @@ function NavBar() {
 
   const scrollWithOffset = (el) => {
     let yOffset = 0;
-    console.log(el);
 
     if (el.nodeName === 'BODY') yOffset = headerHeight;
 
     const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset;
-    console.log('yoff', yOffset, yCoordinate, yCoordinate + yOffset);
     window.scrollTo({ top: yCoordinate + yOffset, behavior: 'smooth' });
   };
 
@@ -121,9 +119,7 @@ function NavBar() {
                       scroll={(el) => scrollWithOffset(el)}
                       onClick={handleClickAway}
                     >
-                      <Box sx={{ fontSize: { md: '50px' } }}>
-                        Fabio C.
-                      </Box>
+                      <Box sx={{ fontSize: { md: '50px' } }}>Fabio C.</Box>
                     </HashLink>
                   </Typography>
                 </Grid>

@@ -5,7 +5,7 @@ function Hero(props) {
   return (
     <section className="hero-section" id="Hero">
       <div className="section-wrapper">
-        <div className="hero-container">
+        <div className="hero-container container">
           <div className="hero-intro-wrapper">
             <span className="hero-intro">Hi, my name is</span>
           </div>

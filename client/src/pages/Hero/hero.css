@@ -32,11 +32,12 @@
 }
 
 @media only screen and (max-width: 600px) {
-  .container {
-    grid-template-columns: 10vw repeat(4, 1fr) 5vw;
+  .hero-container {
+    grid-template-columns: 7vw repeat(4, 1fr) 7vw;
     grid-template-rows: 15vh repeat(5, auto) auto;
   }
+
   .hero-comment {
-    font-size: 7vw;
+    font-size: clamp(1.2rem, 5vw, 3.25rem);
   }
 }

@@ -6,7 +6,7 @@ import { useProfileContext } from '../../contexts/ProfileProvider';
 import './about.css';
 
 function About(props) {
-  const { profile, setProfile } = useProfileContext();
+  const { profile } = useProfileContext();
 
   console.log(profile.avatarImage);
 
@@ -14,23 +14,18 @@ function About(props) {
     <section className="page-section" id="About">
       <div className="section-wrapper">
         About me Section
-        <div className="about-container">
-          <div className="section-name about-name-wrapper">
-            <h3 className="about-name">About me</h3>
+        <div className="about-container container">
+          <div className=" about-name-wrapper">
+            <h3 className="about-name section-name">01-About me</h3>
           </div>
-
-          {/* <div className="about-title-wrapper">
-            <h3 className="about-title">
-              ITS Analyst and Upcoming Web Developer
-            </h3>
-          </div> */}
 
           <div className="avatar-wrapper">
             <Avatar
               className="avatar"
               alt="Fabio Choi"
+              variant="square"
               src={profile.avatarImage}
-              sx={{ width: '100%', height: '100%' }}
+              sx={{ width: '100%', height: 'auto', objectfit: 'cover' }}
             />
           </div>
 
@@ -44,6 +39,33 @@ function About(props) {
               bootcamp course to hone my previous programming skills I developed
               in my past co-ops.
             </p>
+            <span>Some technologies that I am working with recently:</span>
+            <ul className="tech-list">
+              <li className="tech-item">
+                <span>JavaScript (ES6+)</span>
+              </li>
+              <li>
+                <span>React</span>
+              </li>
+              <li>
+                <span>NodeJS</span>
+              </li>
+              <li>
+                <span>MongoDB</span>
+              </li>
+              <li>
+                <span>ExpressJS</span>
+              </li>
+              <li>
+                <span>Python</span>
+              </li>
+              <li>
+                <span>Material UI</span>
+              </li>
+              <li>
+                <span>SocketIO</span>
+              </li>
+            </ul>
           </div>
         </div>
       </div>

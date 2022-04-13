@@ -9,7 +9,6 @@ a:any-link {
   text-decoration: none;
 }
 
-/* Declare text styles */
 h1,
 h2,
 h3,
@@ -19,7 +18,6 @@ h6,
 span,
 p,
 .section-name {
-  /* Font minimum, preferred and maximum value */
   font-size: clamp(var(--min), var(--val), var(--max));
   margin: clamp(var(--margin-min), var(--margin-reg), var(--margin-max)) 0;
 }
@@ -44,7 +42,7 @@ h2 {
 
 h3 {
   --min: 2rem;
-  --val: 5vw;
+  --val: 4.5vw;
   --max: 3.25rem;
   --margin-min: 0.6rem;
   --margin-reg: 4vw;
@@ -77,21 +75,18 @@ h6 {
   --margin-max: 0.8rem;
 }
 
-span {
-  --min: 1rem;
+span,
+p {
+  --min: 0.8em;
   --val: 2vw;
-  --max: 2rem;
+  --max: 1.2em;
   --margin-min: 0.1rem;
   --margin-reg: 4vw;
   --margin-max: 0.4rem;
 }
-p {
-  --min: 1em;
-  --val: 2vw;
-  --max: 2em;
-  --margin-min: 0.1rem;
-  --margin-reg: 4vw;
-  --margin-max: 0.4rem;
+
+.container {
+  grid-gap: 0.5em;
 }
 
 .section-wrapper {
@@ -99,14 +94,30 @@ p {
 }
 
 .section-name {
-  --min: 2rem;
+  --min: 1.3rem;
   --val: 5vw;
-  --max: 3.25rem; 
+  --max: 3.25rem;
+  font-weight: 500;
+}
+
+.textLeft {
+  text-align: left;
+}
+
+.textRight {
+  text-align: right;
 }
 
 @media (max-height: 700px) {
   .section-wrapper {
     height: 600px;
+  }
+}
+
+@media only screen and (min-width: 2000px) {
+  .section-name {
+    --val: 8vw;
+    --max: 8rem;
   }
 }
 

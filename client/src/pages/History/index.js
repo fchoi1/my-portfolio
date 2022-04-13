@@ -3,16 +3,18 @@ import HorizontalScroll from 'react-scroll-horizontal';
 
 import './history.css';
 function History(props) {
-  const parent = { width: `60em`, height: `30em` };
+  // const parent = { width: `60em`, height: `30em` };
   return (
     <section id="History">
-      <div className="section-wrapper">History Section</div>
-      <div style={parent}>
-        <HorizontalScroll>
-          <div className="child">test</div>
-          <div className="child"></div>
-          <div className="child"></div>
-        </HorizontalScroll>
+      <div className="section-wrapper">
+        History Section
+        <div className="history-scroll-wrapper">
+          <HorizontalScroll>
+            <div className="child">test</div>
+            <div className="child">test2</div>
+            <div className="child">test3</div>
+          </HorizontalScroll>
+        </div>
       </div>
     </section>
   );

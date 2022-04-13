@@ -5,28 +5,20 @@
 }
 
 .about-name-wrapper {
-  padding-left: 5%;
-  text-align: center;
   margin: 2% 0;
-  grid-area: 2 / 2 / 2 / 6;
+  grid-area: 2 / 2 / 2 / 5;
 }
 
 .about-name {
-  font-size: 60px;
   padding: 0;
   margin: 0;
-  font-weight: 500;
 }
-
-/* .about-title-wrapper {
-  grid-area: 3 / 2 / 3 / 6;
-} */
 
 .avatar-wrapper {
-  grid-area: 2 / 6 / 4 / 8;
-
-  
+  grid-area: 3 / 6 / 5 / 8;
+  place-self: center;
 }
+
 .about-title {
   word-wrap: break-word;
   text-align: center;
@@ -41,4 +33,38 @@
   grid-area: 3 / 2 / 5 / 6;
 }
 
+.tech-list {
+  column-count: 2;
+  column-gap: 10px;
+  column-width: 120px;
+}
 
+.tech-item {
+}
+
+@media only screen and (max-width: 1200px) {
+}
+
+@media only screen and (max-width: 900px) {
+}
+
+@media only screen and (max-width: 600px) {
+  .about-container {
+    grid-template-columns: 7vw repeat(6, 1fr) 7vw;
+    grid-template-rows: 15vh repeat(5, auto) auto;
+  }
+  .about-name-wrapper {
+    margin: 2% 0;
+    grid-area: 2 / 3 / 3 / 7;
+    place-self: center;
+  }
+
+  .avatar-wrapper {
+    grid-area: 3 / 3 / 4/ 7;
+    width: 30vw;
+  }
+
+  .about-content-wrapper {
+    grid-area: 4 / 2 / 6 / 8;
+  }
+}

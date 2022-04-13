@@ -3,3 +3,8 @@
   height: 100%;
   background-color: aqua;
 }
+
+.history-scroll-wrapper{
+  width: 60vw;
+  height: 10vh;
+}
