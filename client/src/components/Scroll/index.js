@@ -1,7 +1,35 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { useScrollTrigger, Slide, Zoom, Box } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import { useMediaQuery } from '@mui/material';
+
+export function useHorizontalScroll() {
+  const elRef = useRef();
+  useEffect(() => {
+    const el = elRef.current;
+    if (el) {
+      const onWheel = (e) => {
+        if (e.deltaY === 0) return;
+        if (
+          !(el.scrollLeft === 0 && e.deltaY < 0) &&
+          !(
+            el.scrollWidth - el.clientWidth - Math.round(el.scrollLeft) === 0 &&
+            e.deltaY > 0
+          )
+        ) {
+          e.preventDefault();
+        }
+        el.scrollTo({
+          left: el.scrollLeft + e.deltaY,
+          behavior: 'smooth'
+        });
+      };
+      el.addEventListener('wheel', onWheel);
+      return () => el.removeEventListener('wheel', onWheel);
+    }
+  }, []);
+  return elRef;
+}
 
 export const HideOnScroll = (props) => {
   const { children, window, setOpenMenu } = props;

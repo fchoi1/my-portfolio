@@ -1,10 +1,20 @@
+.history-container {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: 20vh repeat(5, auto) auto;
+}
+
 .child {
   width: 30em;
   height: 100%;
   background-color: aqua;
 }
 
-.history-scroll-wrapper{
-  width: 60vw;
-  height: 10vh;
+.history-scroll-wrapper {
+  grid-area: 3/ 2/ 4 /8;
+  height: 40vh;
+}
+
+.test-scroll-wrapper {
+  grid-area: 4/ 2/ 5 /8;
 }

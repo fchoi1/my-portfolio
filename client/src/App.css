@@ -87,10 +87,17 @@ p {
 
 .container {
   grid-gap: 0.5em;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: 20vh repeat(5, auto) auto;
 }
 
 .section-wrapper {
   height: 100vh;
+}
+
+.section-name-wrapper {
+  grid-area: 2 / 2 / 2 / 8;
 }
 
 .section-name {
