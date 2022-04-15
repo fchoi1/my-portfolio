@@ -177,7 +177,7 @@ function NavBar() {
 
       <Box sx={{ py: { xs: 1, sm: 2, md: 1 } }} ref={topRef}>
         <Typography variant="h5" component="div">
-          <Box sx={{ fontSize: { md: '50px' } }}>Blah</Box>
+          <Box sx={{ fontSize: { md: '50px', color: 'white' } }}>Blah</Box>
         </Typography>
       </Box>
 

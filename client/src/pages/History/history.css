@@ -12,7 +12,7 @@
 
 .history-scroll-wrapper {
   grid-area: 3/ 2/ 4 /8;
-  height: 40vh;
+  height: 80vh;
 }
 
 .test-scroll-wrapper {

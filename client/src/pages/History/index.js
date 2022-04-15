@@ -1,8 +1,5 @@
 import React from 'react';
-import HorizontalScroll from 'react-scroll-horizontal';
-import { ScrollView } from 'react-native';
-
-import TimelineItem from '../../components/TimelineItem';
+import TimeLine from '../../components/TimeLine';
 
 import { useHorizontalScroll } from '../../components/Scroll';
 
@@ -37,6 +34,24 @@ function History(props) {
       endDate: 'Mar 2022',
       description:
         'Eiusmod reprehenderit pariatur magna elit ipsum ex nostrud est fugiat ut esse magna veniam. Magna deserunt commodo non sit fugiat quis sit dolor consequat. Proident nostrud excepteur do mollit culpa nostrud nostrud pariatur consequat ullamco esse.'
+    },
+    {
+      name: 'Job 4',
+      position: 'Web Dev',
+      location: 'Toronto, ON',
+      startDate: 'Jan 2016',
+      endDate: 'Dec 2018',
+      description:
+        'Eiusmod reprehenderit pariatur magna elit ipsum ex nostrud est fugiat ut esse magna veniam. Magna deserunt commodo non sit fugiat quis sit dolor consequat. Proident nostrud excepteur do mollit culpa nostrud nostrud pariatur consequat ullamco esse.'
+    },
+    {
+      name: 'Job 5',
+      position: 'Web Dev',
+      location: 'Toronto, ON',
+      startDate: 'Jan 2016',
+      endDate: 'Dec 2018',
+      description:
+        'Eiusmod reprehenderit pariatur magna elit ipsum ex nostrud est fugiat ut esse magna veniam. Magna deserunt commodo non sit fugiat quis sit dolor consequat. Proident nostrud excepteur do mollit culpa nostrud nostrud pariatur consequat ullamco esse.'
     }
   ];
 
@@ -51,12 +66,7 @@ function History(props) {
           </div>
 
           <div className="history-scroll-wrapper">
-            <HorizontalScroll>
-              {historyList &&
-                historyList.map((job, i) => (
-                  <TimelineItem job={job} num={i} key={i} />
-                ))}
-            </HorizontalScroll>
+            <TimeLine historyList={historyList} />
           </div>
 
           {/* <div className="test-scroll-wrapper">
