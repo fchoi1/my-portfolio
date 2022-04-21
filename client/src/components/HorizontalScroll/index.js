@@ -66,22 +66,22 @@ export default class ScrollHorizontal extends Component {
       ? animationValue + mouseY
       : animationValue - mouseY;
 
-    console.log(newAnimationValue);
+    // console.log(newAnimationValue);
 
     if (!this.caniscroll()) {
       return;
     }
 
-    if (this.state.start && newAnimationValue > 0) {
-      window.scrollBy(0, -100);
-      return;
-    }
+    // if (this.state.start && newAnimationValue > 0) {
+    //   window.scrollBy(0, -100);
+    //   return;
+    // }
 
-    if (this.state.end && newAnimationValue < this.state.max) {
-      window.scrollBy(0, 100);
+    // if (this.state.end && newAnimationValue < this.state.max) {
+    //   window.scrollBy(0, 100);
 
-      return;
-    }
+    //   return;
+    // }
 
     const scrolling = () => {
       this.setState({ animValues: newAnimationValue });

@@ -1,8 +1,44 @@
 .timeline-item-wrapper {
-  width: 30em;
+  width: 15em;
   height: 100%;
+  display: flex;
+  justify-self: flex-end;
+  align-items: center;
+  flex-direction: column;
+  background-color: beige;
 }
 
-.timeline-item-wrapper {
-  background-color: beige;
+.timeline-item-wrapper-end {
+  width: 22.5em;
+  left: 25%;
+}
+
+.timeline-item {
+  height: 50%;
+  width: 150%;
+  display: flex;
+  align-content: flex-start;
+  flex-direction: column;
+}
+
+.timeline-item-wrapper-wide {
+  width: 22.5em;
+}
+.timeline-item-wide {
+  width: 100%;
+}
+
+.timeline-end {
+  width: 100%;
+}
+
+.timeline-branch {
+  border-left: 1px solid black;
+  width: 1px;
+  height: 50%;
+  margin: 0 auto;
+}
+
+.timeline-bottom {
+  flex-direction: column-reverse;
 }

@@ -6,6 +6,8 @@ import MainPage from './pages';
 // Contexts
 import MuiThemeProvider from './contexts/MuiThemeProvider';
 import { ProfileProvider } from './contexts/ProfileProvider';
+import { ProjectProvider } from './contexts/ProjectProvider';
+import { HistoryProvider } from './contexts/HistoryProvider';
 
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
 
@@ -17,11 +19,17 @@ function App() {
       <BrowserRouter>
         <MuiThemeProvider>
           <ProfileProvider>
-            <NavBar />
-            <Routes>
-              <Route exact path="/" element={<MainPage />} />
-            </Routes>
-            <Footer />
+            <ProjectProvider>
+              <HistoryProvider>
+
+                <NavBar />
+                <Routes>
+                  <Route exact path="/" element={<MainPage />} />
+                </Routes>
+                <Footer />
+                
+              </HistoryProvider>
+            </ProjectProvider>
           </ProfileProvider>
         </MuiThemeProvider>
       </BrowserRouter>
