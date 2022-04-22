@@ -8,37 +8,74 @@
   background-color: beige;
 }
 
-.timeline-item-wrapper-end {
-  width: 22.5em;
-  left: 25%;
-}
-
 .timeline-item {
-  height: 50%;
+  height: 49%;
   width: 150%;
   display: flex;
   align-content: flex-start;
   flex-direction: column;
+  border: 3px solid green;
+  z-index: 1;
 }
 
 .timeline-item-wrapper-wide {
-  width: 22.5em;
+  width: calc(15em * 1.5);
 }
+
 .timeline-item-wide {
   width: 100%;
+}
+
+.timeline-item-wrapper-one-side-left {
+  width: calc(15em * 1.25);
+  align-items: flex-end;
+}
+
+.timeline-item-wrapper-one-side-right {
+  width: calc(15em * 1.25);
+  align-items: flex-start;
+}
+
+.timeline-item-one-side {
+  width: 125%;
 }
 
 .timeline-end {
   width: 100%;
 }
 
-.timeline-branch {
-  border-left: 1px solid black;
-  width: 1px;
-  height: 50%;
-  margin: 0 auto;
-}
-
 .timeline-bottom {
   flex-direction: column-reverse;
+}
+
+.timeline-branch-wrapper {
+  position: relative;
+  border: 1px solid red;
+  height: 20%;
+}
+
+.timeline-branch::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  border-left: 5px solid black;
+  transform: translate(-50%);
+}
+
+.timeline-content-wrapper {
+  margin: 1%;
+  padding: 1%;
+  height: 100%;
+  width: auto;
+  border-radius: 5%;
+  border: 3px solid blue;
+}
+
+/* Time line content styling*/
+.timeline-content-details {
+  display: flex;
+  justify-content: space-between;
 }

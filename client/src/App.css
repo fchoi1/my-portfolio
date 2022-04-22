@@ -1,3 +1,6 @@
+:root {
+}
+
 a,
 a:link,
 a:visited,
@@ -93,7 +96,7 @@ p {
 }
 
 .section-wrapper {
-  height: 100vh;
+  height: 1000px;
 }
 
 .section-name-wrapper {

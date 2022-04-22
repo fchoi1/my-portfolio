@@ -86,7 +86,7 @@ export default class ScrollHorizontal extends Component {
     const scrolling = () => {
       this.setState({ animValues: newAnimationValue });
     };
-    console.log(this.state);
+    // console.log(this.state);
     // Begin Scrolling Animation
     window.requestAnimationFrame(scrolling);
   }

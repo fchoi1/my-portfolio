@@ -27,6 +27,17 @@ const HistoryProvider = ({ value = [], ...props }) => {
         'Eiusmod reprehenderit pariatur magna elit ipsum ex nostrud est fugiat ut esse magna veniam. Magna deserunt commodo non sit fugiat quis sit dolor consequat. Proident nostrud excepteur do mollit culpa nostrud nostrud pariatur consequat ullamco esse.'
     },
     {
+      name: 'Project 0',
+      type: 'project',
+      position: 'Web Dev',
+      location: 'Toronto, ON',
+      startDate: 'Jan 2016',
+      endDate: 'Dec 2018',
+      description:
+        'Eiusmod reprehenderit pariatur magna elit ipsum ex nostrud est fugiat ut esse magna veniam. Magna deserunt commodo non sit fugiat quis sit dolor consequat. Proident nostrud excepteur do mollit culpa nostrud nostrud pariatur consequat ullamco esse.'
+    },
+
+    {
       name: 'Project 1',
       type: 'project',
       position: 'Web Dev',
@@ -57,8 +68,58 @@ const HistoryProvider = ({ value = [], ...props }) => {
         'Eiusmod reprehenderit pariatur magna elit ipsum ex nostrud est fugiat ut esse magna veniam. Magna deserunt commodo non sit fugiat quis sit dolor consequat. Proident nostrud excepteur do mollit culpa nostrud nostrud pariatur consequat ullamco esse.'
     },
     {
-      name: 'Project 3',
+      name: 'Job 4',
+      type: 'job',
+      position: 'Web Dev',
+      location: 'Toronto, ON',
+      startDate: 'Jan 2016',
+      endDate: 'Dec 2018',
+      description:
+        'Eiusmod reprehenderit pariatur magna elit ipsum ex nostrud est fugiat ut esse magna veniam. Magna deserunt commodo non sit fugiat quis sit dolor consequat. Proident nostrud excepteur do mollit culpa nostrud nostrud pariatur consequat ullamco esse.'
+    },
+    {
+      name: 'project 3',
       type: 'project',
+      position: 'Web Dev',
+      location: 'Toronto, ON',
+      startDate: 'Jan 2016',
+      endDate: 'Dec 2018',
+      description:
+        'Eiusmod reprehenderit pariatur magna elit ipsum ex nostrud est fugiat ut esse magna veniam. Magna deserunt commodo non sit fugiat quis sit dolor consequat. Proident nostrud excepteur do mollit culpa nostrud nostrud pariatur consequat ullamco esse.'
+    },
+    {
+      name: 'project 4',
+      type: 'project',
+      position: 'Web Dev',
+      location: 'Toronto, ON',
+      startDate: 'Jan 2016',
+      endDate: 'Dec 2018',
+      description:
+        'Eiusmod reprehenderit pariatur magna elit ipsum ex nostrud est fugiat ut esse magna veniam. Magna deserunt commodo non sit fugiat quis sit dolor consequat. Proident nostrud excepteur do mollit culpa nostrud nostrud pariatur consequat ullamco esse.'
+    },
+    {
+      name: 'Project 5',
+      type: 'project',
+      position: 'Web Dev',
+      location: 'Toronto, ON',
+      startDate: 'Jan 2016',
+      endDate: 'Dec 2018',
+      description:
+        'Eiusmod reprehenderit pariatur magna elit ipsum ex nostrud est fugiat ut esse magna veniam. Magna deserunt commodo non sit fugiat quis sit dolor consequat. Proident nostrud excepteur do mollit culpa nostrud nostrud pariatur consequat ullamco esse.'
+    },
+    {
+      name: 'Project 6',
+      type: 'project',
+      position: 'Web Dev',
+      location: 'Toronto, ON',
+      startDate: 'Jan 2016',
+      endDate: 'Dec 2018',
+      description:
+        'Eiusmod reprehenderit pariatur magna elit ipsum ex nostrud est fugiat ut esse magna veniam. Magna deserunt commodo non sit fugiat quis sit dolor consequat. Proident nostrud excepteur do mollit culpa nostrud nostrud pariatur consequat ullamco esse.'
+    },
+    {
+      name: 'Job 6',
+      type: 'job',
       position: 'Web Dev',
       location: 'Toronto, ON',
       startDate: 'Jan 2016',
