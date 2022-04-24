@@ -14,12 +14,35 @@ const ProjectProvider = ({ value = [], ...props }) => {
   //     cart: [],
   //     cartOpen: true
   //   });
-  const myProjects = {
-    github: 'fchoi1',
-    linkedin: 'https://www.linkedin.com/in/fchoi1/',
-    instagram: 'https://www.instagram.com/w4ng0/',
-    avatarImage: require('../assets/images/avatar/fabio-choi.png')
-  };
+  const myProjects = [
+    {
+      name: 'project1',
+      technologies: ['CSS', 'JS'],
+      website: '',
+      github: 'https://www.linkedin.com/in/fchoi1/',
+      description:
+        'Fugiat pariatur cillum dolore est tempor labore ullamco adipisicing do amet consequat. Commodo reprehenderit elit ad cillum dolore mollit magna irure aute aliqua sunt. Labore ad amet nulla eiusmod culpa reprehenderit duis. Aliquip exercitation ut id irure consectetur irure nulla occaecat aliqua in id. In veniam culpa velit Lorem quis officia qui reprehenderit dolor. Esse ut laborum est consectetur excepteur aliqua nisi.',
+      images: ' '
+    },
+    {
+      name: 'project2',
+      technologies: ['CSS', 'MongoDB', 'express'],
+      website: '',
+      github: 'https://www.linkedin.com/in/fchoi1/',
+      description:
+        'Fugiat pariatur cillum dolore est tempor labore ullamco adipisicing do amet consequat. Commodo reprehenderit elit ad cillum dolore mollit magna irure aute aliqua sunt. Labore ad amet nulla eiusmod culpa reprehenderit duis. Aliquip exercitation ut id irure consectetur irure nulla occaecat aliqua in id. In veniam culpa velit Lorem quis officia qui reprehenderit dolor. Esse ut laborum est consectetur excepteur aliqua nisi.',
+      images: ' '
+    },
+    {
+      name: 'project3',
+      technologies: ['react', 'Java', 'Python'],
+      website: '',
+      github: 'https://www.github.com/fchoi1/',
+      description:
+        'Fugiat pariatur cillum dolore est tempor labore ullamco adipisicing do amet consequat. Commodo reprehenderit elit ad cillum dolore mollit magna irure aute aliqua sunt. Labore ad amet nulla eiusmod culpa reprehenderit duis. Aliquip exercitation ut id irure consectetur irure nulla occaecat aliqua in id. In veniam culpa velit Lorem quis officia qui reprehenderit dolor. Esse ut laborum est consectetur excepteur aliqua nisi.',
+      images: ' '
+    }
+  ];
 
   const [projects, setProjects] = useState(myProjects);
 

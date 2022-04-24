@@ -1,7 +1,8 @@
 .history-container {
   display: grid;
   grid-template-columns: repeat(8, 1fr);
-  grid-template-rows: 20vh repeat(5, auto) auto;
+  grid-template-rows: 5vh repeat(5, auto) auto;
+  height: 80%;
 }
 
 .child {
@@ -10,9 +11,23 @@
   background-color: aqua;
 }
 
+.button-wrapper {
+  display: flex;
+}
+
+.right-history {
+  grid-area: 4/ 8/ 5 /9;
+  justify-self: start;
+}
+
+.left-history {
+  grid-area: 4/ 1/ 5 /2;
+  justify-self: end;
+}
+
 .history-scroll-wrapper {
-  grid-area: 3/ 2/ 4 /8;
-  height: 80vh;
+  grid-area: 3/ 2/ 6 /8;
+  height: 40em;
 }
 
 .test-scroll-wrapper {
