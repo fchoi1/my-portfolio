@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import TimeLine from '../../components/TimeLine';
+import TimeLine from 'components/TimeLine';
 
-import { useHorizontalScroll } from '../../components/Scroll';
-import { useHistoryContext } from '../../contexts/HistoryProvider';
+import { useHorizontalScroll } from 'components/Scroll';
+import { useHistoryContext } from 'contexts/HistoryProvider';
 
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
@@ -23,12 +23,13 @@ function History(props) {
     <section id="History">
       <div className="section-wrapper">
         <div className="history-container container">
+          
           <div className=" history-name-wrapper section-name-wrapper">
             <h3 className="history-name section-name textRight">02-History</h3>
           </div>
 
           <div className="button-wrapper left-history">
-            <IconButton size="large" edge="start">
+            <IconButton size="large">
               <ArrowBackIcon />
             </IconButton>
           </div>

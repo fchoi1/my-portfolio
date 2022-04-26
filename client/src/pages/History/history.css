@@ -1,7 +1,7 @@
 .history-container {
   display: grid;
   grid-template-columns: repeat(8, 1fr);
-  grid-template-rows: 5vh repeat(5, auto) auto;
+  grid-template-rows: 5vh repeat(6, auto);
   height: 80%;
 }
 

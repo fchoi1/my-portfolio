@@ -1,0 +1,33 @@
+.project-item-container {
+  border: 1px solid blueviolet;
+  min-height: 400px;
+  padding: 1%;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(6, max-content) auto;
+}
+
+.project-item-name-wrapper {
+  grid-area: 1 / 1 / 2 /6;
+  height: 100%;
+}
+
+.project-item-name {
+  font-size: 3vw;
+}
+
+.project-item-description-wrapper {
+  grid-area: 2 / 1 / 4 / 4;
+}
+
+.project-item-description {
+  font-size: 1.5vw;
+}
+
+.project-item-images-wrapper {
+  grid-area: 2/ 4 / 6 / 7;
+}
+
+.project-item-link-wrapper {
+  grid-area: 4/ 1 / 6 / 4;
+}

@@ -5,33 +5,39 @@ const projectContext = createContext();
 const { Provider } = projectContext;
 
 const ProjectProvider = ({ value = [], ...props }) => {
-  // state is most up to date global state
-  // dispatch is the method to execut to update state
-  //   const [state, dispatch] = useProductReducer({
-  //     products: [],
-  //     categories: [],
-  //     currentCategory: '',
-  //     cart: [],
-  //     cartOpen: true
-  //   });
+  function importAll(r) {
+    let images = {};
+    r.keys().map((item, index) => {
+      images[item.replace('./', '')] = r(item);
+      return null;
+    });
+    return images;
+  }
+
+  const images = importAll(
+    require.context('../assets/images/projects/', true, /\.(png|jpe?g|svg)$/)
+  );
+
   const myProjects = [
     {
-      name: 'project1',
+      name: 'Lidar Live streaming Robot',
       technologies: ['CSS', 'JS'],
-      website: '',
+
       github: 'https://www.linkedin.com/in/fchoi1/',
       description:
         'Fugiat pariatur cillum dolore est tempor labore ullamco adipisicing do amet consequat. Commodo reprehenderit elit ad cillum dolore mollit magna irure aute aliqua sunt. Labore ad amet nulla eiusmod culpa reprehenderit duis. Aliquip exercitation ut id irure consectetur irure nulla occaecat aliqua in id. In veniam culpa velit Lorem quis officia qui reprehenderit dolor. Esse ut laborum est consectetur excepteur aliqua nisi.',
-      images: ' '
+      imageFolder: '1-LIDAR_Live_streaming_Robot',
+      images: []
     },
     {
       name: 'project2',
       technologies: ['CSS', 'MongoDB', 'express'],
-      website: '',
+      website: 'test',
       github: 'https://www.linkedin.com/in/fchoi1/',
       description:
         'Fugiat pariatur cillum dolore est tempor labore ullamco adipisicing do amet consequat. Commodo reprehenderit elit ad cillum dolore mollit magna irure aute aliqua sunt. Labore ad amet nulla eiusmod culpa reprehenderit duis. Aliquip exercitation ut id irure consectetur irure nulla occaecat aliqua in id. In veniam culpa velit Lorem quis officia qui reprehenderit dolor. Esse ut laborum est consectetur excepteur aliqua nisi.',
-      images: ' '
+      imageFolder: '2-Steward_Platform_Maze_Solver',
+      images: []
     },
     {
       name: 'project3',
@@ -40,9 +46,32 @@ const ProjectProvider = ({ value = [], ...props }) => {
       github: 'https://www.github.com/fchoi1/',
       description:
         'Fugiat pariatur cillum dolore est tempor labore ullamco adipisicing do amet consequat. Commodo reprehenderit elit ad cillum dolore mollit magna irure aute aliqua sunt. Labore ad amet nulla eiusmod culpa reprehenderit duis. Aliquip exercitation ut id irure consectetur irure nulla occaecat aliqua in id. In veniam culpa velit Lorem quis officia qui reprehenderit dolor. Esse ut laborum est consectetur excepteur aliqua nisi.',
-      images: ' '
+      imageFolder: '3-Warehouse_Aerial_Manipulator',
+      images: []
+    },
+    {
+      name: 'project4',
+      technologies: ['react', 'Java', 'Python'],
+      website: '',
+      github: 'https://www.github.com/fchoi1/',
+      description:
+        'Fugiat pariatur cillum dolore est tempor labore ullamco adipisicing do amet consequat. Commodo reprehenderit elit ad cillum dolore mollit magna irure aute aliqua sunt. Labore ad amet nulla eiusmod culpa reprehenderit duis. Aliquip exercitation ut id irure consectetur irure nulla occaecat aliqua in id. In veniam culpa velit Lorem quis officia qui reprehenderit dolor. Esse ut laborum est consectetur excepteur aliqua nisi.',
+      imageFolder: '3-Warehouse_Aerial_Manipulator',
+      images: []
     }
   ];
+
+  myProjects.forEach((project) => {
+    Object.keys(images).map((image) => {
+      if (project.imageFolder === image.split('/')[0]) {
+        project.images.push({ img: images[image], title: image.split('/')[1] });
+        delete images[image];
+      }
+      return null;
+    });
+  });
+
+  console.log(myProjects);
 
   const [projects, setProjects] = useState(myProjects);
 

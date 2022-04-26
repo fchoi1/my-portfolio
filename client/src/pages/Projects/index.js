@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { useProjectContext } from '../../contexts/ProjectProvider';
-import ProjectItem from '../../components/ProjectItem';
+import { useProjectContext } from 'contexts/ProjectProvider';
+import ProjectItem from 'components/ProjectItem';
 import './project.css';
 
 function Projects(props) {

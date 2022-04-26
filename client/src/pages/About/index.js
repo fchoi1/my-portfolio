@@ -1,7 +1,7 @@
 import React from 'react';
 import { Avatar } from '@mui/material';
 
-import { useProfileContext } from '../../contexts/ProfileProvider';
+import { useProfileContext } from 'contexts/ProfileProvider';
 
 import './about.css';
 

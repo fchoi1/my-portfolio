@@ -96,7 +96,7 @@ p {
 }
 
 .section-wrapper {
-  height: 1000px;
+  min-height: 1000px;
 }
 
 .section-name-wrapper {

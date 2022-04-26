@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from 'react';
-import HorizontalScroll from '../HorizontalScroll';
-import TimelineItem from '../TimelineItem';
+import HorizontalScroll from 'components/HorizontalScroll';
+import TimelineItem from 'components/TimelineItem';
 
 import './timeline.css';
 

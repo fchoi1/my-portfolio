@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useTheme } from '@mui/material/styles';
 
-import { useHistoryContext } from '../../contexts/HistoryProvider';
+import { useHistoryContext } from 'contexts/HistoryProvider';
 import classNames from 'classnames';
 
 import './timelineitem.css';
