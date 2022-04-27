@@ -26,7 +26,7 @@ const ProjectProvider = ({ value = [], ...props }) => {
       github: 'https://www.linkedin.com/in/fchoi1/',
       description:
         'Fugiat pariatur cillum dolore est tempor labore ullamco adipisicing do amet consequat. Commodo reprehenderit elit ad cillum dolore mollit magna irure aute aliqua sunt. Labore ad amet nulla eiusmod culpa reprehenderit duis. Aliquip exercitation ut id irure consectetur irure nulla occaecat aliqua in id. In veniam culpa velit Lorem quis officia qui reprehenderit dolor. Esse ut laborum est consectetur excepteur aliqua nisi.',
-      imageFolder: '1-LIDAR_Live_streaming_Robot',
+      imageFolder: 'LIDAR_Live_streaming_Robot',
       images: []
     },
     {
@@ -36,7 +36,7 @@ const ProjectProvider = ({ value = [], ...props }) => {
       github: 'https://www.linkedin.com/in/fchoi1/',
       description:
         'Fugiat pariatur cillum dolore est tempor labore ullamco adipisicing do amet consequat. Commodo reprehenderit elit ad cillum dolore mollit magna irure aute aliqua sunt. Labore ad amet nulla eiusmod culpa reprehenderit duis. Aliquip exercitation ut id irure consectetur irure nulla occaecat aliqua in id. In veniam culpa velit Lorem quis officia qui reprehenderit dolor. Esse ut laborum est consectetur excepteur aliqua nisi.',
-      imageFolder: '2-Steward_Platform_Maze_Solver',
+      imageFolder: 'Steward_Platform_Maze_Solver',
       images: []
     },
     {
@@ -46,17 +46,18 @@ const ProjectProvider = ({ value = [], ...props }) => {
       github: 'https://www.github.com/fchoi1/',
       description:
         'Fugiat pariatur cillum dolore est tempor labore ullamco adipisicing do amet consequat. Commodo reprehenderit elit ad cillum dolore mollit magna irure aute aliqua sunt. Labore ad amet nulla eiusmod culpa reprehenderit duis. Aliquip exercitation ut id irure consectetur irure nulla occaecat aliqua in id. In veniam culpa velit Lorem quis officia qui reprehenderit dolor. Esse ut laborum est consectetur excepteur aliqua nisi.',
-      imageFolder: '3-Warehouse_Aerial_Manipulator',
+      imageFolder: 'Warehouse_Aerial_Manipulator',
       images: []
     },
     {
-      name: 'project4',
+      name: 'Tech Blog',
+      Date: 'March 2022',
       technologies: ['react', 'Java', 'Python'],
-      website: '',
-      github: 'https://www.github.com/fchoi1/',
+      website: 'https://fabio-tech-blog.herokuapp.com/',
+      github: 'https://github.com/fchoi1/tech-blog',
       description:
-        'Fugiat pariatur cillum dolore est tempor labore ullamco adipisicing do amet consequat. Commodo reprehenderit elit ad cillum dolore mollit magna irure aute aliqua sunt. Labore ad amet nulla eiusmod culpa reprehenderit duis. Aliquip exercitation ut id irure consectetur irure nulla occaecat aliqua in id. In veniam culpa velit Lorem quis officia qui reprehenderit dolor. Esse ut laborum est consectetur excepteur aliqua nisi.',
-      imageFolder: '3-Warehouse_Aerial_Manipulator',
+        'This is a simple application to use MVC moddel with node js to connect to sql database and access REST apis. This is an application to view a tech blog with users to create, edit and delete posts as well as add comments. Techonologies mysql2, dotenv, express, sequelize, MVC model.',
+      imageFolder: 'Tech_Blog',
       images: []
     }
   ];

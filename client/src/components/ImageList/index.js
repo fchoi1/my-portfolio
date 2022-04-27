@@ -1,9 +1,9 @@
 import React from 'react';
-import { ImageList, ImageListItem } from '@mui/material';
+import { ImageList, ImageListItem, Box } from '@mui/material';
 
 function srcset(image, size, rows = 1, cols = 1) {
   return {
-    src: `${image}?w=${size * cols}&h=${size * rows}&fit=crop&auto=format`,
+    src: `${image}?w='${size * cols}'&h=${size * rows}&fit=crop&auto=format`,
     srcSet: `${image}?w=${size * cols}&h=${
       size * rows
     }&fit=crop&auto=format&dpr=2 2x`
@@ -13,21 +13,30 @@ function srcset(image, size, rows = 1, cols = 1) {
 function ImageDisplayList(props) {
   const { images } = props;
   return (
-    <ImageList sx={{ maxHeight: 450 }} variant="quilted" cols={2} rowHeight={121}>
-      {images.map((item, i) => (
-        <ImageListItem
-          key={item.img}
-          cols={i % 3 === 0 ? 2 : 1}
-          rows={i % 3 === 0 ? 2 : 1}
-        >
-          <img
-            {...srcset(item.img, 121, item.rows, item.cols)}
-            alt={item.title}
-            loading="lazy"
-          />
-        </ImageListItem>
-      ))}
-    </ImageList>
+    <Box sx={{ width: 'auto', height: 450, overflowY: 'scroll' }}>
+      <ImageList
+        // sx={{ maxHeight: 500, textAlign: 'center' }}
+        variant="quilted"
+        cols={2}
+        // rowHeight={200}
+      >
+        {images.map((item, i) => (
+          <ImageListItem
+            key={item.img}
+            cols={i % 3 === 0 ? 2 : 1}
+            rows={i % 3 === 0 ? 2 : 1}
+          >
+            <img
+              // {...srcset(item.img, 200, item.rows, item.cols)}
+              src={`${item.img}?w=248&fit=crop&auto=format`}
+              srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
+              alt={item.title}
+              loading="lazy"
+            />
+          </ImageListItem>
+        ))}
+      </ImageList>
+    </Box>
   );
 }
 

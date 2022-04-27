@@ -1,12 +1,16 @@
 import React from 'react';
 import ContactForm from 'components/ContactForm';
 
+import './contact.css';
+
 function Contact(props) {
   return (
-    <div className="section-wrapper">
-      Contact Section
-      <ContactForm />
-    </div>
+    <section id="Contact">
+      <div className="section-wrapper contact-section">
+        Contact Section Test
+        <ContactForm />
+      </div>
+    </section>
   );
 }
 
