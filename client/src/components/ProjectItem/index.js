@@ -8,7 +8,7 @@ import classNames from 'classnames';
 function ProjectItem(props) {
   const { project, num, showMoreRef, showMore } = props;
   const reversed = num % 2 === 0;
-  const delay = 1000;
+  const delay = 10;
 
   const hideProject = classNames({
     'hide-project': num > 2 ? !showMore : false,
