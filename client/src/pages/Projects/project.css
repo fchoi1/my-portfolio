@@ -1,10 +1,15 @@
 .projects-container {
-    display: grid;
-    grid-template-columns: repeat(8, 1fr);
-    grid-template-rows: 5vh repeat(5, auto) auto;
-    height: 80%;
-  }
-  
- .project-item-description{
-   font-size: 1em;
- }
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: 5vh repeat(5, auto) auto;
+  height: 80%;
+}
+
+.projects-list-wrapper {
+  grid-area: 3 / 3 / 4 / 7;
+}
+
+.projects-list-show-more {
+  grid-area: 4 / 3 / 5 / 7;
+  justify-self: cente
+}

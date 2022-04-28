@@ -3,6 +3,16 @@ import { useScrollTrigger, Slide, Zoom, Box } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import { useMediaQuery } from '@mui/material';
 
+export const scrollToTargetAdjusted = (element, offSet) => {
+  var elementPosition = element.getBoundingClientRect().top;
+  var offsetPosition = elementPosition + window.pageYOffset - offSet;
+
+  window.scrollTo({
+    top: offsetPosition,
+    behavior: 'smooth'
+  });
+};
+
 export function useHorizontalScroll() {
   const elRef = useRef();
   useEffect(() => {

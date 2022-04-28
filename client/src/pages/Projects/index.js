@@ -1,12 +1,26 @@
-import React from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 
+import { scrollToTargetAdjusted } from 'components/Scroll';
+import { Button } from '@mui/material';
 import { useProjectContext } from 'contexts/ProjectProvider';
 import ProjectItem from 'components/ProjectItem';
+
 import './project.css';
 
 function Projects(props) {
   const { projects, setProjects } = useProjectContext();
-  console.log(projects);
+  const [showMore, setShowMore] = useState(false);
+  const [currProjects, setCurrProjects] = useState(projects);
+
+  const showMoreRef = useRef(null);
+
+  const handleShow = (event) => {
+    if (showMoreRef.current) {
+      scrollToTargetAdjusted(showMoreRef.current, 100);
+    }
+    setShowMore(!showMore);
+  };
+
   return (
     <section id="Projects">
       <div className="section-wrapper">
@@ -14,11 +28,23 @@ function Projects(props) {
         <div className="container projects-container ">
           <div className=" projects-name-wrapper section-name-wrapper">
             <h3 className="projects-name section-name">03-Projects</h3>
-
-            {projects &&
-              projects.map((project, i) => (
-                <ProjectItem project={project} key={i}></ProjectItem>
+          </div>
+          <div className="projects-list-wrapper">
+            {currProjects &&
+              currProjects.map((project, i) => (
+                <ProjectItem
+                  project={project}
+                  num={i}
+                  key={i}
+                  showMore={showMore}
+                  showMoreRef={i === 2 ? showMoreRef : null}
+                ></ProjectItem>
               ))}
+          </div>
+          <div className="projects-list-show-more">
+            <Button onClick={handleShow}>
+              {showMore ? 'show less' : 'show more'}
+            </Button>
           </div>
         </div>
       </div>
