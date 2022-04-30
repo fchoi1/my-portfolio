@@ -41,15 +41,12 @@ const theme = createTheme({
   components: {
     MuiAppBar: {
       styleOverrides: {
-        root: {
-          opacity: 0.6
-        }
+        root: {}
       }
     }
   },
   mixins: {
     toolbar: {
-      opacity: 0.6,
       minHeight: '64px',
       '@media (max-width:600px) ': {
         minHeight: '48px'

@@ -1,4 +1,6 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, cloneElement } from 'react';
+import PropTypes from 'prop-types';
+
 import { useScrollTrigger, Slide, Zoom, Box } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import { useMediaQuery } from '@mui/material';
@@ -12,6 +14,16 @@ export const scrollToTargetAdjusted = (element, offSet) => {
     behavior: 'smooth'
   });
 };
+
+export function ElevationScroll(props) {
+  const { children, setElevation } = props;
+  useEffect(() => {
+    window.onscroll = () =>
+      window.pageYOffset === 0 ? setElevation(0) : setElevation(4);
+  }, [setElevation]);
+
+  return <>{children}</>;
+}
 
 export function useHorizontalScroll() {
   const elRef = useRef();
@@ -42,10 +54,8 @@ export function useHorizontalScroll() {
 }
 
 export const HideOnScroll = (props) => {
-  const { children, window, setOpenMenu } = props;
-  const trigger = useScrollTrigger({
-    target: window ? window() : undefined
-  });
+  const { children, setOpenMenu } = props;
+  const trigger = useScrollTrigger();
 
   const theme = useTheme();
   const isBig = useMediaQuery(theme.breakpoints.up('sm'));
@@ -65,12 +75,10 @@ export const HideOnScroll = (props) => {
 };
 
 export const ScrollTop = (props) => {
-  const { children, window, topRef } = props;
+  const { children, topRef } = props;
 
   const trigger = useScrollTrigger({
-    target: window ? window() : undefined,
-    disableHysteresis: true,
-    threshold: 100
+    disableHysteresis: true
   });
 
   const handleClick = (e) => {

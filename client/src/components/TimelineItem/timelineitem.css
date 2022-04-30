@@ -79,3 +79,9 @@
   display: flex;
   justify-content: space-between;
 }
+
+.timeline-content-description {
+  --min: 0.6em;
+  --val: 2vw;
+  --max: 1em;
+}

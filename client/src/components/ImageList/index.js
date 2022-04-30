@@ -13,7 +13,7 @@ function srcset(image, size, rows = 1, cols = 1) {
 function ImageDisplayList(props) {
   const { images } = props;
   return (
-    <Box sx={{ width: 'auto', height: 450, overflowY: 'scroll' }}>
+    <Box sx={{ width: 'auto', maxHeight: 300, overflowY: 'scroll' }}>
       <ImageList
         // sx={{ maxHeight: 500, textAlign: 'center' }}
         variant="quilted"

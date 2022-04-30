@@ -1,4 +1,6 @@
 import React from 'react';
+import Moment from 'react-moment';
+
 import { useTheme } from '@mui/material/styles';
 
 import { useHistoryContext } from 'contexts/HistoryProvider';
@@ -10,7 +12,6 @@ function TimelineItem(props) {
   const { item, num } = props;
 
   const { history } = useHistoryContext();
-
 
   const theme = useTheme();
 
@@ -71,7 +72,10 @@ function TimelineItem(props) {
         <div className={timelineItem}>
           <div className="timeline-branch-wrapper">
             <div className="timeline-branch">
-              <div className="timeline-content-date">{item.startDate}</div>
+              <div className="timeline-content-date">
+                {' '}
+                <Moment>{item.startDate} </Moment>
+              </div>
             </div>
           </div>
 

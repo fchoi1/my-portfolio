@@ -15,10 +15,11 @@ function Projects(props) {
   const showMoreRef = useRef(null);
 
   const handleShow = (event) => {
+    setShowMore(!showMore);
+
     if (showMoreRef.current) {
       scrollToTargetAdjusted(showMoreRef.current, 100);
     }
-    setShowMore(!showMore);
   };
 
   return (

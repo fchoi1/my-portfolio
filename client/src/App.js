@@ -1,4 +1,5 @@
-import './App.css';
+import 'App.css';
+import 'scrollbar.css';
 
 import NavBar from 'components/Nav';
 import MainPage from 'pages';
@@ -21,13 +22,11 @@ function App() {
           <ProfileProvider>
             <ProjectProvider>
               <HistoryProvider>
-
                 <NavBar />
                 <Routes>
                   <Route exact path="/" element={<MainPage />} />
                 </Routes>
                 <Footer />
-                
               </HistoryProvider>
             </ProjectProvider>
           </ProfileProvider>

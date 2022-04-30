@@ -1,3 +1,11 @@
+:root {
+  --yaleBlue: #044389;
+  --darkSkyBlue: #86bbd8;
+  --mediumChampagne: #eddea4;
+  --atomicTangerine: #f7a072;
+  --liverChestnut: #957964;
+}
+
 a,
 a:link,
 a:visited,
@@ -20,6 +28,7 @@ p,
 .section-name {
   font-size: clamp(var(--min), var(--val), var(--max));
   margin: clamp(var(--margin-min), var(--margin-reg), var(--margin-max)) 0;
+  color: var(--mediumChampagne);
 }
 
 h1 {
@@ -94,6 +103,7 @@ p {
 
 .section-wrapper {
   min-height: 1000px;
+  background-color: var(--yaleBlue);
 }
 
 .section-name-wrapper {
@@ -115,13 +125,26 @@ p {
   text-align: right;
 }
 
+ul {
+  list-style: none; /* Remove default bullets */
+}
+
+ul li::before {
+  content: '\2022'; /* Add content: \2022 is the CSS Code/unicode for a bullet */
+  color: var(--mediumChampagne); /* Change the color */
+  font-weight: bold; /* If you want it to be bold */
+  display: inline-block; /* Needed to add space between the bullet and the text */
+  width: 1em; /* Also needed for space (tweak if needed) */
+  margin-left: -1em; /* Also needed for space (tweak if needed) */
+}
+
 @media (max-height: 700px) {
   .section-wrapper {
     height: 600px;
   }
 }
 
-@media only screen and (min-width: 2000px) {
+@media only screen and (min-width: 2500px) {
   .section-name {
     --val: 8vw;
     --max: 8rem;

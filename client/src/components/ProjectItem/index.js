@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import './projectitem.css';
 
 import ImageDisplayList from 'components/ImageList';
@@ -8,12 +8,25 @@ import classNames from 'classnames';
 function ProjectItem(props) {
   const { project, num, showMoreRef, showMore } = props;
   const reversed = num % 2 === 0;
-  const delay = 10;
 
-  const hideProject = classNames({
-    'hide-project': num > 2 ? !showMore : false,
-    'show-project': num > 2 ? showMore : false
-  });
+  const hideAnimation = `fade-out 0.3s 500ms ease-out forwards`;
+  const showAnimation = `fade-in 0.5s ease-out `;
+
+  let [more, setMore] = useState('none');
+  let [animationStyle, setAnimationStyle] = useState('');
+
+  useEffect(() => {
+    setMore('inherit');
+    if (showMore && num > 2) {
+      setAnimationStyle(showAnimation);
+    } else if (!showMore && num > 2) {
+      setAnimationStyle(hideAnimation);
+    }
+  }, [showMore, more, hideAnimation, showAnimation, setAnimationStyle, num]);
+
+  useEffect(() => {
+    setMore('none');
+  }, []);
 
   const projectItemName = classNames({
     'project-item-name-wrapper': true,
@@ -34,18 +47,12 @@ function ProjectItem(props) {
     'project-item-images-wrapper-left': reversed
   });
 
-  let animationStyle = '';
-  const hideAnimation = `fade-out 0.5s ${delay * num}ms ease-out forwards`;
-  const showAnimation = `fade-in 0.5s ${delay * 1/num}ms ease-in`;
-
-  if (showMore && num > 2) {
-    animationStyle = showAnimation;
-  } else if (!showMore && num > 2) {
-    animationStyle = hideAnimation;
-  }
-
   return (
-    <div ref={showMoreRef} style={{ animation: animationStyle }}>
+    <div
+      ref={showMoreRef}
+      style={{ animation: animationStyle, display: num > 2 ? more : 'inherit' }}
+    >
+      {/* <div ref={showMoreRef} className={TStyle}> */}
       <div className="project-item-container container ">
         <div className={projectItemName}>
           <h4 className="project-item-name">{project.name}</h4>
