@@ -5,7 +5,6 @@
   justify-self: flex-end;
   align-items: center;
   flex-direction: column;
-  background-color: beige;
 }
 
 .timeline-item {
@@ -65,6 +64,16 @@
   transform: translate(-50%);
 }
 
+.timeline-content-date {
+  position: absolute;
+  left: 50%;
+  padding-left: 2%;
+}
+
+.timeline-content-date-top {
+  bottom: 0%;
+}
+
 .timeline-content-wrapper {
   margin: 1%;
   padding: 1%;
@@ -84,4 +93,5 @@
   --min: 0.6em;
   --val: 2vw;
   --max: 1em;
+  color: var(--tertiary);
 }

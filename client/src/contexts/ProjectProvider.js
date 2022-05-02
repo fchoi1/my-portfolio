@@ -21,18 +21,25 @@ const ProjectProvider = ({ value = [], ...props }) => {
   const myProjects = [
     {
       name: 'Lidar Live streaming Robot',
-      technologies: ['CSS', 'JS'],
-      github: 'https://www.linkedin.com/in/fchoi1/',
+      technologies: ['ROS', ' Linux/Terminal', 'Git', 'ROSJS', 'HTML'],
+      github: 'https://github.com/fchoi1/Linabot',
       description:
-        'Fugiat pariatur cillum dolore est tempor labore ullamco adipisicing do amet consequat. Commodo reprehenderit elit ad cillum dolore mollit magna irure aute aliqua sunt. Labore ad amet nulla eiusmod culpa reprehenderit duis. Aliquip exercitation ut id irure consectetur irure nulla occaecat aliqua in id. In veniam culpa velit Lorem quis officia qui reprehenderit dolor. Esse ut laborum est consectetur excepteur aliqua nisi.',
+        'A project I worked on at Linamar to design an automous robot that can deliver tool changes',
       imageFolder: 'LIDAR_Live_streaming_Robot',
       images: []
     },
     {
       name: 'Steward Platform Maze Game',
-      technologies: ['CSS', 'MongoDB', 'express'],
+      technologies: [
+        'C++',
+        'OOP',
+        'Solidworks 3D Modelling',
+        'Mechanical Design',
+        'Arduino',
+        'IMU'
+      ],
       website: 'test',
-      github: 'https://www.linkedin.com/in/fchoi1/',
+      github: 'https://github.com/fchoi1/stewart-platform',
       description:
         'Fugiat pariatur cillum dolore est tempor labore ullamco adipisicing do amet consequat. Commodo reprehenderit elit ad cillum dolore mollit magna irure aute aliqua sunt. Labore ad amet nulla eiusmod culpa reprehenderit duis. Aliquip exercitation ut id irure consectetur irure nulla occaecat aliqua in id. In veniam culpa velit Lorem quis officia qui reprehenderit dolor. Esse ut laborum est consectetur excepteur aliqua nisi.',
       imageFolder: 'Steward_Platform_Maze_Solver',
@@ -40,9 +47,9 @@ const ProjectProvider = ({ value = [], ...props }) => {
     },
     {
       name: 'Warehouse Aerial Manipulator',
-      technologies: ['react', 'Java', 'Python'],
+      technologies: ['Solidworks 3D Modelling', 'Mechanical Design', 'Arduino'],
       Date: 'March 2022',
-      website: '',
+      website: 'https://1drv.ms/p/s!Ap-4bV5caE3xdK1LdPpFxN_whmI?e=Gb9zD0',
       github: 'https://www.github.com/fchoi1/',
       description:
         'Fugiat pariatur cillum dolore est tempor labore ullamco adipisicing do amet consequat. Commodo reprehenderit elit ad cillum dolore mollit magna irure aute aliqua sunt. Labore ad amet nulla eiusmod culpa reprehenderit duis. Aliquip exercitation ut id irure consectetur irure nulla occaecat aliqua in id. In veniam culpa velit Lorem quis officia qui reprehenderit dolor. Esse ut laborum est consectetur excepteur aliqua nisi.',
@@ -52,7 +59,7 @@ const ProjectProvider = ({ value = [], ...props }) => {
     {
       name: 'Tech Blog',
       Date: 'March 2022',
-      technologies: ['react', 'Java', 'Python'],
+      technologies: ['react', 'Python'],
       website: 'https://fabio-tech-blog.herokuapp.com/',
       github: 'https://github.com/fchoi1/tech-blog',
       description:
@@ -79,6 +86,7 @@ const ProjectProvider = ({ value = [], ...props }) => {
       description:
         'This is my first RPG Game created in Java. It uses keyboard controls and event has animations.',
       imageFolder: 'PvZ_RPG',
+      override: true,
       images: []
     },
     {

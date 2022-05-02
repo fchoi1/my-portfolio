@@ -20,12 +20,13 @@ function History(props) {
   const scrollRef = useHorizontalScroll();
 
   return (
-    <section id="History">
+    <section id="Journey">
       <div className="section-wrapper">
         <div className="history-container container">
-          
           <div className=" history-name-wrapper section-name-wrapper">
-            <h3 className="history-name section-name textRight">02-History</h3>
+            <h3 className="history-name section-name textRight">
+              02-My Journey
+            </h3>
           </div>
 
           <div className="button-wrapper left-history">
@@ -47,26 +48,6 @@ function History(props) {
               <ArrowForwardIcon />
             </IconButton>
           </div>
-
-          {/* <div className="test-scroll-wrapper">
-            <div
-              ref={scrollRef}
-              style={{ width: 600, overflow: 'auto', height: '30vh' }}
-            >
-              <h4>test scroll with react native</h4>
-
-              <div style={{ whiteSpace: 'nowrap' }}>
-                I will definitely overflow due to the small width of my parent
-                container LMagna enim ut culpa ipsum tempor occaecat
-                reprehenderit consectetur sint. Eiusmod id aute et cupidatat
-                enim dolor mollit reprehenderit id velit et ea velit do.
-                Consectetur pariatur mollit dolor eu. Culpa exercitation
-                occaecat sit tempor mollit nostrud excepteur ullamco. Laboris
-                est quis amet anim ad mollit qui ex cupidatat culpa irure duis
-                magna. Laboris ipsum ex elit fugiat non est ex.
-              </div>
-            </div>
-          </div> */}
         </div>
       </div>
     </section>

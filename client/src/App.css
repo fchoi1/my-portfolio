@@ -4,6 +4,26 @@
   --mediumChampagne: #eddea4;
   --atomicTangerine: #f7a072;
   --liverChestnut: #957964;
+
+  --MidnightBlue: #03045e;
+  --DarkCornflowerBlue: #023e8a;
+  --StarCommandBlue: #0077b6;
+  --BlueGreen: #0096c7;
+  --PacificBlue: #00b4d8;
+  --SkyBlue: #48cae4;
+  --MiddleBlue: #90e0ef;
+  --BlizzardBlue: #ade8f4;
+  --LightCyan: #caf0f8;
+
+  --primary: var(--DarkCornflowerBlue);
+  --secondary: var(--PacificBlue);
+  --tertiary: var(--LightCyan);
+  --quaternary: var(--StarCommandBlue);
+  --quinary: var();
+}
+
+body {
+  background-color: var(--primary);
 }
 
 a,
@@ -28,7 +48,11 @@ p,
 .section-name {
   font-size: clamp(var(--min), var(--val), var(--max));
   margin: clamp(var(--margin-min), var(--margin-reg), var(--margin-max)) 0;
-  color: var(--mediumChampagne);
+  color: var(--tertiary);
+}
+
+.section-name {
+  color: var(--secondary);
 }
 
 h1 {
@@ -103,7 +127,7 @@ p {
 
 .section-wrapper {
   min-height: 1000px;
-  background-color: var(--yaleBlue);
+  background-color: var(--primary);
 }
 
 .section-name-wrapper {
@@ -131,7 +155,7 @@ ul {
 
 ul li::before {
   content: '\2022'; /* Add content: \2022 is the CSS Code/unicode for a bullet */
-  color: var(--mediumChampagne); /* Change the color */
+  color: var(--secondary); /* Change the color */
   font-weight: bold; /* If you want it to be bold */
   display: inline-block; /* Needed to add space between the bullet and the text */
   width: 1em; /* Also needed for space (tweak if needed) */

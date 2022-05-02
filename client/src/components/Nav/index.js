@@ -53,7 +53,12 @@ function NavBar(props) {
     isBig ? setOpenMenu(true) : setOpenMenu(false);
   }, [isBig]);
 
-  const pages = ['About', 'History', 'Projects', 'Contact'];
+  const pages = [
+    { name: 'About', link: 'About' },
+    { name: 'My Journey', link: 'Journey' },
+    { name: 'Projects', link: 'Projects' },
+    { name: 'Contact', link: 'Contact' }
+  ];
 
   // for mobile
   const handleOpenMenu = () => setOpenMenu((value) => !value);
@@ -84,7 +89,7 @@ function NavBar(props) {
     <>
       <ElevationScroll setElevation={setElevation}>
         <HideOnScroll setOpenMenu={setOpenMenu}>
-          <AppBar color="yaleBlue" elevation={elevation}>
+          <AppBar color="primary" elevation={elevation}>
             <ClickAwayListener onClickAway={handleClickAway}>
               <Toolbar
                 disableGutters
@@ -112,6 +117,7 @@ function NavBar(props) {
                       noWrap
                       component="div"
                       sx={{ ml: { sm: 2 }, py: 1 }}
+                      color="secondary"
                     >
                       <HashLink
                         to={`/#`}
@@ -141,9 +147,9 @@ function NavBar(props) {
                       <Grid container>
                         {pages &&
                           pages.map((page) => (
-                            <Grid item key={page} xs={12} sm="auto">
+                            <Grid item key={page.name} xs={12} sm="auto">
                               <HashLink
-                                to={`/#${page}`}
+                                to={`/#${page.link}`}
                                 scroll={(el) => scrollWithOffset(el)}
                                 onClick={handleClickAway}
                               >
@@ -155,12 +161,12 @@ function NavBar(props) {
                                   variant="text"
                                   focusRipple
                                   color={
-                                    currPage === page
+                                    currPage === page.link
                                       ? 'mediumChampagne'
                                       : 'liverChestnut'
                                   }
                                 >
-                                  {page}
+                                  {page.name}
                                 </NavButton>
                               </HashLink>
                             </Grid>

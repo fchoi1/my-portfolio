@@ -6,13 +6,13 @@ const historyContext = createContext();
 const { Provider } = historyContext;
 
 const HistoryProvider = ({ value = [], ...props }) => {
-  const myHistory = [
+  let myHistory = [
     {
       name: 'CGI Group',
       type: 'job',
       position: 'Technical Analyst',
       location: 'Markham, ON',
-      startDate: moment('Dec 2015', 'MMM-YYYY'),
+      startDate: 'Dec 2015',
       endDate: 'Apr 2016',
       description: `Configured Atlassian suite tools for Jira, Bamboo, and Confluence. 
         Programmed Ansible scripts used to automate environment setup and deployment.
@@ -24,7 +24,7 @@ const HistoryProvider = ({ value = [], ...props }) => {
       type: 'job',
       position: 'Software Development Co-op',
       location: 'Markham, ON',
-      startDate: 'Sept 2016',
+      startDate: 'Sep 2016',
       endDate: 'Dec 2016',
       description: `Integrated a task management software (SBM) with SVN/Eclipse to automatically include issue numbers with code commits
         Documented instructions for user setup for the software integration
@@ -61,7 +61,7 @@ const HistoryProvider = ({ value = [], ...props }) => {
       type: 'job',
       position: 'Innovation Developer',
       location: 'Toronto, ON',
-      startDate: 'Sept 2018',
+      startDate: 'Sep 2018',
       endDate: 'Dec 2018',
       description: `Researched data and created applications for face recognition technologies 
         Developed an IoT video streaming device using Raspberry Pi system to implement computer vision techniques on face data (Python, OpenCV)
@@ -90,10 +90,22 @@ const HistoryProvider = ({ value = [], ...props }) => {
       endDate: 'Present',
       description: `Learned fundamentals and techniques in web development. Developed strong coding practices incuding MERN stack and GIT`,
       link: ''
+    },
+    {
+      name: 'Comp Sci and Comp Eng Courses',
+      type: 'project',
+      position: 'Highschool',
+      location: 'Markham, ON',
+      startDate: 'Sep 2014',
+      endDate: 'Present',
+      description: `My Journey started with learning about computer engineering and computer science in my highschool courses`,
+      link: ''
     }
   ];
 
-  myHistory.sort();
+  myHistory = myHistory.sort(
+    (a, b) => moment(a.startDate, 'MMM YYYY') - moment(b.startDate, 'MMM YYYY')
+  );
 
   const [history, setHistory] = useState(myHistory);
 

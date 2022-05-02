@@ -3,7 +3,7 @@
   min-height: 400px;
   padding: 1%;
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(3, auto) repeat(3, auto);
   grid-template-rows: repeat(6, max-content) auto;
 }
 
@@ -13,7 +13,7 @@
 }
 
 .project-item-name {
-  font-size: 2.6vw;
+  font-size: 2vw;
 }
 
 .project-item-description-wrapper {
@@ -29,6 +29,7 @@
 
 .project-item-images-wrapper {
   grid-area: 2/ 4 / 6 / 7;
+  place-self: center;
 }
 
 .project-item-link-wrapper {

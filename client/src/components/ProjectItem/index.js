@@ -64,11 +64,19 @@ function ProjectItem(props) {
 
         <div className={projectItemLink}>
           <span className="project-item-link">
-            {project.github && <a href={project.github}>Github Repo</a>}
+            {project.github && (
+              <a href={project.github} target="_blank" rel="noreferrer">
+                Github Repo
+              </a>
+            )}
           </span>
 
           <span className="project-item-link">
-            {project.website && <a href={project.website}>Website</a>}
+            {project.website && (
+              <a href={project.website} target="_blank" rel="noreferrer">
+                Website
+              </a>
+            )}
           </span>
         </div>
 

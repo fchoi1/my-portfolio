@@ -16,7 +16,7 @@ function TimelineItem(props) {
   const theme = useTheme();
 
   // theme.palette.mediumChampagne.light
-
+  console.log(history);
   const useWide =
     history.length === num + 1 ||
     num === 0 ||
@@ -38,9 +38,6 @@ function TimelineItem(props) {
   const isEndOneSide =
     history.length === num + 1 && history[num - 1]?.type !== history[num].type;
 
-  // console.log(num, isStartOneSide, isEndOneSide);
-  // console.log(useWide, oneSideLeft, oneSideRight, num);
-
   const timelineWrapper = classNames({
     'timeline-item-wrapper': true,
     'timeline-item-wrapper-one-side-left': oneSideLeft || isEndOneSide,
@@ -57,24 +54,19 @@ function TimelineItem(props) {
     'timeline-bottom': item.type === 'job'
   });
 
+  const timelineDate = classNames({
+    'timeline-content-date': true,
+    'timeline-content-date-top': item.type === 'job'
+  });
+
   return (
     <>
-      <div
-        data-timelineid={num}
-        className={timelineWrapper}
-        style={{
-          backgroundColor:
-            num % 2 === 0
-              ? theme.palette.mediumChampagne.light
-              : theme.palette.mediumChampagne.dark
-        }}
-      >
+      <div data-timelineid={num} className={timelineWrapper}>
         <div className={timelineItem}>
           <div className="timeline-branch-wrapper">
             <div className="timeline-branch">
-              <div className="timeline-content-date">
-                {' '}
-                <Moment>{item.startDate} </Moment>
+              <div className={timelineDate}>
+                <Moment date={item.startDate} format="MMM YYYY" />
               </div>
             </div>
           </div>

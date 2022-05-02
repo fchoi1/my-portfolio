@@ -10,7 +10,6 @@ import './project.css';
 function Projects(props) {
   const { projects, setProjects } = useProjectContext();
   const [showMore, setShowMore] = useState(false);
-  const [currProjects, setCurrProjects] = useState(projects);
 
   const showMoreRef = useRef(null);
 
@@ -31,8 +30,8 @@ function Projects(props) {
             <h3 className="projects-name section-name">03-Projects</h3>
           </div>
           <div className="projects-list-wrapper">
-            {currProjects &&
-              currProjects.map((project, i) => (
+            {projects &&
+              projects.map((project, i) => (
                 <ProjectItem
                   project={project}
                   num={i}
@@ -43,7 +42,7 @@ function Projects(props) {
               ))}
           </div>
           <div className="projects-list-show-more">
-            <Button onClick={handleShow}>
+            <Button onClick={handleShow} color='secondary'>
               {showMore ? 'show less' : 'show more'}
             </Button>
           </div>

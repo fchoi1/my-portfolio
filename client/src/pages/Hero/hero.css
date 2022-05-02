@@ -18,8 +18,18 @@
   grid-area: 3 / 2 / 3 / 6;
 }
 
+.hero-name {
+  color: var(--tertiary);
+}
+
 .title-wrapper {
   grid-area: 4 / 2 / 4/ 6;
+}
+
+.hero-intro,
+.hero-comment,
+.title {
+  color: var(--secondary);
 }
 
 @media only screen and (max-width: 1200px) {
