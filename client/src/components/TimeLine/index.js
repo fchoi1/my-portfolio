@@ -1,4 +1,5 @@
 import React, { useRef, useEffect, useState } from 'react';
+import classNames from 'classnames';
 import { useHistoryContext } from 'contexts/HistoryProvider';
 
 import HorizontalScroll from 'components/HorizontalScroll';
@@ -18,18 +19,14 @@ const addYearDivider = (historyList) => {
   for (let i = 0; i < historyList.length; i++) {
     prevYear = moment(historyList[i]?.startDate, 'MMM YYYY').year();
     nextYear = moment(historyList[i + 1]?.startDate, 'MMM YYYY').year();
-    console.log(i, prevYear, nextYear, prevYear < nextYear);
     if (!nextYear) {
       break;
     }
-
     newArray.push(historyList[i]);
-
     if (prevYear < nextYear)
       newArray.push({ startDate: nextYear, type: 'divider' });
   }
   newArray.push(historyList[historyList.length - 1]);
-
   return newArray;
 };
 
@@ -41,6 +38,11 @@ function TimeLine(props) {
   );
 
   const { setHistory } = useHistoryContext();
+
+  const timeline = classNames({
+    timeline: true,
+    'timeline-gradient': true
+  });
 
   // useEffect(() => {
   //   setHistory(currHistoryList);
@@ -57,25 +59,31 @@ function TimeLine(props) {
   }, [first]);
 
   return (
-    <div className="timeline">
-      <HorizontalScroll animValues={scrollVal}>
-        {currHistoryList &&
-          currHistoryList.map((historyItem, i) => {
-            return historyItem.type === 'divider' ? (
-              <div ref={i === 1 ? first : null} key={i}>
-                <TimeLineDivider item={historyItem} num={i} />
-              </div>
-            ) : (
-              <div ref={i === 1 ? first : null} key={i}>
-                <TimelineItem
-                  item={historyItem}
-                  history={currHistoryList}
-                  num={i}
-                />
-              </div>
-            );
-          })}
-      </HorizontalScroll>
+    <div className={timeline}>
+      <div className=" timeline-gradient-right">
+        <div className=" timeline-gradient-left">
+          <div className="timeline-line">
+            <HorizontalScroll animValues={scrollVal}>
+              {currHistoryList &&
+                currHistoryList.map((historyItem, i) => {
+                  return historyItem.type === 'divider' ? (
+                    <div ref={i === 1 ? first : null} key={i}>
+                      <TimeLineDivider item={historyItem} num={i} />
+                    </div>
+                  ) : (
+                    <div ref={i === 1 ? first : null} key={i}>
+                      <TimelineItem
+                        item={historyItem}
+                        history={currHistoryList}
+                        num={i}
+                      />
+                    </div>
+                  );
+                })}
+            </HorizontalScroll>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

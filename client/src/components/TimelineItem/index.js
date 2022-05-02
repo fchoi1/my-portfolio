@@ -64,7 +64,7 @@ function TimelineItem(props) {
   const { item, num, history } = props;
 
   // const { history } = useHistoryContext();
-  console.log(history);
+  // console.log(history);
 
   const theme = useTheme();
 

@@ -20,13 +20,14 @@ function History(props) {
   return (
     <section id="Journey">
       <div className="section-wrapper">
-        <div className="history-container container">
+        <div className="history-title-container container">
           <div className=" history-name-wrapper section-name-wrapper">
             <h3 className="history-name section-name textRight">
               02-My Journey
             </h3>
           </div>
-
+        </div>
+        <div className="history-container container">
           <div className="button-wrapper left-history">
             <IconButton size="large">
               <ArrowBackIcon />

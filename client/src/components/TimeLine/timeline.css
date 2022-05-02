@@ -1,11 +1,60 @@
 .timeline {
   position: relative;
-  height: 100%;  
   background-color: var(--quaternary);
-
+  padding: 0;
 }
 
-.timeline::after {
+/* border-image: linear-gradient(to right, var(--primary), var(--quaternary)); */
+
+/*  */
+.timeline-gradient-left,
+.timeline-gradient-right {
+  height: 100%;
+  position: relative;
+}
+
+.timeline-gradient-right::after {
+  content: '';
+  position: absolute;
+  background-image: linear-gradient(
+    270deg,
+    var(--primary),
+    rgba(0, 0, 0, 0) 100%
+  );
+  top: 0;
+  bottom: 0;
+  left: 93%;
+  right: 0;
+}
+
+.timeline-gradient-left::after {
+  content: '';
+  position: absolute;
+  background-image: linear-gradient(
+    90deg,
+    var(--primary),
+    rgba(0, 0, 0, 0) 100%
+  );
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 93%;
+}
+
+.timeline-gradient {
+  height: 100%;
+  background-image: linear-gradient(90deg, var(--primary), rgba(0, 0, 0, 0) 7%),
+    linear-gradient(270deg, var(--primary), rgba(0, 0, 0, 0) 7%),
+    linear-gradient(180deg, var(--primary), rgba(0, 0, 0, 0) 5%),
+    linear-gradient(0deg, var(--primary), rgba(0, 0, 0, 0) 5%);
+}
+
+.timeline-line {
+  position: relative;
+  height: 100%;
+}
+
+.timeline-line::after {
   content: '';
   position: absolute;
   background-color: black;
