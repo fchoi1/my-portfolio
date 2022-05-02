@@ -107,6 +107,8 @@ const HistoryProvider = ({ value = [], ...props }) => {
     (a, b) => moment(a.startDate, 'MMM YYYY') - moment(b.startDate, 'MMM YYYY')
   );
 
+  console.log('starting', myHistory);
+  
   const [history, setHistory] = useState(myHistory);
 
   return <Provider value={{ history, setHistory }} {...props} />;

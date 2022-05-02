@@ -1,0 +1,12 @@
+.timeline-divider-wrapper {
+  width: 10em;
+  display: flex;
+  flex-direction: column-reverse;
+  height: 100%;
+}
+
+.timeline-divider {
+  display: flex;
+  justify-content: center;
+  height: 49%;
+}

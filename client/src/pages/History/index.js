@@ -15,8 +15,6 @@ function History(props) {
   const { history } = useHistoryContext();
   const [scrollVal, setScrollVal] = useState(0);
 
-  console.log(history);
-
   const scrollRef = useHorizontalScroll();
 
   return (

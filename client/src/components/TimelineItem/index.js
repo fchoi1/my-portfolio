@@ -8,35 +8,70 @@ import classNames from 'classnames';
 
 import './timelineitem.css';
 
-function TimelineItem(props) {
-  const { item, num } = props;
+const checkPosition = (list, item, i) => {
+  let useWide, oneSideLeft, oneSideRight, isStartOneSide, isEndOneSide;
 
-  const { history } = useHistoryContext();
+  if (item.type === 'job') {
+    useWide =
+      i + 1 === list.length ||
+      i === 0 ||
+      (list[i - 1]?.type === item.type && list[i + 1]?.type === item.type);
+
+    oneSideLeft =
+      i !== 0 &&
+      (list[i - 1]?.type !== item.type || list[i + 1]?.type === 'divider') &&
+      list[i + 1]?.type === item.type;
+
+    oneSideRight =
+      list.length !== i + 1 &&
+      list[i - 1]?.type === item.type &&
+      (list[i + 1]?.type !== item.type || list[i + 1]?.type === 'divider');
+
+    isStartOneSide = i === 0 && list[i + 1]?.type !== item?.type;
+
+    isEndOneSide =
+      list.length === i + 1 &&
+      (list[i - 1]?.type !== item?.type || list[i - 1]?.type === 'divider');
+  } else if (item.type === 'project') {
+    useWide =
+      i + 1 === list.length ||
+      i === 0 ||
+      ((list[i - 1]?.type === item.type || list[i - 1]?.type === 'divider') &&
+        (list[i + 1]?.type === item.type || list[i + 1]?.type === 'divider'));
+
+    oneSideLeft =
+      i !== 0 &&
+      list[i - 1]?.type !== item.type &&
+      list[i + 1]?.type !== 'divider' &&
+      list[i + 1]?.type === item.type;
+
+    oneSideRight =
+      list.length !== i + 1 &&
+      list[i - 1]?.type === item.type &&
+      list[i + 1]?.type !== item.type &&
+      list[i + 1]?.type !== 'divider';
+
+    isStartOneSide = i === 0 && list[i + 1]?.type !== item?.type;
+
+    isEndOneSide =
+      list.length === i + 1 &&
+      (list[i - 1]?.type !== item?.type || list[i - 1]?.type === 'divider');
+  }
+  return { useWide, oneSideLeft, oneSideRight, isStartOneSide, isEndOneSide };
+};
+
+function TimelineItem(props) {
+  const { item, num, history } = props;
+
+  // const { history } = useHistoryContext();
+  console.log(history);
 
   const theme = useTheme();
 
+  const { useWide, oneSideLeft, oneSideRight, isStartOneSide, isEndOneSide } =
+    checkPosition(history, item, num);
+
   // theme.palette.mediumChampagne.light
-  console.log(history);
-  const useWide =
-    history.length === num + 1 ||
-    num === 0 ||
-    (history[num - 1]?.type === history[num].type &&
-      history[num + 1]?.type === history[num].type);
-
-  const oneSideRight =
-    history.length !== num + 1 &&
-    history[num - 1]?.type === history[num].type &&
-    history[num + 1]?.type !== history[num].type;
-
-  const oneSideLeft =
-    num !== 0 &&
-    history[num - 1]?.type !== history[num].type &&
-    history[num + 1]?.type === history[num].type;
-
-  const isStartOneSide =
-    num === 0 && history[num + 1]?.type !== history[num].type;
-  const isEndOneSide =
-    history.length === num + 1 && history[num - 1]?.type !== history[num].type;
 
   const timelineWrapper = classNames({
     'timeline-item-wrapper': true,

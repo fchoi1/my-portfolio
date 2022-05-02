@@ -3,6 +3,7 @@ import { useHistoryContext } from 'contexts/HistoryProvider';
 
 import HorizontalScroll from 'components/HorizontalScroll';
 import TimelineItem from 'components/TimelineItem';
+import TimeLineDivider from 'components/TimeLineDivider';
 import moment from 'moment';
 
 import './timeline.css';
@@ -10,16 +11,25 @@ import './timeline.css';
 const addYearDivider = (historyList) => {
   let prevYear, nextYear;
   let newArray = [];
-  for (let i = 1; i < historyList.length; i++) {
-    prevYear = moment(historyList[i - 1].startDate, 'MMM YYYY').year();
-    nextYear = moment(historyList[i].startDate, 'MMM YYYY').year();
+  // initial
+  prevYear = moment(historyList[0]?.startDate, 'MMM YYYY').year();
+  newArray.push({ startDate: prevYear, type: 'divider' });
 
-    if (prevYear < nextYear) {
-      console.log('Less', prevYear, nextYear);
-      newArray.push({ startDate: prevYear, type: 'divider' });
+  for (let i = 0; i < historyList.length; i++) {
+    prevYear = moment(historyList[i]?.startDate, 'MMM YYYY').year();
+    nextYear = moment(historyList[i + 1]?.startDate, 'MMM YYYY').year();
+    console.log(i, prevYear, nextYear, prevYear < nextYear);
+    if (!nextYear) {
+      break;
     }
+
     newArray.push(historyList[i]);
+
+    if (prevYear < nextYear)
+      newArray.push({ startDate: nextYear, type: 'divider' });
   }
+  newArray.push(historyList[historyList.length - 1]);
+
   return newArray;
 };
 
@@ -31,9 +41,12 @@ function TimeLine(props) {
   );
 
   const { setHistory } = useHistoryContext();
-  setHistory(currHistoryList);
 
-  console.log('curr', currHistoryList);
+  // useEffect(() => {
+  //   setHistory(currHistoryList);
+  // }, []);
+
+  // console.log('curr', currHistoryList);
 
   const [prevYear, setPrevYear] = useState(
     historyList ? historyList[0].startDate : ''
@@ -48,14 +61,17 @@ function TimeLine(props) {
       <HorizontalScroll animValues={scrollVal}>
         {currHistoryList &&
           currHistoryList.map((historyItem, i) => {
-            console.log(historyItem.type === 'divider', historyItem.type);
             return historyItem.type === 'divider' ? (
-              <div key={i}>
-                <span>{historyItem.startDate} </span>
+              <div ref={i === 1 ? first : null} key={i}>
+                <TimeLineDivider item={historyItem} num={i} />
               </div>
             ) : (
               <div ref={i === 1 ? first : null} key={i}>
-                <TimelineItem item={historyItem} num={i} />
+                <TimelineItem
+                  item={historyItem}
+                  history={currHistoryList}
+                  num={i}
+                />
               </div>
             );
           })}
