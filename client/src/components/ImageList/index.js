@@ -16,7 +16,7 @@ function ImageDisplayList(props) {
     <Box sx={{ width: 300, maxHeight: 300, overflowY: 'scroll' }}>
       <ImageList
         // sx={{ maxHeight: 500, textAlign: 'center' }}
-        cols={2}
+        cols={1}
         // rowHeight={200}
       >
         {images.map((item, i) => (

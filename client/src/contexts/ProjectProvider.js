@@ -20,54 +20,6 @@ const ProjectProvider = ({ value = [], ...props }) => {
 
   const myProjects = [
     {
-      name: 'Lidar Live streaming Robot',
-      technologies: ['ROS', ' Linux/Terminal', 'Git', 'ROSJS', 'HTML'],
-      github: 'https://github.com/fchoi1/Linabot',
-      description:
-        'A project I worked on at Linamar to design an automous robot that can deliver tool changes',
-      imageFolder: 'LIDAR_Live_streaming_Robot',
-      images: []
-    },
-    {
-      name: 'Steward Platform Maze Game',
-      technologies: [
-        'C++',
-        'OOP',
-        'Solidworks 3D Modelling',
-        'Mechanical Design',
-        'Arduino',
-        'IMU'
-      ],
-      website: 'test',
-      github: 'https://github.com/fchoi1/stewart-platform',
-      description:
-        'Fugiat pariatur cillum dolore est tempor labore ullamco adipisicing do amet consequat. Commodo reprehenderit elit ad cillum dolore mollit magna irure aute aliqua sunt. Labore ad amet nulla eiusmod culpa reprehenderit duis. Aliquip exercitation ut id irure consectetur irure nulla occaecat aliqua in id. In veniam culpa velit Lorem quis officia qui reprehenderit dolor. Esse ut laborum est consectetur excepteur aliqua nisi.',
-      imageFolder: 'Steward_Platform_Maze_Solver',
-      images: []
-    },
-    {
-      name: 'Warehouse Aerial Manipulator',
-      technologies: ['Solidworks 3D Modelling', 'Mechanical Design', 'Arduino'],
-      Date: 'March 2022',
-      website: 'https://1drv.ms/p/s!Ap-4bV5caE3xdK1LdPpFxN_whmI?e=Gb9zD0',
-      github: 'https://www.github.com/fchoi1/',
-      description:
-        'Fugiat pariatur cillum dolore est tempor labore ullamco adipisicing do amet consequat. Commodo reprehenderit elit ad cillum dolore mollit magna irure aute aliqua sunt. Labore ad amet nulla eiusmod culpa reprehenderit duis. Aliquip exercitation ut id irure consectetur irure nulla occaecat aliqua in id. In veniam culpa velit Lorem quis officia qui reprehenderit dolor. Esse ut laborum est consectetur excepteur aliqua nisi.',
-      imageFolder: 'Warehouse_Aerial_Manipulator',
-      images: []
-    },
-    {
-      name: 'Tech Blog',
-      Date: 'March 2022',
-      technologies: ['react', 'Python'],
-      website: 'https://fabio-tech-blog.herokuapp.com/',
-      github: 'https://github.com/fchoi1/tech-blog',
-      description:
-        'This is a simple application to use MVC moddel with node js to connect to sql database and access REST apis. This is an application to view a tech blog with users to create, edit and delete posts as well as add comments. Techonologies mysql2, dotenv, express, sequelize, MVC model.',
-      imageFolder: 'Tech_Blog',
-      images: []
-    },
-    {
       name: 'Jibber Jabber',
       Date: 'April 2022',
       technologies: ['react', 'Java', 'Python'],
@@ -109,6 +61,54 @@ const ProjectProvider = ({ value = [], ...props }) => {
       description:
         'This is a simple application to use MVC model with node js to connect to mongoDB access REST apis. This is an application to view a budget tracker where you can input transactions to track your spending. The focus of this assignement is PWA and offline functionality when connection is unstable. The website is still functional and works with or without internet connectivity with express. Techonologies mongoDB, PWA, express, MVC model, Heroku, service workers and cache.',
       imageFolder: 'Budget_Tracker',
+      images: []
+    },
+    {
+      name: 'Lidar Live streaming Robot',
+      technologies: ['ROS', ' Linux/Terminal', 'Git', 'ROSJS', 'HTML'],
+      github: 'https://github.com/fchoi1/Linabot',
+      description:
+        'A project I worked on at Linamar to design an automous robot that can deliver tool changes',
+      imageFolder: 'LIDAR_Live_streaming_Robot',
+      images: []
+    },
+    {
+      name: 'Steward Platform Maze Game',
+      technologies: [
+        'C++',
+        'OOP',
+        'Solidworks 3D Modelling',
+        'Mechanical Design',
+        'Arduino',
+        'IMU'
+      ],
+      website: 'test',
+      github: 'https://github.com/fchoi1/stewart-platform',
+      description:
+        'A project that uses a microcontroller to control a steward platform which is a platform held by 6 actuators which enables this system to have 6 degrees of freedom. This was program in C++ and uses sensor data from an IMU (inertial measurement unit) to control tilt and z axis movement  ',
+      imageFolder: 'Steward_Platform_Maze_Solver',
+      images: []
+    },
+    {
+      name: 'Warehouse Aerial Manipulator',
+      technologies: ['Solidworks 3D Modelling', 'Mechanical Design', 'Arduino'],
+      Date: 'March 2022',
+      website: 'https://1drv.ms/p/s!Ap-4bV5caE3xdK1LdPpFxN_whmI?e=Gb9zD0',
+      github: 'https://www.github.com/fchoi1/',
+      description:
+        'This was my fourth year design project. This is where me and my group designed a manipulator attached to a drone to be able to pick up small packages. The use case was for factories to move around small products and to be able to scan and keep track of product inventory. Since drones can cover 3D space, it makes it more efficient that ground robots and human labour.',
+      imageFolder: 'Warehouse_Aerial_Manipulator',
+      images: []
+    },
+    {
+      name: 'Tech Blog',
+      Date: 'March 2022',
+      technologies: ['react', 'Python'],
+      website: 'https://fabio-tech-blog.herokuapp.com/',
+      github: 'https://github.com/fchoi1/tech-blog',
+      description:
+        'This is a simple application to use MVC moddel with node js to connect to sql database and access REST apis. This is an application to view a tech blog with users to create, edit and delete posts as well as add comments. Techonologies mysql2, dotenv, express, sequelize, MVC model.',
+      imageFolder: 'Tech_Blog',
       images: []
     }
   ];
