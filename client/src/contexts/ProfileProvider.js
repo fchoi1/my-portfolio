@@ -18,7 +18,8 @@ const ProfileProvider = ({ value = [], ...props }) => {
     github: 'fchoi1',
     linkedin: 'https://www.linkedin.com/in/fchoi1/',
     instagram: 'https://www.instagram.com/w4ng0/',
-    avatarImage: require('../assets/images/avatar/fabio-choi.png')
+    avatarImage: require('../assets/images/avatar/fabio-choi.png'),
+    email: 'mailto:fchoi@outlook.com'
   };
 
   const [profile, setProfile] = useState(myProfile);

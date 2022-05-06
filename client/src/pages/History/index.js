@@ -17,6 +17,17 @@ function History(props) {
 
   const scrollRef = useHorizontalScroll();
 
+  const handleClick = (e) => {
+    if (!e.target.getAttribute('data-type')) return;
+
+    if (e.target.getAttribute('data-type') === 'right') {
+      setScrollVal((prev) => prev  - 200);
+    } else if (e.target.getAttribute('data-type') === 'left') {
+      setScrollVal((prev) => prev + 200);
+    }
+    console.log(scrollVal);
+  };
+
   return (
     <section id="Journey">
       <div className="section-wrapper">
@@ -29,7 +40,7 @@ function History(props) {
         </div>
         <div className="history-container container">
           <div className="button-wrapper left-history">
-            <IconButton size="large">
+            <IconButton data-type="left" size="large" onClick={handleClick}>
               <ArrowBackIcon />
             </IconButton>
           </div>
@@ -43,7 +54,7 @@ function History(props) {
           </div>
 
           <div className="button-wrapper right-history">
-            <IconButton size="large">
+            <IconButton data-type="right" size="large" onClick={handleClick}>
               <ArrowForwardIcon />
             </IconButton>
           </div>

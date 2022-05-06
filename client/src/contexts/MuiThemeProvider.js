@@ -7,10 +7,11 @@ const theme = createTheme({
       main: '#023e8a',
       contrastText: '#90e0ef'
     },
-    secondary: { main: '#90e0ef' },
-    tertiary: {},
-    quaternary: { main: '#023e8a' },
-    quinary: {},
+    secondary: { main: '#00b4d8' },
+    tertiary: { main: '#caf0f8' },
+    quaternary: { main: '#0077b6' },
+    quinary: { main: '#03045e' },
+    senary: { main: '#90e0ef' },
 
     yaleBlue: {
       main: '#044389',

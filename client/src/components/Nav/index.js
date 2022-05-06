@@ -81,7 +81,7 @@ function NavBar(props) {
       borderRadius: '10px'
     },
     '&:hover, &.Mui-focusVisible': {
-      color: theme.palette.mediumChampagne.light
+      color: theme.palette.senary.main
     }
   }));
 
@@ -162,8 +162,8 @@ function NavBar(props) {
                                   focusRipple
                                   color={
                                     currPage === page.link
-                                      ? 'mediumChampagne'
-                                      : 'liverChestnut'
+                                      ? 'tertiary'
+                                      : 'secondary'
                                   }
                                 >
                                   {page.name}

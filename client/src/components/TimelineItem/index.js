@@ -3,7 +3,6 @@ import Moment from 'react-moment';
 
 import { useTheme } from '@mui/material/styles';
 
-import { useHistoryContext } from 'contexts/HistoryProvider';
 import classNames from 'classnames';
 
 import './timelineitem.css';
@@ -63,9 +62,6 @@ const checkPosition = (list, item, i) => {
 function TimelineItem(props) {
   const { item, num, history } = props;
 
-  // const { history } = useHistoryContext();
-  // console.log(history);
-
   const theme = useTheme();
 
   const { useWide, oneSideLeft, oneSideRight, isStartOneSide, isEndOneSide } =
@@ -101,21 +97,33 @@ function TimelineItem(props) {
           <div className="timeline-branch-wrapper">
             <div className="timeline-branch">
               <div className={timelineDate}>
-                <Moment date={item.startDate} format="MMM YYYY" />
+                <span className='timeline-item-date'>
+                  <Moment date={item.startDate} format="MMM YYYY" />
+                </span>
               </div>
             </div>
           </div>
 
           <div className="timeline-content-wrapper">
-            <div className="timeline-content-title">{item.name}</div>
+            <div className="timeline-content-title-wrapper">
+              <span className="timeline-content-title">{item.name}</span>
+            </div>
 
-            <div className="timeline-content-type">{item.type}</div>
+            {/* <div className="timeline-content-type">{item.type}</div> */}
             {item.position && (
-              <div className="timeline-content-position">{item.position}</div>
+              <div className="timeline-content-position-wrapper">
+                <span className="timeline-content-position">
+                  {item.position}
+                </span>
+              </div>
             )}
             <div className="timeline-content-details">
               {item.location && (
-                <div className="timeline-content-position">{item.location}</div>
+                <div className="timeline-content-location-wrapper">
+                  <span className="timeline-content-location">
+                    {item.location}
+                  </span>
+                </div>
               )}
             </div>
             <span className="timeline-content-description">

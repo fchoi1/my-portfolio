@@ -13,7 +13,13 @@ function srcset(image, size, rows = 1, cols = 1) {
 function ImageDisplayList(props) {
   const { images } = props;
   return (
-    <Box sx={{ width: 300, maxHeight: 300, overflowY: 'scroll' }}>
+    <Box
+      sx={{
+        width: { md: 300, sm: 300, xs: 200 },
+        maxHeight: { md: 300, sm: 300, xs: 200 },
+        overflowY: 'scroll'
+      }}
+    >
       <ImageList
         // sx={{ maxHeight: 500, textAlign: 'center' }}
         cols={1}

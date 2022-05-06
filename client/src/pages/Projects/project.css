@@ -13,3 +13,9 @@
   grid-area: 4 / 3 / 5 / 7;
   justify-self: center
 }
+
+@media only screen and (max-width: 900px) {
+  .projects-list-wrapper {
+    grid-area: 3 / 2 / 4 / 8;
+  }
+}

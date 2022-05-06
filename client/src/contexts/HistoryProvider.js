@@ -92,7 +92,7 @@ const HistoryProvider = ({ value = [], ...props }) => {
       link: ''
     },
     {
-      name: 'Comp Sci and Comp Eng Courses',
+      name: 'Comp Sci, Comp Eng Courses',
       type: 'project',
       position: 'Highschool',
       location: 'Markham, ON',

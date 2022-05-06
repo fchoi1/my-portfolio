@@ -1,3 +1,12 @@
 .contact-section {
   height: 400px;
 }
+
+.contact-info-wrapper{
+  grid-area: 3 / 2 / 4 / 8;
+
+}
+
+.contact-form-wrapper{
+  grid-area: 4 / 2 / 5 / 8;
+}

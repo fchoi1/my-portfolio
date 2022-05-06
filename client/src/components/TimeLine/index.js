@@ -33,11 +33,10 @@ const addYearDivider = (historyList) => {
 function TimeLine(props) {
   const { historyList, scrollVal, setScrollVal } = props;
   const first = useRef(null);
-  const [currHistoryList, setCurrHistoryList] = useState(
+  const [currHistoryList] = useState(
     addYearDivider(historyList)
   );
 
-  const { setHistory } = useHistoryContext();
 
   const timeline = classNames({
     timeline: true,
@@ -49,10 +48,6 @@ function TimeLine(props) {
   // }, []);
 
   // console.log('curr', currHistoryList);
-
-  const [prevYear, setPrevYear] = useState(
-    historyList ? historyList[0].startDate : ''
-  );
 
   useEffect(() => {
     if (first?.current) console.log(first.current.getBoundingClientRect());

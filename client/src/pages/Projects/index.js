@@ -24,7 +24,6 @@ function Projects(props) {
   return (
     <section id="Projects">
       <div className="section-wrapper">
-        Project Sections
         <div className="container projects-container ">
           <div className=" projects-name-wrapper section-name-wrapper">
             <h3 className="projects-name section-name">03-Projects</h3>

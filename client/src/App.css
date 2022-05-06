@@ -19,7 +19,8 @@
   --secondary: var(--PacificBlue);
   --tertiary: var(--LightCyan);
   --quaternary: var(--StarCommandBlue);
-  --quinary: var();
+  --quinary: var(--MidnightBlue);
+  --senary: var(--MiddleBlue)
 }
 
 body {
@@ -183,6 +184,6 @@ ul li::before {
 
 @media only screen and (max-width: 600px) {
   .section-wrapper {
-    height: 80vh;
+    height: auto;
   }
 }
