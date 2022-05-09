@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import { useHistoryContext } from 'contexts/HistoryProvider';
 
 import HorizontalScroll from 'components/HorizontalScroll';
+
 import TimelineItem from 'components/TimelineItem';
 import TimeLineDivider from 'components/TimeLineDivider';
 import moment from 'moment';
@@ -31,23 +32,14 @@ const addYearDivider = (historyList) => {
 };
 
 function TimeLine(props) {
-  const { historyList, scrollVal, setScrollVal } = props;
+  const { historyList} = props;
   const first = useRef(null);
-  const [currHistoryList] = useState(
-    addYearDivider(historyList)
-  );
-
+  const [currHistoryList] = useState(addYearDivider(historyList));
 
   const timeline = classNames({
     timeline: true,
     'timeline-gradient': true
   });
-
-  // useEffect(() => {
-  //   setHistory(currHistoryList);
-  // }, []);
-
-  // console.log('curr', currHistoryList);
 
   useEffect(() => {
     if (first?.current) console.log(first.current.getBoundingClientRect());
@@ -58,7 +50,7 @@ function TimeLine(props) {
       <div className=" timeline-gradient-right">
         <div className=" timeline-gradient-left">
           <div className="timeline-line">
-            <HorizontalScroll animValues={scrollVal}>
+            <HorizontalScroll>
               {currHistoryList &&
                 currHistoryList.map((historyItem, i) => {
                   return historyItem.type === 'divider' ? (

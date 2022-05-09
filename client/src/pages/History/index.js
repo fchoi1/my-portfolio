@@ -1,8 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
 import TimeLine from 'components/TimeLine';
+
+import { useTheme, styled } from '@mui/material/styles';
 
 import { useHorizontalScroll } from 'components/Scroll';
 import { useHistoryContext } from 'contexts/HistoryProvider';
+
+import { useScrollContext } from 'contexts/ScrollProvider';
+import { UPDATE_SCROLL, UPDATE_STARTEND } from 'contexts/actions';
 
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
@@ -10,23 +15,77 @@ import { IconButton } from '@mui/material';
 
 import './history.css';
 function History(props) {
-  // const parent = { width: `60em`, height: `30em` };
+  const scrollIncrement = 300;
+  const iconSize = { fontSize: '3rem' };
 
   const { history } = useHistoryContext();
-  const [scrollVal, setScrollVal] = useState(0);
+  const [scrollContextState, setScrollContextState] = useScrollContext();
 
-  const scrollRef = useHorizontalScroll();
+  const theme = useTheme();
+
+  const scrollRef = useHorizontalScroll(); // ???
 
   const handleClick = (e) => {
-    if (!e.target.getAttribute('data-type')) return;
+    if (!e.currentTarget.getAttribute('data-type')) return;
 
-    if (e.target.getAttribute('data-type') === 'right') {
-      setScrollVal((prev) => prev  - 200);
-    } else if (e.target.getAttribute('data-type') === 'left') {
-      setScrollVal((prev) => prev + 200);
+    if (e.currentTarget.getAttribute('data-type') === 'right') {
+      if (
+        scrollContextState.animValue - scrollIncrement <=
+        scrollContextState.max
+      ) {
+        // set max
+        setScrollContextState({
+          animValue: scrollContextState.max,
+          type: UPDATE_SCROLL
+        });
+        setScrollContextState({
+          start: false,
+          end: true,
+          type: UPDATE_STARTEND
+        });
+        return;
+      } else {
+        setScrollContextState({
+          animValue: scrollContextState.animValue - scrollIncrement,
+          type: UPDATE_SCROLL
+        });
+      }
     }
-    console.log(scrollVal);
+
+    if (e.currentTarget.getAttribute('data-type') === 'left') {
+      if (
+        scrollContextState.animValue + scrollIncrement >=
+        scrollContextState.min
+      ) {
+        setScrollContextState({
+          animValue: scrollContextState.min,
+          type: UPDATE_SCROLL
+        });
+
+        setScrollContextState({
+          start: true,
+          end: false,
+          type: UPDATE_STARTEND
+        });
+      } else {
+        setScrollContextState({
+          animValue: scrollContextState.animValue + scrollIncrement,
+          type: UPDATE_SCROLL
+        });
+      }
+    }
   };
+
+  const HistoryButton = styled(IconButton)(({ theme }) => ({
+    '&:hover, &.Mui-focusVisible': {
+      color: theme.palette.quinary.main + '80',
+      backgroundColor: theme.palette.tertiary.main + '50'
+    },
+    '&& .MuiTouchRipple-root': {
+      overflow: 'visible',
+      bottom: '30%'
+    }
+  }));
 
   return (
     <section id="Journey">
@@ -40,23 +99,36 @@ function History(props) {
         </div>
         <div className="history-container container">
           <div className="button-wrapper left-history">
-            <IconButton data-type="left" size="large" onClick={handleClick}>
-              <ArrowBackIcon />
-            </IconButton>
+            <HistoryButton
+              data-type="left"
+              onClick={handleClick}
+              sx={{ height: '50%' }}
+              color="senary"
+              size="large"
+            >
+              <ArrowBackIcon sx={iconSize} />
+            </HistoryButton>
           </div>
 
           <div className="history-scroll-wrapper">
-            <TimeLine
-              historyList={history}
-              scrollVal={scrollVal}
-              setScrollVal={setScrollVal}
-            />
+            <TimeLine historyList={history} />
           </div>
 
           <div className="button-wrapper right-history">
-            <IconButton data-type="right" size="large" onClick={handleClick}>
-              <ArrowForwardIcon />
-            </IconButton>
+            <HistoryButton
+              data-type="right"
+              onClick={handleClick}
+              color="senary"
+              sx={{
+                height: '50%',
+                '&& .MuiTouchRipple-rippleVisible': {
+                  animationDuration: '1000ms'
+                }
+              }}
+              size="large"
+            >
+              <ArrowForwardIcon sx={iconSize} />
+            </HistoryButton>
           </div>
         </div>
       </div>

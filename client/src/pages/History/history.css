@@ -1,7 +1,7 @@
 .history-container {
   display: grid;
   grid-template-columns: 8vw repeat(6, 1fr) 8vw;
-  grid-template-rows: repeat(6, auto);
+  grid-template-rows: repeat(5, 1fr);
   height: 80%;
 }
 
@@ -20,23 +20,20 @@
 
 .button-wrapper {
   display: flex;
+  align-self: center;
 }
 
 .right-history {
-  grid-area: 4 / 8 / 5 / 9;
+  grid-area: 3 / 8 / 4 / 9;
   justify-self: start;
 }
 
 .left-history {
-  grid-area: 4 / 1 / 5 / 2;
+  grid-area: 3 / 1 / 4 / 2;
   justify-self: end;
 }
 
 .history-scroll-wrapper {
-  grid-area: 4 / 2 / 5 / 8;
+  grid-area: 1 / 2 / 6 / 8;
   height: 50em;
-}
-
-.test-scroll-wrapper {
-  grid-area: 3 / 2 / 4 / 8;
 }
