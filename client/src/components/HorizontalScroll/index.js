@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef, useCallback, memo } from 'react';
+import React, { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { Motion, spring, presets } from 'react-motion';
 import { useScrollContext } from 'contexts/ScrollProvider';
@@ -8,7 +8,7 @@ import {
   UPDATE_STARTEND
 } from 'contexts/actions';
 
-function ScrollHorizontalTest(props) {
+function ScrollHorizontal(props) {
   const {
     reverseScroll = false,
     config = null,
@@ -181,7 +181,7 @@ function ScrollHorizontalTest(props) {
   );
 }
 
-ScrollHorizontalTest.propTypes = {
+ScrollHorizontal.propTypes = {
   reverseScroll: PropTypes.bool,
   config: PropTypes.object,
   style: PropTypes.object,
@@ -192,7 +192,7 @@ ScrollHorizontalTest.propTypes = {
   enableScrollDown: PropTypes.bool
 };
 
-ScrollHorizontalTest.defaultProps = {
+ScrollHorizontal.defaultProps = {
   reverseScroll: false,
   config: null,
   style: { width: `100%`, height: `100%` },
@@ -202,4 +202,4 @@ ScrollHorizontalTest.defaultProps = {
   enableScrollDown: false
 };
 
-export default ScrollHorizontalTest;
+export default ScrollHorizontal;

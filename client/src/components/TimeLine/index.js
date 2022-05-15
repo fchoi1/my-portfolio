@@ -1,38 +1,16 @@
 import React, { useRef, useEffect, useState } from 'react';
 import classNames from 'classnames';
-import { useHistoryContext } from 'contexts/HistoryProvider';
+import { useHistoryContext, addYearDivider } from 'contexts/HistoryProvider';
 
 import HorizontalScroll from 'components/HorizontalScroll';
 
 import TimelineItem from 'components/TimelineItem';
 import TimeLineDivider from 'components/TimeLineDivider';
-import moment from 'moment';
 
 import './timeline.css';
 
-const addYearDivider = (historyList) => {
-  let prevYear, nextYear;
-  let newArray = [];
-  // initial
-  prevYear = moment(historyList[0]?.startDate, 'MMM YYYY').year();
-  newArray.push({ startDate: prevYear, type: 'divider' });
-
-  for (let i = 0; i < historyList.length; i++) {
-    prevYear = moment(historyList[i]?.startDate, 'MMM YYYY').year();
-    nextYear = moment(historyList[i + 1]?.startDate, 'MMM YYYY').year();
-    if (!nextYear) {
-      break;
-    }
-    newArray.push(historyList[i]);
-    if (prevYear < nextYear)
-      newArray.push({ startDate: nextYear, type: 'divider' });
-  }
-  newArray.push(historyList[historyList.length - 1]);
-  return newArray;
-};
-
 function TimeLine(props) {
-  const { historyList} = props;
+  const { historyList } = props;
   const first = useRef(null);
   const [currHistoryList] = useState(addYearDivider(historyList));
 

@@ -46,7 +46,6 @@ function ProjectItem(props) {
     'project-item-images-wrapper': true,
     'project-item-images-wrapper-left': reversed
   });
-
   return (
     <div
       ref={showMoreRef}

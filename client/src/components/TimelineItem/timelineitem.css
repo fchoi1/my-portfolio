@@ -118,3 +118,13 @@
   --max: 1em;
   color: var(--tertiary);
 }
+
+.timeline-content-description-list {
+  padding-left: 6%;
+}
+
+.timeline-content-description-list span {
+  --min: 0.8rem;
+  --val: 2vw;
+  --max: 0.9rem;
+}

@@ -2,7 +2,7 @@ import React from 'react';
 import './timelinedivider.css';
 
 function TimeLineDivider(props) {
-  const { num, item } = props;
+  const { item } = props;
 
   return (
     <div className="timeline-divider-wrapper">

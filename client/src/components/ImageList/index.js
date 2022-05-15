@@ -1,17 +1,11 @@
 import React from 'react';
+import ImageItem from 'components/ImageModal';
 import { ImageList, ImageListItem, Box } from '@mui/material';
-
-function srcset(image, size, rows = 1, cols = 1) {
-  return {
-    src: `${image}?w='${size * cols}'&h=${size * rows}&fit=crop&auto=format`,
-    srcSet: `${image}?w=${size * cols}&h=${
-      size * rows
-    }&fit=crop&auto=format&dpr=2 2x`
-  };
-}
+import './imagelist.css';
 
 function ImageDisplayList(props) {
   const { images } = props;
+
   return (
     <Box
       sx={{
@@ -26,19 +20,14 @@ function ImageDisplayList(props) {
         // rowHeight={200}
       >
         {images.map((item, i) => (
-          <ImageListItem
-            key={item.img}
-            cols={i % 3 === 0 ? 2 : 1}
-            rows={i % 3 === 0 ? 2 : 1}
-          >
-            <img
-              // {...srcset(item.img, 200, item.rows, item.cols)}
-              src={`${item.img}?w=248&fit=crop&auto=format`}
-              srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
-              alt={item.title}
-              loading="lazy"
-            />
-          </ImageListItem>
+          // <ImageListItem key={item.img} cols={1} rows={1}>
+          //   {/* <button>
+
+          //   </button> */}
+
+          //   <ImageModal img={item.img} alt={item.title} title={item.title} />
+          // </ImageListItem>
+          <ImageItem img={item.img} alt={item.title} title={item.title} />
         ))}
       </ImageList>
     </Box>

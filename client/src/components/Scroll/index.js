@@ -1,5 +1,4 @@
-import React, { useEffect, useRef, cloneElement } from 'react';
-import PropTypes from 'prop-types';
+import React, { useEffect, useRef } from 'react';
 
 import { useScrollTrigger, Slide, Zoom, Box } from '@mui/material';
 import { useTheme } from '@mui/material/styles';

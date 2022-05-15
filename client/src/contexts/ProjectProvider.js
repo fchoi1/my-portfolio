@@ -15,7 +15,7 @@ const ProjectProvider = ({ value = [], ...props }) => {
   }
 
   const images = importAll(
-    require.context('../assets/images/projects/', true, /\.(png|jpe?g|svg)$/)
+    require.context('../assets/images/projects/', true, /\.(avif|jpe?g|svg)$/)
   );
 
   const myProjects = [

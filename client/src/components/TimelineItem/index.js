@@ -97,7 +97,7 @@ function TimelineItem(props) {
           <div className="timeline-branch-wrapper">
             <div className="timeline-branch">
               <div className={timelineDate}>
-                <span className='timeline-item-date'>
+                <span className="timeline-item-date">
                   <Moment date={item.startDate} format="MMM YYYY" />
                 </span>
               </div>
@@ -126,9 +126,18 @@ function TimelineItem(props) {
                 </div>
               )}
             </div>
-            <span className="timeline-content-description">
-              {item.description}
-            </span>
+            <div className="timeline-content-description">
+              <ul className="timeline-content-description-list">
+                {item.description &&
+                  item.description.map((description, i) => (
+                    <li key={i}>
+                      <span className="timeline-content-description-list-span">
+                        {description}
+                      </span>
+                    </li>
+                  ))}
+              </ul>
+            </div>
           </div>
         </div>
       </div>

@@ -5,15 +5,6 @@ const ProfileContext = createContext();
 const { Provider } = ProfileContext;
 
 const ProfileProvider = ({ value = [], ...props }) => {
-  // state is most up to date global state
-  // dispatch is the method to execut to update state
-  //   const [state, dispatch] = useProductReducer({
-  //     products: [],
-  //     categories: [],
-  //     currentCategory: '',
-  //     cart: [],
-  //     cartOpen: true
-  //   });
   const myProfile = {
     github: 'fchoi1',
     linkedin: 'https://www.linkedin.com/in/fchoi1/',
