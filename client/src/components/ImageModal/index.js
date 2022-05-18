@@ -6,8 +6,11 @@ const style = {
   left: '50%',
   transform: 'translate(-50%, -50%)',
   width: 'auto',
+  height: 'auto',
+  maxWidth: '90%',
+  maxHeight: '80%',
   bgcolor: 'background.paper',
-  border: '2px solid #000',
+
   boxShadow: 24,
   p: 4
 };
@@ -44,7 +47,18 @@ const ImageItem = (props) => {
       >
         <Fade in={open}>
           <Box sx={style}>
-            <img src={img} alt={alt} />
+            <img
+              src={img}
+              alt={alt}
+              style={{
+                height: 'auto',
+                width: 'auto',
+                maxHeight: '80vh',
+                maxWidth: '100%',
+                objectFit: 'contain',
+                border: '2px solid #000'
+              }}
+            />
           </Box>
         </Fade>
       </Modal>
