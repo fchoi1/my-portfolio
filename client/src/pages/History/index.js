@@ -1,14 +1,13 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import TimeLine from 'components/TimeLine';
+import TimeLineMobile from 'components/TimeLineMobile';
 
-import { useTheme, styled } from '@mui/material/styles';
-
-import { useHorizontalScroll } from 'components/Scroll';
 import { useHistoryContext } from 'contexts/HistoryProvider';
-
+import { useBreakPoint } from 'contexts/MuiThemeProvider';
 import { useScrollContext } from 'contexts/ScrollProvider';
 import { UPDATE_SCROLL, UPDATE_STARTEND } from 'contexts/actions';
 
+import { useTheme, styled } from '@mui/material/styles';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { IconButton } from '@mui/material';
@@ -22,9 +21,9 @@ function History(props) {
   const [scrollContextState, setScrollContextState] = useScrollContext();
 
   const theme = useTheme();
+  const breakpoint = useBreakPoint();
 
-  const scrollRef = useHorizontalScroll(); // ???
-
+  console.log('is mobile?', breakpoint);
   const handleClick = (e) => {
     if (!e.currentTarget.getAttribute('data-type')) return;
 
@@ -97,39 +96,48 @@ function History(props) {
             </h3>
           </div>
         </div>
+
         <div className="history-container container">
-          <div className="button-wrapper left-history">
-            <HistoryButton
-              data-type="left"
-              onClick={handleClick}
-              sx={{ height: '50%' }}
-              color="senary"
-              size="large"
-            >
-              <ArrowBackIcon sx={iconSize} />
-            </HistoryButton>
-          </div>
+          {breakpoint === 'sm' ? (
+            <div className="timeline-mobile-wrapper">
+              <TimeLineMobile historyList={history} />
+            </div>
+          ) : (
+            <>
+              <div className="button-wrapper left-history">
+                <HistoryButton
+                  data-type="left"
+                  onClick={handleClick}
+                  sx={{ height: '50%' }}
+                  color="senary"
+                  size="large"
+                >
+                  <ArrowBackIcon sx={iconSize} />
+                </HistoryButton>
+              </div>
 
-          <div className="history-scroll-wrapper">
-            <TimeLine historyList={history} />
-          </div>
+              <div className="history-scroll-wrapper">
+                <TimeLine historyList={history} />
+              </div>
 
-          <div className="button-wrapper right-history">
-            <HistoryButton
-              data-type="right"
-              onClick={handleClick}
-              color="senary"
-              sx={{
-                height: '50%',
-                '&& .MuiTouchRipple-rippleVisible': {
-                  animationDuration: '1000ms'
-                }
-              }}
-              size="large"
-            >
-              <ArrowForwardIcon sx={iconSize} />
-            </HistoryButton>
-          </div>
+              <div className="button-wrapper right-history">
+                <HistoryButton
+                  data-type="right"
+                  onClick={handleClick}
+                  color="senary"
+                  sx={{
+                    height: '50%',
+                    '&& .MuiTouchRipple-rippleVisible': {
+                      animationDuration: '1000ms'
+                    }
+                  }}
+                  size="large"
+                >
+                  <ArrowForwardIcon sx={iconSize} />
+                </HistoryButton>
+              </div>
+            </>
+          )}
         </div>
       </div>
     </section>

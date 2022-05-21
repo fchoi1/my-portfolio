@@ -5,6 +5,10 @@
   height: 80%;
 }
 
+.timeline-mobile-wrapper {
+  grid-area: 1 / 2 / 2 / 8;
+}
+
 .history-title-container {
   display: grid;
   grid-template-columns: repeat(8, 1fr);

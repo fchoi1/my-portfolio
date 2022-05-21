@@ -27,8 +27,6 @@ function ScrollHorizontal(props) {
 
   const [scrollContextState, setScrollContextState] = useScrollContext();
 
-  console.log('scroll context in HS', scrollContextState);
-
   useEffect(() => {
     let hscroll;
     if (hScrollParent.current) {

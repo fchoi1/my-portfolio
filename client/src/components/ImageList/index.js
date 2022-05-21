@@ -27,7 +27,12 @@ function ImageDisplayList(props) {
 
           //   <ImageModal img={item.img} alt={item.title} title={item.title} />
           // </ImageListItem>
-          <ImageItem img={item.img} alt={item.title} title={item.title} />
+          <ImageItem
+            img={item.img}
+            alt={item.title}
+            title={item.title}
+            key={i}
+          />
         ))}
       </ImageList>
     </Box>

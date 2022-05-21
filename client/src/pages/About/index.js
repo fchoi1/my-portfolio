@@ -8,7 +8,6 @@ import './about.css';
 function About(props) {
   const { profile } = useProfileContext();
 
-  console.log(profile.avatarImage);
 
   return (
     <section className="page-section" id="About">

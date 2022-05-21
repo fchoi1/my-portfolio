@@ -37,8 +37,6 @@ function NavBar(props) {
   const headerRef = useRef(null);
 
   const theme = useTheme();
-  // console.log(theme);
-  // console.log(theme.palette.atomicTangerine);
 
   useEffect(() => {
     setCurrPage(location.hash.replace('#', ''));

@@ -123,7 +123,6 @@ const ProjectProvider = ({ value = [], ...props }) => {
     });
   });
 
-  console.log(myProjects);
 
   const [projects, setProjects] = useState(myProjects);
 

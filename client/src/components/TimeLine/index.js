@@ -1,6 +1,6 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import classNames from 'classnames';
-import { useHistoryContext, addYearDivider } from 'contexts/HistoryProvider';
+import { addYearDivider } from 'contexts/HistoryProvider';
 
 import HorizontalScroll from 'components/HorizontalScroll';
 
@@ -19,9 +19,9 @@ function TimeLine(props) {
     'timeline-gradient': true
   });
 
-  useEffect(() => {
-    if (first?.current) console.log(first.current.getBoundingClientRect());
-  }, [first]);
+  // useEffect(() => {
+  //   if (first?.current) console.log(first.current.getBoundingClientRect());
+  // }, [first]);
 
   return (
     <div className={timeline}>
