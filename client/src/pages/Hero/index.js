@@ -15,9 +15,10 @@ function Hero(props) {
           </div>
           <div className="title-wrapper">
             <p className="title">
-              I am an ITS Analyst, engineer graduate and upcoming Web Developer.
-              I've always had a passion for programming and excited to develop
-              my skills in a professional environment!
+              I am a web developer, and engineer graduate from University of
+              Waterloo. I've always had a passionate for programming and working
+              with new technologies. If you are reading this, I am currently
+              seeking new exciting opportunities.
             </p>
           </div>
         </div>

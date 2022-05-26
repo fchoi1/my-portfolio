@@ -19,10 +19,6 @@ function TimeLine(props) {
     'timeline-gradient': true
   });
 
-  // useEffect(() => {
-  //   if (first?.current) console.log(first.current.getBoundingClientRect());
-  // }, [first]);
-
   return (
     <div className={timeline}>
       <div className=" timeline-gradient-right">

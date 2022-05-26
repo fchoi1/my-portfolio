@@ -1,12 +1,19 @@
+global.base_dir = __dirname;
+global.abs_path = function (path) {
+  return base_dir + path;
+};
+global.include = function (file) {
+  return require(abs_path('/' + file));
+};
+
 const express = require('express');
 const path = require('path');
-// const db = require('./config/connection');
-// const routes = require('./routes');
+const db = include('config/connection');
 
 // const { authMiddleware } = require('./utils/auth');
-// const { ApolloServer } = require('apollo-server-express');
+const { ApolloServer } = require('apollo-server-express');
 
-// const { typeDefs, resolvers } = require('./schemas');
+const { typeDefs, resolvers } = include('schemas');
 
 const PORT = process.env.PORT || 3001;
 const app = express();

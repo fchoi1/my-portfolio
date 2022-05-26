@@ -41,7 +41,7 @@ function Projects(props) {
               ))}
           </div>
           <div className="projects-list-show-more">
-            <Button onClick={handleShow} color='secondary'>
+            <Button onClick={handleShow} color="secondary">
               {showMore ? 'show less' : 'show more'}
             </Button>
           </div>
