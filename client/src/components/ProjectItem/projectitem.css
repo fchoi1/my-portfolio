@@ -71,7 +71,14 @@
   flex-direction: column;
 }
 
-.p-item-role {
+.p-item-tech ul,
+.p-item-feature ul {
+  column-count: 2;
+  column-gap: 10px;
+  column-width: 120px;
+}
+
+/* .p-item-role {
 }
 
 .p-item-rb {
@@ -81,16 +88,7 @@
 }
 
 .p-item-tech {
-}
-
-.p-item-tech ul {
-  column-count: 2;
-  column-gap: 10px;
-  column-width: 120px;
-}
-
-.p-item-feature {
-}
+} */
 
 .p-item-sub-title {
   --min: 1em;
