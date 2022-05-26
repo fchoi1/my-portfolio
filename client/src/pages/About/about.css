@@ -1,7 +1,8 @@
 .about-container {
   display: grid;
-  grid-template-columns: repeat(8, 1fr);
-  grid-template-rows: 20vh repeat(5, auto) auto;
+  grid-template-columns: 15vw repeat(6, 1fr) 15vw;
+  grid-template-rows: 20vh repeat(3, auto) 1fr;
+  min-height: 100vh;
 }
 
 .about-name-wrapper {
@@ -52,6 +53,7 @@
     grid-template-columns: 7vw repeat(6, 1fr) 7vw;
     grid-template-rows: 15vh repeat(5, auto) auto;
   }
+  
   .about-name-wrapper {
     margin: 2% 0;
     grid-area: 2 / 3 / 3 / 7;

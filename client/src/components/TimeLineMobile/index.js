@@ -1,10 +1,10 @@
 import React, { useState, useRef } from 'react';
 
 import TimelineItem from 'components/TimelineItem';
+import TimeLineItemMobile from 'components/TimeLineItemMobile';
 import TimeLineDivider from 'components/TimeLineDivider';
 
 import { useHistoryContext, addYearDivider } from 'contexts/HistoryProvider';
-import classNames from 'classnames';
 
 function TimeLineMobile(props) {
   const { historyList } = props;
@@ -21,7 +21,12 @@ function TimeLineMobile(props) {
             </div>
           ) : (
             <div ref={i === 1 ? first : null} key={i}>
-              <TimelineItem
+              {/* <TimelineItem
+                item={historyItem}
+                history={currHistoryList}
+                num={i}
+              /> */}
+              <TimeLineItemMobile
                 item={historyItem}
                 history={currHistoryList}
                 num={i}

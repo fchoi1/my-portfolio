@@ -8,7 +8,6 @@ import './about.css';
 function About(props) {
   const { profile } = useProfileContext();
 
-
   return (
     <section className="page-section" id="About">
       <div className="section-wrapper">

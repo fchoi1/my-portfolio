@@ -20,7 +20,7 @@
   --tertiary: var(--LightCyan);
   --quaternary: var(--StarCommandBlue);
   --quinary: var(--MidnightBlue);
-  --senary: var(--MiddleBlue)
+  --senary: var(--MiddleBlue);
 }
 
 body {
@@ -122,12 +122,13 @@ p {
 .container {
   grid-gap: 0.5em;
   display: grid;
-  grid-template-columns: repeat(8, 1fr);
+  grid-template-columns: 15vw repeat(6, 1fr) 15vw;
   grid-template-rows: 20vh repeat(5, auto) auto;
 }
 
 .section-wrapper {
-  min-height: 1000px;
+  min-height: 100vh;
+  height: auto;
   background-color: var(--primary);
 }
 
@@ -163,12 +164,6 @@ ul li::before {
   margin-left: -1em; /* Also needed for space (tweak if needed) */
 }
 
-@media (max-height: 700px) {
-  .section-wrapper {
-    height: 600px;
-  }
-}
-
 @media only screen and (min-width: 2500px) {
   .section-name {
     --val: 8vw;
@@ -183,7 +178,10 @@ ul li::before {
 }
 
 @media only screen and (max-width: 600px) {
-  .section-wrapper {
-    height: auto;
+  .container {
+    grid-template-columns: 7vw repeat(6, 1fr) 7vw;
   }
+}
+
+@media (max-height: 700px) {
 }

@@ -9,24 +9,13 @@ function ImageDisplayList(props) {
   return (
     <Box
       sx={{
-        width: { md: 300, sm: 300, xs: 200 },
-        maxHeight: { md: 300, sm: 300, xs: 200 },
+        width: { md: '90%', sm: '90%', xs: '90%' },
+        maxHeight: { md: '25vw', sm: '35vw', xs: '35vw' },
         overflowY: 'scroll'
       }}
     >
-      <ImageList
-        // sx={{ maxHeight: 500, textAlign: 'center' }}
-        cols={1}
-        // rowHeight={200}
-      >
+      <ImageList cols={1}>
         {images.map((item, i) => (
-          // <ImageListItem key={item.img} cols={1} rows={1}>
-          //   {/* <button>
-
-          //   </button> */}
-
-          //   <ImageModal img={item.img} alt={item.title} title={item.title} />
-          // </ImageListItem>
           <ImageItem
             img={item.img}
             alt={item.title}

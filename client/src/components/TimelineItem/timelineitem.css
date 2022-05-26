@@ -1,4 +1,4 @@
-.timeline-item-wrapper {
+.tl-item-wrapper {
   width: 15em;
   height: 100%;
   display: flex;
@@ -7,7 +7,7 @@
   flex-direction: column;
 }
 
-.timeline-item {
+.tl-item {
   height: 49%;
   width: 150%;
   display: flex;
@@ -17,25 +17,25 @@
   z-index: 1;
 }
 
-.timeline-item-wrapper-wide {
+.tl-item-wrapper-wide {
   width: calc(15em * 1.5);
 }
 
-.timeline-item-wide {
+.tl-item-wide {
   width: 100%;
 }
 
-.timeline-item-wrapper-one-side-left {
+.tl-item-wrapper-one-side-left {
   width: calc(15em * 1.25);
   align-items: flex-end;
 }
 
-.timeline-item-wrapper-one-side-right {
+.tl-item-wrapper-one-side-right {
   width: calc(15em * 1.25);
   align-items: flex-start;
 }
 
-.timeline-item-one-side {
+.tl-item-one-side {
   width: 125%;
 }
 
@@ -47,13 +47,13 @@
   flex-direction: column-reverse;
 }
 
-.timeline-branch-wrapper {
+.tl-branch-wrapper {
   position: relative;
   /* border: 1px solid red; */
   height: 20%;
 }
 
-.timeline-branch::after {
+.tl-branch::after {
   content: '';
   position: absolute;
   z-index: -1;
@@ -64,39 +64,39 @@
   transform: translate(-50%);
 }
 
-.timeline-content-date {
+.tl-content-date {
   position: absolute;
   left: 50%;
   padding-left: 2%;
 }
 
-.timeline-content-date-top {
+.tl-content-date-top {
   bottom: 0%;
 }
 
-.timeline-item-date {
+.tl-item-date {
   color: var(--senary);
   --min: 1rem;
   --val: 2.5vw;
   --max: 1.5rem;
 }
 
-.timeline-content-wrapper {
+.tl-content-wrapper {
   margin: 1%;
   padding: 1%;
   height: auto;
   width: auto;
-  border-radius: 5%;
+  border-radius: 15px;
   border: 3px solid var(--secondary);
 }
 
 /* Time line content styling*/
-.timeline-content-details {
+.tl-content-details {
   display: flex;
   justify-content: space-between;
 }
 
-.timeline-content-title {
+.tl-content-title {
   color: var(--quinary);
   font-weight: 700;
   --min: 0.9rem;
@@ -104,7 +104,7 @@
   --max: 1.8rem;
 }
 
-.timeline-content-location {
+.tl-content-location {
   color: var(--primary);
   font-weight: 800;
   --min: 0.8rem;
@@ -112,18 +112,18 @@
   --max: 1.2rem;
 }
 
-.timeline-content-description {
+.tl-content-description {
   --min: 0.6em;
   --val: 2vw;
   --max: 1em;
   color: var(--tertiary);
 }
 
-.timeline-content-description-list {
+.tl-content-description-list {
   padding-left: 6%;
 }
 
-.timeline-content-description-list span {
+.tl-content-description-list span {
   --min: 0.8rem;
   --val: 2vw;
   --max: 0.9rem;

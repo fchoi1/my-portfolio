@@ -94,7 +94,7 @@ const HistoryProvider = ({ value = [], ...props }) => {
     },
     {
       name: 'Univeristy of Toronto Continuing Studies ',
-      type: 'project',
+      type: 'other',
       position: 'Coding Bootcamp',
       location: 'Toronto, ON',
       startDate: 'Oct 2021',
@@ -108,7 +108,7 @@ const HistoryProvider = ({ value = [], ...props }) => {
     },
     {
       name: 'Comp Sci, Comp Eng Courses',
-      type: 'project',
+      type: 'other',
       position: 'Highschool',
       location: 'Markham, ON',
       startDate: 'Sep 2014',
@@ -126,7 +126,6 @@ const HistoryProvider = ({ value = [], ...props }) => {
     (a, b) => moment(a.startDate, 'MMM YYYY') - moment(b.startDate, 'MMM YYYY')
   );
 
-
   const [history, setHistory] = useState(myHistory);
 
   return <Provider value={{ history, setHistory }} {...props} />;
@@ -135,7 +134,6 @@ const HistoryProvider = ({ value = [], ...props }) => {
 const useHistoryContext = () => {
   return useContext(historyContext);
 };
-
 
 const addYearDivider = (historyList) => {
   let prevYear, nextYear;

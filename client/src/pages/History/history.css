@@ -1,8 +1,8 @@
 .history-container {
   display: grid;
-  grid-template-columns: 8vw repeat(6, 1fr) 8vw;
-  grid-template-rows: repeat(5, 1fr);
-  height: 80%;
+  grid-template-columns: 15vw repeat(6, 1fr) 15vw;
+  grid-template-rows: auto;
+  min-height: 100vh;
 }
 
 .timeline-mobile-wrapper {
@@ -11,9 +11,13 @@
 
 .history-title-container {
   display: grid;
-  grid-template-columns: repeat(8, 1fr);
-  grid-template-rows: 5vh auto;
-  height: 80%;
+  grid-template-columns: 15vw auto 15vw;
+  grid-template-rows: 10vh auto;
+}
+
+.history-name-wrapper {
+  grid-area: 2 / 2 / 3 / 3;
+  text-align: right;
 }
 
 .child {
@@ -40,4 +44,19 @@
 .history-scroll-wrapper {
   grid-area: 1 / 2 / 6 / 8;
   height: 50em;
+}
+
+@media only screen and (max-width: 1500px) {
+}
+
+@media only screen and (max-width: 1200px) {
+}
+
+@media only screen and (max-width: 900px) {
+  .history-container {
+    grid-template-columns: 7vw repeat(6, 1fr) 7vw;
+  }
+}
+
+@media only screen and (max-width: 600px) {
 }

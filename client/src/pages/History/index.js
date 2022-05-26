@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import TimeLine from 'components/TimeLine';
 import TimeLineMobile from 'components/TimeLineMobile';
 
@@ -23,7 +23,7 @@ function History(props) {
   const theme = useTheme();
   const breakpoint = useBreakPoint();
 
-  console.log('is mobile?', breakpoint);
+  // console.log('is mobile?', breakpoint);
   const handleClick = (e) => {
     if (!e.currentTarget.getAttribute('data-type')) return;
 
@@ -98,7 +98,7 @@ function History(props) {
         </div>
 
         <div className="history-container container">
-          {breakpoint === 'sm' ? (
+          {['md', 'sm', 'xs'].includes(breakpoint) ? (
             <div className="timeline-mobile-wrapper">
               <TimeLineMobile historyList={history} />
             </div>

@@ -22,12 +22,29 @@ const ProjectProvider = ({ value = [], ...props }) => {
     {
       name: 'Jibber Jabber',
       Date: 'April 2022',
-      technologies: ['react', 'Java', 'Python'],
+      technologies: [
+        'React',
+        'Express',
+        'NodeJS',
+        'MongoDB',
+        'Socket IO',
+        'Material UI',
+        'GraphQL'
+      ],
       website: 'https://jibber-jabber-app.herokuapp.com/',
       github: 'https://github.com/fchoi1/Jibber-Jabber',
       description:
-        'This is a a typical messenger that helps you find people and shoot a text to them in real time. You are presented with a login/signup page. Once you signup or login with your account, you will be redirected to the dashboard page. This will contain all of our recent chats where you can click on any of the chats and then you get redirected to the personal chat room where you send and receive the messages. On the dashboard page, you can search a a user by their name and the results will be displayed from where you can click on the contact and send him a message. We have used GraphQl for interacting with the MongoDb, mongoose ODM, Express for server framwork, Socket IO for sending and receiving messages in real time.',
+        'This is a simple chat app where users can register/login to message other users online. The homepage contains a custom designed logo and the option to signup or login. Once authenticated, you will be redirected to the dashboard page. This will contain all of our recent chats where you can click on any of the chats and then you get redirected to the personal chat room where you send and receive the messages. ',
+      descriptionShort:
+        'This is a chat app where users can send and recieve real time messages. Includes functional user login and registration',
       imageFolder: 'Jibber_Jabber',
+      role: 'I was in charge of implementing Socket IO server and functions for users to see real time messages. I also developed front-end components including the chat list, active chat and searchable user list using a mix of Material UI frameworks',
+      roadBlocks:
+        'Since this was a group project, merge conflicts occurred frequently with multiple members working on the same features without knowing. Learning new technologies such as Socket IO and trying to integrate the socket server with the back end graphql server.',
+      solution:
+        'To solve issues with members double-dipping on the same issues or features, we had frequent slack updates to clearly understand what was being worked on. We would also have meetings together to identify who was the best group/individual suitable to solve that task. For integrating Socket IO, we had pair programming sessions to read over the documentation and online resources, help catch mistakes, and to verify any issues with the implementation. ',
+      features: ['Real time', 'Live Notifications', 'Responsive'],
+      keywords: [''],
       images: []
     },
     {
@@ -122,7 +139,6 @@ const ProjectProvider = ({ value = [], ...props }) => {
       return null;
     });
   });
-
 
   const [projects, setProjects] = useState(myProjects);
 

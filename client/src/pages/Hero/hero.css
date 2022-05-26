@@ -1,7 +1,8 @@
 .hero-container {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: 20vh repeat(5, auto) auto;
+  grid-template-rows: 20vh repeat(3, auto) 1fr;
+  height: 100vh;
 }
 
 .hero-intro-wrapper {
