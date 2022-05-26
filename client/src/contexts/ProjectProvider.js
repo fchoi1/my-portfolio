@@ -69,7 +69,15 @@ const ProjectProvider = ({ value = [], ...props }) => {
     {
       name: 'Bike Haven Store',
       Date: 'April 2015',
-      technologies: ['NodeJS', 'SQL', 'ORM', 'MVC', 'Handlebars', 'Express'],
+      technologies: [
+        'NodeJS',
+        'SQL',
+        'ORM',
+        'MVC',
+        'Handlebars',
+        'Express',
+        'JWT'
+      ],
       website: 'https://bike-haven.herokuapp.com/',
       github: 'https://github.com/fchoi1/Bike-Haven',
       description:
@@ -82,13 +90,13 @@ const ProjectProvider = ({ value = [], ...props }) => {
       roadBlocks:
         'This was a group project using git and github. The features and issues were divided among the group members. However, some features were dependant or linked to each other. Depending on the availability of each group member, some were not able to start or make progress on their tasks due to dependent features not being completed. There were many scheduling conflicts that occurred which resulted in many meetings not consisting of the entire group.',
       solution: '',
-      features: ['Responsive'],
+      features: ['Responsive', 'User Authentication'],
       keywords: ['']
     },
     {
       name: 'Budget Tracker',
       Date: 'April 2015',
-      technologies: ['Java', 'Animations'],
+      technologies: ['NodeJS', 'PWA', 'Cache', 'Express', 'MongoDB', 'NoSQL'],
       website: 'https://fabio-budget-tracker.herokuapp.com/',
       github: 'https://github.com/fchoi1/budget-tracker',
       description:
@@ -99,7 +107,7 @@ const ProjectProvider = ({ value = [], ...props }) => {
       role: '',
       roadBlocks: '',
       solution: '',
-      features: ['Responsive'],
+      features: ['Responsive', 'Offline capabilities', 'Interactive'],
       keywords: ['']
     },
     {
@@ -114,7 +122,12 @@ const ProjectProvider = ({ value = [], ...props }) => {
       role: '',
       roadBlocks: '',
       solution: '',
-      features: ['Responsive', 'MVC', 'Custom user modal'],
+      features: [
+        'Responsive',
+        'MVC',
+        'Custom user modal',
+        'User Authentication'
+      ],
       keywords: ['']
     },
     {
@@ -137,12 +150,20 @@ const ProjectProvider = ({ value = [], ...props }) => {
       role: '',
       roadBlocks: '',
       solution: '',
-      features: ['Responsive'],
+      features: [
+        'Object Oriented Programming',
+        '6 degrees of freedom platform'
+      ],
       keywords: ['']
     },
     {
       name: 'Warehouse Aerial Manipulator',
-      technologies: ['Solidworks 3D Modelling', 'Mechanical Design', 'Arduino'],
+      technologies: [
+        'Solidworks 3D Modelling',
+        'Mechanical Design',
+        'Arduino',
+        'C++'
+      ],
       Date: 'March 2022',
       website: 'https://1drv.ms/p/s!Ap-4bV5caE3xdK1LdPpFxN_whmI?e=Gb9zD0',
       github: 'https://www.github.com/fchoi1/',
@@ -154,13 +175,13 @@ const ProjectProvider = ({ value = [], ...props }) => {
       role: '',
       roadBlocks: '',
       solution: '',
-      features: ['Responsive'],
+      features: ['Robotics', 'Path-finding', 'Drone'],
       keywords: ['']
     },
     {
       name: 'Tech Blog',
       Date: 'March 2022',
-      technologies: ['react', 'Python'],
+      technologies: ['MVC', 'mySQL', 'NodeJS', 'Express', 'REST API'],
       website: 'https://fabio-tech-blog.herokuapp.com/',
       github: 'https://github.com/fchoi1/tech-blog',
       description:
@@ -171,7 +192,7 @@ const ProjectProvider = ({ value = [], ...props }) => {
       role: '',
       roadBlocks: '',
       solution: '',
-      features: ['Responsive'],
+      features: ['Responsive', 'User Authentication', 'Blog Post'],
       keywords: ['']
     }
   ];

@@ -9,8 +9,8 @@ function TimeLineItemMobile(props) {
   return (
     <div className="tl-content-wrapper tl-mobile-item-container container">
       <div className="tl-mobile-left">
-        <div className="tl-content-title-wrapper">
-          <span className="tl-content-title">{item.name}</span>
+        <div className="tl-content-title-wrapper tl-mobile-wrapper">
+          <span className="tl-content-title tl-mobile-title">{item.name}</span>
         </div>
 
         {item.position && (
@@ -19,7 +19,7 @@ function TimeLineItemMobile(props) {
           </div>
         )}
 
-        <div className="tl-content-date">
+        <div className="tl-content-date tl-mobile-date">
           <span className="tl-item-date">
             <Moment date={item.startDate} format="MMM YYYY" />
           </span>
@@ -27,14 +27,16 @@ function TimeLineItemMobile(props) {
 
         {item.location && (
           <div className="tl-content-location-wrapper">
-            <span className="tl-content-location">{item.location}</span>
+            <span className="tl-content-location tl-mobile-location">
+              {item.location}
+            </span>
           </div>
         )}
       </div>
 
       <div className="tl-mobile-right">
         <div className="tl-content-description">
-          <ul className="tl-content-description-list">
+          <ul className="tl-content-description-list tl-mobile-description-list">
             {item.description &&
               item.description.map((description, i) => (
                 <li key={i}>

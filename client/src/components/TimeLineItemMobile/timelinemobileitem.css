@@ -1,10 +1,10 @@
-.tl-content-wrapper {
+.tl-mobile-wrapper {
   width: 100%;
 }
 
 .tl-mobile-item-container {
   display: grid;
-  grid-template-columns: 40% 60%;
+  grid-template-columns: 35% 65%;
   grid-template-rows: auto repeat(3, min-content);
 }
 
@@ -18,20 +18,20 @@
   margin-left: 1%;
 }
 
-.tl-content-date {
+.tl-mobile-date {
   display: block;
   position: static;
   padding: 0;
 }
 
-.tl-content-title {
+.tl-mobile-title {
   color: var(--tertiary);
 }
 
-.tl-content-location {
+.tl-mobile-location {
   color: var(--secondary);
 }
 
-.tl-content-description-list {
+.tl-mobile-description-list {
   margin: 1% 0;
 }
