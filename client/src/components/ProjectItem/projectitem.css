@@ -1,12 +1,11 @@
 .p-item-container {
-  border: 0.2em solid var(--quinary);
   margin: 1%;
-  border-radius: 20px;
   min-height: 400px;
   padding: 1% 2%;
   display: grid;
   grid-template-columns: 50% 50%;
   grid-template-rows: auto repeat(3, min-content);
+  grid-gap: 0;
 }
 
 .p-item-link-wrapper {
@@ -29,6 +28,7 @@
   grid-area: 1 / 1 / 2 / 3;
   height: 100%;
   text-align: center;
+  text-shadow: 2px 2px 4px #000000;
 }
 
 .p-item-name {
@@ -45,14 +45,16 @@
 
 .p-item-tech,
 .p-item-description {
-  margin: 5%;
+  margin:  5% 5% 0 5%;
 }
 
+.p-item-tech span,
+.p-item-feature span,
 .p-item-text,
 .p-item-link {
   --min: 0.8em;
   --val: 0.8vw;
-  --max: 1.2em;
+  --max: 0.9em;
 }
 
 .p-item-images {
@@ -78,22 +80,20 @@
   column-width: 120px;
 }
 
-/* .p-item-role {
-}
-
-.p-item-rb {
-}
-
+.p-item-role,
+.p-item-rb,
 .p-item-solution {
+  margin: 1% 0;
 }
-
-.p-item-tech {
-} */
 
 .p-item-sub-title {
+  text-shadow: 2px 2px 4px #000000;
   --min: 1em;
   --val: 4vw;
-  --max: 1.5em;
+  --max: 1.1em;
+  --margin-min: 0.2rem;
+  --margin-reg: 4vw;
+  --margin-max: 0.4rem;
 }
 
 .hide-project {
@@ -154,6 +154,11 @@
   .p-item-tech,
   .p-item-description {
     margin: 0;
+    text-align: center;
+  }
+
+  .p-item-tech ul {
+    list-style-position: inside;
   }
 }
 

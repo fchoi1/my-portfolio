@@ -5,7 +5,7 @@ function PItemList(props) {
   return (
     <>
       <h5 className="p-item-sub-title">{title}</h5>
-      <ul>
+      <ul className='defaultUL'>
         {itemList &&
           itemList.map((item, i) => (
             <li key={i}>

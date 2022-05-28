@@ -151,17 +151,14 @@ p {
   text-align: right;
 }
 
-ul {
-  list-style: none; /* Remove default bullets */
+.defaultUL li {
+  margin-left: -1em; /* Also needed for space (tweak if needed) */
 }
 
-ul li::before {
-  content: '\2022'; /* Add content: \2022 is the CSS Code/unicode for a bullet */
+.defaultUL li::marker {
   color: var(--secondary); /* Change the color */
-  font-weight: bold; /* If you want it to be bold */
-  display: inline-block; /* Needed to add space between the bullet and the text */
-  width: 1em; /* Also needed for space (tweak if needed) */
-  margin-left: -1em; /* Also needed for space (tweak if needed) */
+  font-size: 0.8rem;
+  width: 1em;
 }
 
 @media only screen and (min-width: 2500px) {

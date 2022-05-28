@@ -9,8 +9,8 @@ function ImageDisplayList(props) {
   return (
     <Box
       sx={{
-        width: { md: '90%', sm: '90%', xs: '90%' },
-        maxHeight: { md: '25vw', sm: '35vw', xs: '35vw' },
+        width: { md: '90%', sm: '60%', xs: '85%' },
+        maxHeight: { md: '20vw', sm: '35vw', xs: '55vw' },
         overflowY: 'scroll'
       }}
     >

@@ -136,7 +136,7 @@ function TimelineItem(props) {
               )}
             </div>
             <div className="tl-content-description">
-              <ul className="tl-content-description-list">
+              <ul className="tl-content-description-list defaultUL">
                 {item.description &&
                   item.description.map((description, i) => (
                     <li key={i}>

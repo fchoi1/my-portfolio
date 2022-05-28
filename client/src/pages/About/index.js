@@ -37,7 +37,7 @@ function About(props) {
               in my past co-ops.
             </p>
             <span>Some technologies that I am working with recently:</span>
-            <ul className="tech-list">
+            <ul className="tech-list defaultUL">
               <li className="tech-item">
                 <span>JavaScript (ES6+)</span>
               </li>

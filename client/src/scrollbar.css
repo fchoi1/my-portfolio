@@ -6,25 +6,27 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: -webkit-linear-gradient(
+  /* background: -webkit-linear-gradient(
     left,
-    rgba(198, 198, 198, 1) 0%,
-    rgba(220, 220, 220, 1) 100%
-  ) !important;
+    var(--BlizzardBlue) 0%,
+    var(--LightCyan) 100%
+  ) !important; */
+  background: var(--secondary);
+
   background-clip: padding-box !important;
-  border: 2px solid transparent !important;
   border-image: initial !important;
   min-height: 28px !important;
-  /*box-shadow: rgba(0, 0, 0, 0.0980392) 1px 1px 0px inset, rgba(0, 0, 0, 0.0666667) 0px -1px 0px inset !important;*/
 }
 
 /* :window-inactive inspired by cssTricks */
 ::-webkit-scrollbar-thumb:hover {
-  background: -webkit-linear-gradient(
+  /* background: -webkit-linear-gradient(
     left,
     rgba(158, 158, 158, 1) 0%,
     rgba(180, 180, 180, 1) 100%
-  ) !important;
+  ) !important; */
+  background: var(--quaternary);
+
   background-clip: padding-box !important;
 }
 
@@ -46,10 +48,6 @@
 ::-webkit-scrollbar-track {
   /*background: -webkit-linear-gradient(left, rgba(224,224,224,1) 0%,rgba(200,200,200,1) 100%) !important;*/
   background: var(--primary); /* color of the tracking area */
-  /*background-clip: padding-box !important;*/
-  /*border: 2px solid white !important;*/
-  /*border-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAAAAABVicqIAAAACXZwQWcAAABkAAAAZACHJl7mAAAASUlEQVRo3u3PQQEAIAzDQOoE/6bAyaaiv0sUXN799TOnX0hISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhIqi0mjfaIwOmF7QAAAABJRU5ErkJggg==) 3 repeat!important;*/
-  /*border-image: initial !important;*/
   box-shadow: inset 1px 0px 5px -2px rgba(0, 0, 0, 0.3);
 }
 

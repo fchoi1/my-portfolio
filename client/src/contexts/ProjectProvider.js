@@ -89,8 +89,8 @@ const ProjectProvider = ({ value = [], ...props }) => {
       role: 'I was in charge of designing the database models and also specific CRUD operations routes to the models. I also implemented a user modal where users are able to update their profile via username, password and even avatar images.',
       roadBlocks:
         'This was a group project using git and github. The features and issues were divided among the group members. However, some features were dependant or linked to each other. Depending on the availability of each group member, some were not able to start or make progress on their tasks due to dependent features not being completed. There were many scheduling conflicts that occurred which resulted in many meetings not consisting of the entire group.',
-      solution: '',
-      features: ['Responsive', 'User Authentication'],
+      solution: 'We decided to do pair programming where 2 group members would be assinged to an issue. This way, we can have progress on features even when one person is unavailable. We also reduced the functional requirements due to time constraints and focused on completing the minimum viable product.',
+      features: ['Responsive', 'User Authentication', 'Wishlist feature'],
       keywords: ['']
     },
     {
@@ -112,21 +112,32 @@ const ProjectProvider = ({ value = [], ...props }) => {
     },
     {
       name: 'Lidar Live streaming Robot',
-      technologies: ['ROS', ' Linux/Terminal', 'Git', 'ROSJS', 'HTML'],
+      technologies: [
+        'ROS',
+        ' Linux',
+        'Terminal',
+        'Ubuntu',
+        'Python',
+        'ROSJS',
+        'HTML'
+      ],
       github: 'https://github.com/fchoi1/Linabot',
       description:
-        'A project I worked on at Linamar to design an automous robot that can deliver tool changes',
+        "This was a proof of concept project that involved using an iCreate robot to automatically deliver tools to a robot. This robot would be fully autonomous, and would be able to navigate a manufacturing floor without any human intervention using localization algorithms to know the robot's position on a map. The robot uses a Lidar to map its surroundings and also uses built in bump and sonar sensors to prevent collisions.  This project uses ROS for programming the robot and also dikjstra's algorithm for path finding.",
       imageFolder: 'LIDAR_Live_streaming_Robot',
       images: [],
-      descriptionShort: '',
-      role: '',
-      roadBlocks: '',
-      solution: '',
+      descriptionShort:
+        'A project I worked on at Linamar to design an autonomous robot that can deliver tool changes using path finding and localization',
+      role: 'I was in charge of integration hardware components with ROS. I installed ROS and modified configuration files to fit the iCreate Robot Base.  I performed unit tests to make sure each piece of the hardware was working. ',
+      roadBlocks:
+        'Integration of hardware using ROS was a complex and unfamiliar topic. Everytime we needed to upload software, we would need to open the robot compartment and take out the Raspberry Pi. This process was tedious and long for simple code changes. The robot had only a 2 hour run time before requiring a recharge. Therefore, during rigours testing, we would need to wait for the robot to recharge which would delay testing.',
+      solution:
+        'Being patient and reading through ROS forums and documentation to understand and find the correct libraries to install. It was a team effort to pool together resources and knowledge to make the learning process as efficient as possible.  We also set up a remote access ssh session on the network to be able to connect to the robot remotely. This allows ',
       features: [
-        'Responsive',
-        'MVC',
-        'Custom user modal',
-        'User Authentication'
+        'Robotics',
+        'Interactive',
+        'Autonomous navigation',
+        'Monte Carlo and A* localization algorithm'
       ],
       keywords: ['']
     },
@@ -135,7 +146,7 @@ const ProjectProvider = ({ value = [], ...props }) => {
       technologies: [
         'C++',
         'OOP',
-        'Solidworks 3D Modelling',
+        'Solidworks',
         'Mechanical Design',
         'Arduino',
         'IMU'
@@ -159,7 +170,7 @@ const ProjectProvider = ({ value = [], ...props }) => {
     {
       name: 'Warehouse Aerial Manipulator',
       technologies: [
-        'Solidworks 3D Modelling',
+        'Solidworks',
         'Mechanical Design',
         'Arduino',
         'C++'

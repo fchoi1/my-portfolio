@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useState, useRef } from 'react';
 
 import { scrollToTargetAdjusted } from 'components/Scroll';
 import { Button } from '@mui/material';
@@ -31,17 +31,21 @@ function Projects(props) {
           <div className="projects-list-wrapper">
             {projects &&
               projects.map((project, i) => (
-                <ProjectItem
-                  project={project}
-                  num={i}
-                  key={i}
-                  showMore={showMore}
-                  showMoreRef={i === 2 ? showMoreRef : null}
-                ></ProjectItem>
+                <div key={i}>
+                  <ProjectItem
+                    project={project}
+                    num={i}
+                    showMore={showMore}
+                    showMoreRef={i === 2 ? showMoreRef : null}
+                  ></ProjectItem>
+                  {(i < 2 || showMore) && (
+                    <div className="project-list-divider"></div>
+                  )}
+                </div>
               ))}
           </div>
           <div className="projects-list-show-more">
-            <Button onClick={handleShow} color="secondary">
+            <Button onClick={handleShow} color="secondary" size="large">
               {showMore ? 'show less' : 'show more'}
             </Button>
           </div>
