@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: 15vw repeat(6, 1fr) 15vw;
   grid-template-rows: auto;
-  min-height: 100vh;
+  min-height: 80vh;
 }
 
 .timeline-mobile-wrapper {
@@ -12,7 +12,7 @@
 .history-title-container {
   display: grid;
   grid-template-columns: 15vw auto 15vw;
-  grid-template-rows: 10vh auto;
+  grid-template-rows: 1vh auto;
 }
 
 .history-name-wrapper {
@@ -43,7 +43,7 @@
 
 .history-scroll-wrapper {
   grid-area: 1 / 2 / 6 / 8;
-  height: 50em;
+  height: 80vh;
 }
 
 @media only screen and (max-width: 1500px) {

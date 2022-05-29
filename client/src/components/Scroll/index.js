@@ -1,16 +1,52 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 
 import { useScrollTrigger, Slide, Zoom, Box } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import { useMediaQuery } from '@mui/material';
+import _ from 'lodash';
+import { useLinkClickHandler } from 'react-router-dom';
 
-export const scrollToTargetAdjusted = (element, offSet) => {
-  var elementPosition = element.getBoundingClientRect().top;
-  var offsetPosition = elementPosition + window.pageYOffset - offSet;
+export const scrollToTargetAdjusted = (
+  element,
+  offSet = 0,
+  headerHeight = 0
+) => {
+  if (element.nodeName === 'BODY') offSet = headerHeight;
+
+  const elementPosition = element.getBoundingClientRect().top;
+  const offsetPosition = elementPosition + window.pageYOffset - offSet;
 
   window.scrollTo({
     top: offsetPosition,
     behavior: 'smooth'
+  });
+
+  return new Promise((resolve, reject) => {
+    const failed = setTimeout(() => {
+      reject();
+    }, 2000);
+
+    const scrollHandler = () => {
+      if (
+        window.pageYOffset === Math.round(offsetPosition + offSet) ||
+        window.pageYOffset === Math.round(offsetPosition)
+      ) {
+        window.removeEventListener('scroll', scrollHandler);
+        clearTimeout(failed);
+        resolve();
+      }
+    };
+
+    if (
+      window.pageYOffset === Math.round(offsetPosition + offSet) ||
+      window.pageYOffset === Math.round(offsetPosition)
+    ) {
+      clearTimeout(failed);
+      resolve();
+    } else {
+      window.addEventListener('scroll', scrollHandler);
+      element.getBoundingClientRect();
+    }
   });
 };
 
@@ -52,22 +88,40 @@ export function useHorizontalScroll() {
   return elRef;
 }
 
-export const HideOnScroll = (props) => {
-  const { children, setOpenMenu } = props;
-  const trigger = useScrollTrigger();
-
-  const theme = useTheme();
-  const isBig = useMediaQuery(theme.breakpoints.up('sm'));
-  useEffect(() => {
-    if (!isBig && trigger) {
-      setOpenMenu(false);
-    } else if (isBig) {
-      setOpenMenu(true);
+export const useScrollDirection = (clicked) => {
+  const [scrollDirection, setScrollDirection] = useState(null);
+  const [prevOffset, setPrevOffset] = useState(0);
+  const toggleScrollDirection = () => {
+    let scrollY = window.scrollY;
+    if (scrollY === 0) {
+      setScrollDirection(null);
     }
-  }, [trigger, setOpenMenu, isBig]);
+    if (scrollY > prevOffset || clicked) {
+      setScrollDirection('down');
+    } else if (scrollY < prevOffset) {
+      setScrollDirection('up');
+    }
 
+    setPrevOffset(scrollY);
+  };
+  useEffect(() => {
+    window.addEventListener('scroll', toggleScrollDirection);
+    return () => {
+      window.removeEventListener('scroll', toggleScrollDirection);
+    };
+  });
+  return scrollDirection;
+};
+
+export const HideOnScroll = (props) => {
+  const { children, clicked } = props;
+  const scrollDirection = useScrollDirection(clicked);
   return (
-    <Slide appear={false} direction="down" in={!trigger}>
+    <Slide
+      appear={false}
+      direction="down"
+      in={scrollDirection === 'up' && !clicked}
+    >
       {children}
     </Slide>
   );

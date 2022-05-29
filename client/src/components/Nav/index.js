@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState, forwardRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 //Material UI
 import {
@@ -19,7 +19,12 @@ import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 
 import { useTheme, styled } from '@mui/material/styles';
 
-import { ScrollTop, HideOnScroll, ElevationScroll } from '../Scroll';
+import {
+  ScrollTop,
+  HideOnScroll,
+  ElevationScroll,
+  scrollToTargetAdjusted
+} from '../Scroll';
 
 import { HashLink } from 'react-router-hash-link';
 import { useLocation } from 'react-router-dom';
@@ -28,6 +33,8 @@ import './nav.css';
 
 function NavBar(props) {
   const [openMenu, setOpenMenu] = useState(true);
+  const [clicked, setClicked] = useState(false);
+
   const [elevation, setElevation] = useState(0);
   const [currPage, setCurrPage] = useState('');
   const [headerHeight, setHeaderHeight] = useState(0);
@@ -51,6 +58,13 @@ function NavBar(props) {
     isBig ? setOpenMenu(true) : setOpenMenu(false);
   }, [isBig]);
 
+  useEffect(() => {
+    window.addEventListener('scroll', handleClickAway);
+    return () => {
+      window.removeEventListener('scroll', handleClickAway);
+    };
+  });
+
   const pages = [
     { name: 'About', link: 'About' },
     { name: 'My Journey', link: 'Journey' },
@@ -65,13 +79,9 @@ function NavBar(props) {
     if (!isBig) setOpenMenu(false);
   };
 
-  const scrollWithOffset = (el) => {
-    let yOffset = 0;
-
-    if (el.nodeName === 'BODY') yOffset = headerHeight;
-
-    const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset;
-    window.scrollTo({ top: yCoordinate + yOffset, behavior: 'smooth' });
+  const handleLinkClick = () => {
+    if (!isBig) setOpenMenu(false);
+    setClicked(true);
   };
 
   const NavButton = styled(Button)(({ theme }) => ({
@@ -86,7 +96,7 @@ function NavBar(props) {
   return (
     <>
       <ElevationScroll setElevation={setElevation}>
-        <HideOnScroll setOpenMenu={setOpenMenu}>
+        <HideOnScroll clicked={clicked}>
           <AppBar color="primary" elevation={elevation}>
             <ClickAwayListener onClickAway={handleClickAway}>
               <Toolbar
@@ -119,10 +129,26 @@ function NavBar(props) {
                     >
                       <HashLink
                         to={`/#`}
-                        scroll={(el) => scrollWithOffset(el)}
+                        scroll={async (el) =>
+                          await scrollToTargetAdjusted(el, 0, -headerHeight)
+                        }
                         onClick={handleClickAway}
                       >
-                        <Box sx={{ fontSize: { md: '50px' } }}>Fabio C.</Box>
+                        <Box
+                          sx={{
+                            ' &:hover': {
+                              textShadow:
+                                '4px 3px 0px #000, 5px 4px 1px rgba(255,255,255,0.15)'
+                            },
+                            fontSize: {
+                              md: '50px'
+                            },
+                            textShadow:
+                              '3px 2px 1px var(--quinary), 5px 4px 1px rgba(255,255,255,0.15)'
+                          }}
+                        >
+                          Fabio C.
+                        </Box>
                       </HashLink>
                     </Typography>
                   </Grid>
@@ -148,13 +174,24 @@ function NavBar(props) {
                             <Grid item key={page.name} xs={12} sm="auto">
                               <HashLink
                                 to={`/#${page.link}`}
-                                scroll={(el) => scrollWithOffset(el)}
-                                onClick={handleClickAway}
+                                scroll={async (el) => {
+                                  try {
+                                    await scrollToTargetAdjusted(el, 0, 0);
+                                    setClicked(false);
+                                  } catch (err) {
+                                    setClicked(false);
+                                  }
+                                }}
+                                onClick={handleLinkClick}
                               >
                                 <NavButton
                                   sx={{
+                                    ' &:hover': {
+                                      textShadow: '3px 3px 0px #03045eFF'
+                                    },
                                     minHeight: '10px',
-                                    fontSize: { md: '20px', sm: '15px' }
+                                    fontSize: { md: '20px', sm: '15px' },
+                                    textShadow: '3px 3px 0px #00000080'
                                   }}
                                   variant="text"
                                   focusRipple

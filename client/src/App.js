@@ -10,7 +10,7 @@ import { ProfileProvider } from './contexts/ProfileProvider';
 import { ProjectProvider } from './contexts/ProjectProvider';
 import { HistoryProvider } from './contexts/HistoryProvider';
 
-import { Routes, Route, BrowserRouter } from 'react-router-dom';
+import { Routes, Route, BrowserRouter, Navigate } from 'react-router-dom';
 
 import Footer from 'components/Footer';
 
@@ -25,6 +25,7 @@ function App() {
                 <NavBar />
                 <Routes>
                   <Route exact path="/" element={<MainPage />} />
+                  <Route path="*" element={<Navigate from="*" to="/" />} />
                 </Routes>
                 <Footer />
               </HistoryProvider>

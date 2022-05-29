@@ -1,7 +1,7 @@
 .projects-container {
   display: grid;
   grid-template-columns: 15vw 5vw repeat(4, 1fr) 5vw 15vw;
-  grid-template-rows: 10vh repeat(5, auto) auto;
+  grid-template-rows: 1vh repeat(5, auto) auto;
   min-height: 100vh;
 }
 

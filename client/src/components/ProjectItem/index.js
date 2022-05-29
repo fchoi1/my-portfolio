@@ -107,7 +107,12 @@ function ProjectItem(props) {
         <div className="p-item-link-wrapper">
           {project.github && (
             <Button
-              sx={{ color: 'var(--tertiary)' }}
+              sx={{
+                color: 'var(--tertiary)',
+                '&:hover': {
+                  color: 'var(--quinary)'
+                }
+              }}
               color="quaternary"
               variant="contained"
               onClick={() => {
@@ -116,17 +121,16 @@ function ProjectItem(props) {
             >
               Github
             </Button>
-
-            // <span className="p-item-link">
-            //   <a href={project.github} target="_blank" rel="noreferrer">
-            //     Github
-            //   </a>
-            // </span>
           )}
 
           {project.website && (
             <Button
-              sx={{ color: 'var(--tertiary)' }}
+              sx={{
+                color: 'var(--tertiary)',
+                '&:hover': {
+                  color: 'var(--quinary)'
+                }
+              }}
               color="quaternary"
               variant="contained"
               onClick={() => {
@@ -135,18 +139,15 @@ function ProjectItem(props) {
             >
               Live Website
             </Button>
-            // <span className="p-item-link">
-            //   <a href={project.website} target="_blank" rel="noreferrer">
-            //     Live Website
-            //   </a>
-            // </span>
           )}
         </div>
 
         <div className={rightContent}>
-          <div className={className.Image}>
-            <ImageDisplayList images={project.images} />
-          </div>
+          {project.images.length > 0 && (
+            <div className={className.Image}>
+              <ImageDisplayList images={project.images} />
+            </div>
+          )}
 
           <div className={className.Description}>
             <PItemParagraph

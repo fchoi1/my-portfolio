@@ -2,7 +2,6 @@ import React from 'react';
 import Moment from 'react-moment';
 
 import './timelinemobileitem.css';
-import { useBreakPoint } from 'contexts/MuiThemeProvider';
 
 function TimeLineItemMobile(props) {
   const { item, num, history } = props;

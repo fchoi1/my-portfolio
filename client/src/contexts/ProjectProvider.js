@@ -80,8 +80,7 @@ const ProjectProvider = ({ value = [], ...props }) => {
       ],
       website: 'https://bike-haven.herokuapp.com/',
       github: 'https://github.com/fchoi1/Bike-Haven',
-      description:
-        'An Online Bike Store 🚲 Bike Haven is built to facilite bike customers to make an informed decision.  Node.js and Express.js to create a RESTful API. Handlebars.js as the template engine. MySQL and the Sequelize ORM for the database. Used GET and POST routes for retrieving and adding new data. Useed Anime.js - a lightweight JavaScript animation library. Has a folder structure that meets the MVC paradigm. Included authentication (express-session and cookies). Protected API keys and sensitive information with environment variables. dotenv Used bcryp',
+      description: '',
       imageFolder: 'Bike_Haven_Store',
       images: [],
       descriptionShort:
@@ -89,8 +88,14 @@ const ProjectProvider = ({ value = [], ...props }) => {
       role: 'I was in charge of designing the database models and also specific CRUD operations routes to the models. I also implemented a user modal where users are able to update their profile via username, password and even avatar images.',
       roadBlocks:
         'This was a group project using git and github. The features and issues were divided among the group members. However, some features were dependant or linked to each other. Depending on the availability of each group member, some were not able to start or make progress on their tasks due to dependent features not being completed. There were many scheduling conflicts that occurred which resulted in many meetings not consisting of the entire group.',
-      solution: 'We decided to do pair programming where 2 group members would be assinged to an issue. This way, we can have progress on features even when one person is unavailable. We also reduced the functional requirements due to time constraints and focused on completing the minimum viable product.',
-      features: ['Responsive', 'User Authentication', 'Wishlist feature'],
+      solution:
+        'We decided to do pair programming where 2 group members would be assinged to an issue. This way, we can have progress on features even when one person is unavailable. We also reduced the functional requirements due to time constraints and focused on completing the minimum viable product.',
+      features: [
+        'Responsive',
+        'User Authentication and sessions',
+        'Wishlist feature',
+        'Animations'
+      ],
       keywords: ['']
     },
     {
@@ -103,11 +108,32 @@ const ProjectProvider = ({ value = [], ...props }) => {
         'This is a simple application to use MVC model with node js to connect to mongoDB access REST apis. This is an application to view a budget tracker where you can input transactions to track your spending. The focus of this assignement is PWA and offline functionality when connection is unstable. The website is still functional and works with or without internet connectivity with express. Techonologies mongoDB, PWA, express, MVC model, Heroku, service workers and cache.',
       imageFolder: 'Budget_Tracker',
       images: [],
-      descriptionShort: '',
-      role: '',
-      roadBlocks: '',
+      descriptionShort:
+        'A simple budget tracker application that stores your transactions and displays on a visual graph',
+      role: 'This was a solo project utilizing both frontend and backend practices. ',
+      roadBlocks:
+        'This was was the first full stack application utilizing MongoDB, and Express. This was a project for me to understand the best MVC practices and to slowing develop my patterns for using ORMs in NodeJS',
       solution: '',
-      features: ['Responsive', 'Offline capabilities', 'Interactive'],
+      features: ['Responsive', 'Offline Capatible', 'Interactive'],
+      keywords: ['']
+    },
+    {
+      name: 'My Website',
+      Date: 'April 2022',
+      technologies: ['NodeJS', 'ReactJS', 'Material UI', 'Express'],
+      website: 'http://fabio-portfolio.herokuapp.com/',
+      github: 'https://github.com/fchoi1/my-portfolio',
+      description:
+        'This is my personal website to learn more about me and my past experiences. This website showcases my professtional experiences and the mutliple interesting projects I was part of.',
+      imageFolder: 'Budget_Tracker',
+      images: [],
+      descriptionShort:
+        'My personal website which is what you are on right now!',
+      role: 'This was a solo project for me to show off myself and to show my skills as a front-end developer ',
+      roadBlocks:
+        '',
+      solution: '',
+      features: ['Responsive', 'Interactive'],
       keywords: ['']
     },
     {
@@ -169,12 +195,7 @@ const ProjectProvider = ({ value = [], ...props }) => {
     },
     {
       name: 'Warehouse Aerial Manipulator',
-      technologies: [
-        'Solidworks',
-        'Mechanical Design',
-        'Arduino',
-        'C++'
-      ],
+      technologies: ['Solidworks', 'Mechanical Design', 'Arduino', 'C++'],
       Date: 'March 2022',
       website: 'https://1drv.ms/p/s!Ap-4bV5caE3xdK1LdPpFxN_whmI?e=Gb9zD0',
       github: 'https://www.github.com/fchoi1/',

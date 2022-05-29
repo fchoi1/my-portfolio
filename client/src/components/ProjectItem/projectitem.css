@@ -1,6 +1,5 @@
 .p-item-container {
   margin: 1%;
-  min-height: 400px;
   padding: 1% 2%;
   display: grid;
   grid-template-columns: 50% 50%;
@@ -45,7 +44,7 @@
 
 .p-item-tech,
 .p-item-description {
-  margin:  5% 5% 0 5%;
+  margin: 5% 5% 0 5%;
 }
 
 .p-item-tech span,

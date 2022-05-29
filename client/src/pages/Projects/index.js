@@ -13,11 +13,13 @@ function Projects(props) {
 
   const showMoreRef = useRef(null);
 
-  const handleShow = (event) => {
+  const handleShow = async (event) => {
     setShowMore(!showMore);
 
     if (showMoreRef.current) {
-      scrollToTargetAdjusted(showMoreRef.current, 100);
+      setTimeout(async () => {
+        await scrollToTargetAdjusted(showMoreRef.current, 100);
+      }, 100);
     }
   };
 
@@ -36,7 +38,11 @@ function Projects(props) {
                     project={project}
                     num={i}
                     showMore={showMore}
-                    showMoreRef={i === 2 ? showMoreRef : null}
+                    showMoreRef={
+                      (i === 2 && !showMore) || (i === 3 && showMore)
+                        ? showMoreRef
+                        : null
+                    }
                   ></ProjectItem>
                   {(i < 2 || showMore) && (
                     <div className="project-list-divider"></div>
