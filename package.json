@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/fchoi1/my-portfolio#readme",
   "dependencies": {
+    "gatsby": "^4.15.2",
     "react-router-hash-link": "^2.4.3"
   }
 }
