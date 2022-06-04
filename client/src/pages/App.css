@@ -1,0 +1,198 @@
+:root {
+  --yaleBlue: #044389;
+  --darkSkyBlue: #86bbd8;
+  --mediumChampagne: #eddea4;
+  --atomicTangerine: #f7a072;
+  --liverChestnut: #957964;
+
+  --MidnightBlue: #03045e;
+  --DarkCornflowerBlue: #023e8a;
+  --StarCommandBlue: #0077b6;
+  --BlueGreen: #0096c7;
+  --PacificBlue: #00b4d8;
+  --SkyBlue: #48cae4;
+  --MiddleBlue: #90e0ef;
+  --BlizzardBlue: #ade8f4;
+  --LightCyan: #caf0f8;
+
+  --primary: var(--DarkCornflowerBlue);
+  --secondary: var(--PacificBlue);
+  --tertiary: var(--LightCyan);
+  --quaternary: var(--StarCommandBlue);
+  --quinary: var(--MidnightBlue);
+  --senary: var(--MiddleBlue);
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--primary);
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+a,
+a:link,
+a:visited,
+a:focus,
+a:hover,
+a:active,
+a:any-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span,
+p,
+.section-name {
+  font-size: clamp(var(--min), var(--val), var(--max));
+  margin: clamp(var(--margin-min), var(--margin-reg), var(--margin-max)) 0;
+  color: var(--tertiary);
+}
+
+.section-name {
+  color: var(--secondary);
+}
+
+h1 {
+  text-shadow: 8px 8px 0px rgba(0, 0, 0, 0.2);
+  --min: 2.75rem;
+  --val: 7vw;
+  --max: 5rem;
+  --margin-min: 1rem;
+  --margin-reg: 4vw;
+  --margin-max: 1.1rem;
+}
+
+h2 {
+  text-shadow: 6px 6px 0px rgba(0, 0, 0, 0.2);
+  --min: 2.25rem;
+  --val: 6vw;
+  --max: 4rem;
+  --margin-min: 0.5rem;
+  --margin-reg: 4vw;
+  --margin-max: 1rem;
+}
+
+h3 {
+  text-shadow: 6px 6px 0px rgba(0, 0, 0, 0.2);
+  --min: 2rem;
+  --val: 4.5vw;
+  --max: 3.25rem;
+  --margin-min: 0.6rem;
+  --margin-reg: 4vw;
+  --margin-max: 0.8rem;
+}
+
+h4 {
+  --min: 1.75rem;
+  --val: 4vw;
+  --max: 3rem;
+  --margin-min: 0.3rem;
+  --margin-reg: 4vw;
+  --margin-max: 0.8rem;
+}
+
+h5 {
+  --min: 1.5rem;
+  --val: 3vw;
+  --max: 2.75rem;
+  --margin-min: 0.2rem;
+  --margin-reg: 4vw;
+  --margin-max: 0.8rem;
+}
+h6 {
+  --min: 1.25rem;
+  --val: 2.5vw;
+  --max: 2.5rem;
+  --margin-min: 0.1rem;
+  --margin-reg: 3vw;
+  --margin-max: 0.8rem;
+}
+
+span,
+p {
+  --min: 0.8em;
+  --val: 2vw;
+  --max: 1.2em;
+  --margin-min: 0.1rem;
+  --margin-reg: 4vw;
+  --margin-max: 0.4rem;
+}
+
+.container {
+  grid-gap: 0.5em;
+  display: grid;
+  grid-template-columns: 15vw repeat(6, 1fr) 15vw;
+  grid-template-rows: 20vh repeat(5, auto) auto;
+}
+
+.section-wrapper {
+  min-height: 100vh;
+  height: auto;
+  background-color: var(--primary);
+}
+
+.section-name-wrapper {
+  grid-area: 2 / 2 / 2 / 8;
+}
+
+.section-name {
+  --min: 1.3rem;
+  --val: 5vw;
+  --max: 3.25rem;
+  font-weight: 500;
+}
+
+.textLeft {
+  text-align: left;
+}
+
+.textRight {
+  text-align: right;
+}
+
+.defaultUL li {
+  margin-left: -1em; /* Also needed for space (tweak if needed) */
+}
+
+.defaultUL li::marker {
+  color: var(--secondary); /* Change the color */
+  font-size: 0.8rem;
+  width: 1em;
+}
+
+@media only screen and (min-width: 2500px) {
+  .section-name {
+    --val: 8vw;
+    --max: 8rem;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+}
+
+@media only screen and (max-width: 900px) {
+}
+
+@media only screen and (max-width: 600px) {
+  .container {
+    grid-template-columns: 7vw repeat(6, 1fr) 7vw;
+  }
+}
+
+@media (max-height: 700px) {
+}

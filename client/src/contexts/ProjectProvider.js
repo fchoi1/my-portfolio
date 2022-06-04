@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useState, useEffect } from 'react';
 
 //instatiate global state object empty
 const projectContext = createContext();
@@ -14,9 +14,18 @@ const ProjectProvider = ({ value = [], ...props }) => {
     return images;
   }
 
-  const images = importAll(
-    require.context('../assets/images/projects/', true, /\.(avif|jpe?g|svg)$/)
-  );
+  const [images, setImages] = useState([]);
+  useEffect(() => {
+    setImages(
+      importAll(
+        require.context(
+          '../../public/assets/images/projects/',
+          true,
+          /\.(avif|jpe?g|svg)$/
+        )
+      )
+    );
+  }, []);
 
   const myProjects = [
     {
@@ -130,8 +139,7 @@ const ProjectProvider = ({ value = [], ...props }) => {
       descriptionShort:
         'My personal website which is what you are on right now!',
       role: 'This was a solo project for me to show off myself and to show my skills as a front-end developer ',
-      roadBlocks:
-        '',
+      roadBlocks: '',
       solution: '',
       features: ['Responsive', 'Interactive'],
       keywords: ['']

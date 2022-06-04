@@ -1,10 +1,10 @@
 import React from 'react';
 
 // Contexts
-import MuiThemeProvider from './contexts/MuiThemeProvider';
-import { ProfileProvider } from './contexts/ProfileProvider';
-import { ProjectProvider } from './contexts/ProjectProvider';
-import { HistoryProvider } from './contexts/HistoryProvider';
+import MuiThemeProvider from 'contexts/MuiThemeProvider';
+import { ProfileProvider } from 'contexts/ProfileProvider';
+import { ProjectProvider } from 'contexts/ProjectProvider';
+import { HistoryProvider } from 'contexts/HistoryProvider';
 
 export const wrapRootElement = ({ element }) => {
   return (
