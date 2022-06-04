@@ -116,7 +116,9 @@ function ProjectItem(props) {
               color="quaternary"
               variant="contained"
               onClick={() => {
-                window.open(project.github);
+                if (typeof window !== `undefined`) {
+                  window.open(project.github);
+                }
               }}
             >
               Github
@@ -134,7 +136,9 @@ function ProjectItem(props) {
               color="quaternary"
               variant="contained"
               onClick={() => {
-                window.open(project.website);
+                if (typeof window !== `undefined`) {
+                  window.open(project.website);
+                }
               }}
             >
               Live Website

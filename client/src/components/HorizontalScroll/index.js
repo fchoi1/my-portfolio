@@ -98,13 +98,17 @@ function ScrollHorizontal(props) {
     if (!caniscroll()) return;
 
     if ((scrollContextState.start && newAnimationValue > 0, enableScrollUp))
-      return window.scrollBy(0, -100);
+      if (typeof window !== `undefined`) {
+        return window.scrollBy(0, -100);
+      }
 
     if (
       (scrollContextState.end && newAnimationValue < scrollContextState.max,
       enableScrollDown)
     )
-      return window.scrollBy(0, 100);
+      if (typeof window !== `undefined`) {
+        return window.scrollBy(0, 100);
+      }
 
     if (inBounds(newAnimationValue))
       return setScrollContextState({

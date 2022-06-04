@@ -11,6 +11,8 @@ export const scrollToTargetAdjusted = (
   offSet = 0,
   headerHeight = 0
 ) => {
+  if (typeof window == `undefined`) return;
+
   if (element.nodeName === 'BODY') offSet = headerHeight;
 
   const elementPosition = element.getBoundingClientRect().top;
@@ -27,6 +29,8 @@ export const scrollToTargetAdjusted = (
     }, 2000);
 
     const scrollHandler = () => {
+      if (typeof window == `undefined`) return;
+
       if (
         window.pageYOffset === Math.round(offsetPosition + offSet) ||
         window.pageYOffset === Math.round(offsetPosition)
@@ -92,7 +96,10 @@ export const useScrollDirection = (clicked) => {
   const [scrollDirection, setScrollDirection] = useState(null);
   const [prevOffset, setPrevOffset] = useState(0);
   const toggleScrollDirection = () => {
-    let scrollY = window.scrollY;
+    let scrollY;
+    if (typeof window !== `undefined`) {
+      scrollY = window.scrollY;
+    }
     if (scrollY === 0) {
       setScrollDirection(null);
     }
