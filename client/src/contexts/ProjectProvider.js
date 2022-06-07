@@ -43,7 +43,12 @@ const ProjectProvider = ({ value = [], ...props }) => {
         'Since this was a group project, merge conflicts occurred frequently with multiple members working on the same features without knowing. Learning new technologies such as Socket IO and trying to integrate the socket server with the back end graphql server.',
       solution:
         'To solve issues with members double-dipping on the same issues or features, we had frequent slack updates to clearly understand what was being worked on. We would also have meetings together to identify who was the best group/individual suitable to solve that task. For integrating Socket IO, we had pair programming sessions to read over the documentation and online resources, help catch mistakes, and to verify any issues with the implementation. ',
-      features: ['Real time', 'Live Notifications', 'Responsive'],
+      features: [
+        'Real time',
+        'Live Notifications',
+        'Responsive',
+        'Searchable user list'
+      ],
       keywords: [''],
       images: []
     },
@@ -63,7 +68,12 @@ const ProjectProvider = ({ value = [], ...props }) => {
         'For this project, the minimum requirement was to be able to display static photos. However, I wanted to take it one step further and try to have animations or moving images. At the time, I was inexperienced with Java and using animations was a complex topic.',
       solution:
         'Since I was unfamiliar with any animation libraries, it was hard to find an efficient solution. I realized that a video/animation were just many images being displayed one after the other at a certain frame rate.  I did a manual process of finding an animation and saving each frame image. I then stored these frames in seperate folders and used a loop to loop through the images to create enemy and player animations.',
-      features: ['Interactive', 'Visual', 'Game'],
+      features: [
+        'Interactive',
+        'Visual',
+        'RPG Game',
+        'Animated boss/enemy fights'
+      ],
       keywords: ['']
     },
     {
@@ -92,7 +102,7 @@ const ProjectProvider = ({ value = [], ...props }) => {
         'We decided to do pair programming where 2 group members would be assinged to an issue. This way, we can have progress on features even when one person is unavailable. We also reduced the functional requirements due to time constraints and focused on completing the minimum viable product.',
       features: [
         'Responsive',
-        'User Authentication and sessions',
+        'User Authentication and sessions storage',
         'Wishlist feature',
         'Animations'
       ],
@@ -113,8 +123,9 @@ const ProjectProvider = ({ value = [], ...props }) => {
       role: 'This was a solo project utilizing both frontend and backend practices. ',
       roadBlocks:
         'This was was the first full stack application utilizing MongoDB, and Express. This was a project for me to understand the best MVC practices and to slowing develop my patterns for using ORMs in NodeJS',
-      solution: '',
-      features: ['Responsive', 'Offline Capatible', 'Interactive'],
+      solution:
+        'Like learning new concepts, it required time, patience and dedication to understand theses topics to implement them in an applciation',
+      features: ['Responsive', 'Offline Capatible', 'Interactive', 'Visual'],
       keywords: ['']
     },
     {
@@ -130,10 +141,9 @@ const ProjectProvider = ({ value = [], ...props }) => {
       descriptionShort:
         'My personal website which is what you are on right now!',
       role: 'This was a solo project for me to show off myself and to show my skills as a front-end developer ',
-      roadBlocks:
-        '',
+      roadBlocks: '',
       solution: '',
-      features: ['Responsive', 'Interactive'],
+      features: ['Responsive', 'Interactive', 'Built ground up'],
       keywords: ['']
     },
     {
@@ -177,19 +187,22 @@ const ProjectProvider = ({ value = [], ...props }) => {
         'Arduino',
         'IMU'
       ],
-      website: 'test',
+      website: '',
       github: 'https://github.com/fchoi1/stewart-platform',
       description:
         'A project that uses a microcontroller to control a steward platform which is a platform held by 6 actuators which enables this system to have 6 degrees of freedom. This was program in C++ and uses sensor data from an IMU (inertial measurement unit) to control tilt and z axis movement  ',
       imageFolder: 'Steward_Platform_Maze_Solver',
       images: [],
-      descriptionShort: '',
-      role: '',
-      roadBlocks: '',
+      descriptionShort: 'This is a interactive maze solver game where users can control the tilting of the platform with an IMU device',
+      role: 'My role in this project was to code up the logic and apply mathematical model for determining the position and motor values for the platform. I also integrated inputs from the IMU to correspond with the x and y axis tilts and the z rotation motions. ',
+      roadBlocks: 'Implementing the models, formulas with this system was a long process because we need to ensure the calculations are correct in order to send the correct motor values. The motors also had to be calibrated to ensure the neutral position at the beginning. This is crucial because if the initial position is offset, the rest of the calculations would not work. ',
       solution: '',
       features: [
         'Object Oriented Programming',
-        '6 degrees of freedom platform'
+        '6 Degree of freedom platform',
+        'Interactive',
+        'Game',
+        'Modular maze configurations'
       ],
       keywords: ['']
     },

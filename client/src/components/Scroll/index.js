@@ -89,7 +89,7 @@ export function useHorizontalScroll() {
 }
 
 export const useScrollDirection = (clicked) => {
-  const [scrollDirection, setScrollDirection] = useState(null);
+  const [scrollDirection, setScrollDirection] = useState('up');
   const [prevOffset, setPrevOffset] = useState(0);
   const toggleScrollDirection = () => {
     let scrollY = window.scrollY;

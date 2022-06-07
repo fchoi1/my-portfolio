@@ -79,7 +79,7 @@ const HistoryProvider = ({ value = [], ...props }) => {
       link: ''
     },
     {
-      name: 'Brevitas – Contractor for Sanofi',
+      name: 'Sanofi',
       type: 'job',
       position: 'ITS Analyst',
       location: 'Toronto, ON',

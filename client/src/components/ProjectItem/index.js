@@ -173,21 +173,29 @@ function ProjectItem(props) {
             display: isMobile && showProjectDetails.displayDetails
           }}
         >
-          <div className={className.Role}>
-            <PItemParagraph title="My Role" text={project.role} />
-          </div>
+          {project.role && (
+            <div className={className.Role}>
+              <PItemParagraph title="My Role" text={project.role} />
+            </div>
+          )}
 
-          <div className={className.RoadBlock}>
-            <PItemParagraph title="Roadblocks" text={project.roadBlocks} />
-          </div>
+          {project.roadBlocks && (
+            <div className={className.RoadBlock}>
+              <PItemParagraph title="Roadblocks" text={project.roadBlocks} />
+            </div>
+          )}
 
-          <div className={className.Solution}>
-            <PItemParagraph title="Solutions" text={project.solution} />
-          </div>
+          {project.solution && (
+            <div className={className.Solution}>
+              <PItemParagraph title="Solutions" text={project.solution} />
+            </div>
+          )}
 
-          <div className={className.Features}>
-            <PItemList title="Features" itemList={project.features} />
-          </div>
+          {project.features && (
+            <div className={className.Features}>
+              <PItemList title="Features" itemList={project.features} />
+            </div>
+          )}
         </div>
       </div>
     </div>

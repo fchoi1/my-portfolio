@@ -138,3 +138,35 @@
   --val: 2vw;
   --max: 0.9rem;
 }
+
+@media (max-height: 700px) {
+}
+
+@media (max-height: 1100px) {
+  .tl-item-date {
+    --min: 1rem;
+    --val: 2.5vh;
+    --max: 1.5rem;
+  }
+
+  .tl-content-title,
+  .tl-content-position,
+  .tl-content-location {
+    --min: 0.6rem;
+    --val: 3vh;
+    --max: 1rem;
+  }
+
+  .tl-content-description {
+    --min: 0.6em;
+    --val: 2vh;
+    --max: 1em;
+  }
+
+  .tl-content-description-list span {
+    --min: 0.5rem;
+    --val: 2vh;
+    --max: 0.6rem;
+    margin: 0;
+  }
+}

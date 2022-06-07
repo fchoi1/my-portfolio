@@ -151,13 +151,21 @@
 
 @media only screen and (max-width: 900px) {
   .p-item-tech,
-  .p-item-description {
+  .p-item-description,
+  .p-item-feature,
+  .p-item-role,
+  .p-item-rb,
+  .p-item-solution {
     margin: 0;
     text-align: center;
+    place-self: center;
+    width: auto;
   }
 
-  .p-item-tech ul {
+  .p-item-tech ul,
+  .p-item-feature ul {
     list-style-position: inside;
+    padding-left: 0;
   }
 }
 

@@ -10,14 +10,15 @@ import {
   Button,
   Grid,
   Collapse,
-  ClickAwayListener,
-  useMediaQuery
+  ClickAwayListener
 } from '@mui/material';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 
 import { useTheme, styled } from '@mui/material/styles';
+
+import { useBreakPoint } from 'contexts/MuiThemeProvider';
 
 import {
   ScrollTop,
@@ -39,11 +40,11 @@ function NavBar(props) {
   const [currPage, setCurrPage] = useState('');
   const [headerHeight, setHeaderHeight] = useState(0);
 
+  const breakpoint = useBreakPoint();
+
   let location = useLocation();
   const topRef = useRef(null);
   const headerRef = useRef(null);
-
-  const theme = useTheme();
 
   useEffect(() => {
     setCurrPage(location.hash.replace('#', ''));
@@ -53,10 +54,11 @@ function NavBar(props) {
     setHeaderHeight(headerRef.current.clientHeight * -1);
   }, [headerRef, setHeaderHeight]);
 
-  const isBig = useMediaQuery(theme.breakpoints.up('sm'));
   useEffect(() => {
-    isBig ? setOpenMenu(true) : setOpenMenu(false);
-  }, [isBig]);
+    ['md', 'lg', 'xl'].includes(breakpoint)
+      ? setOpenMenu(true)
+      : setOpenMenu(false);
+  }, [breakpoint]);
 
   useEffect(() => {
     window.addEventListener('scroll', handleClickAway);
@@ -76,11 +78,11 @@ function NavBar(props) {
   const handleOpenMenu = () => setOpenMenu((value) => !value);
 
   const handleClickAway = (el) => {
-    if (!isBig) setOpenMenu(false);
+    if (!['md', 'lg', 'xl'].includes(breakpoint)) setOpenMenu(false);
   };
 
   const handleLinkClick = () => {
-    if (!isBig) setOpenMenu(false);
+    if (!['md', 'lg', 'xl'].includes(breakpoint)) setOpenMenu(false);
     setClicked(true);
   };
 
