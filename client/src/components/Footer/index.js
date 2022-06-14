@@ -3,7 +3,7 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import EmailIcon from '@mui/icons-material/Email';
-import { Box } from '@mui/system';
+import { Box } from '@mui/material';
 
 import { useProfileContext } from 'contexts/ProfileProvider';
 
