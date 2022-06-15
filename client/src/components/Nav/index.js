@@ -179,8 +179,10 @@ function NavBar(props) {
                                 scroll={async (el) => {
                                   try {
                                     await scrollToTargetAdjusted(el, 0, 0);
+                                    console.log('done animation');
                                     setClicked(false);
                                   } catch (err) {
+                                    console.log('error', err)
                                     setClicked(false);
                                   }
                                 }}

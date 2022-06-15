@@ -1,10 +1,8 @@
 import React, { useEffect, useState, useRef } from 'react';
 
 import { useScrollTrigger, Slide, Zoom, Box } from '@mui/material';
-import { useTheme } from '@mui/material/styles';
-import { useMediaQuery } from '@mui/material';
+
 import _ from 'lodash';
-import { useLinkClickHandler } from 'react-router-dom';
 
 export const scrollToTargetAdjusted = (
   element,
@@ -16,24 +14,21 @@ export const scrollToTargetAdjusted = (
   const elementPosition = element.getBoundingClientRect().top;
   const offsetPosition = elementPosition + window.pageYOffset - offSet;
 
-  window.scrollTo({
-    top: offsetPosition,
-    behavior: 'smooth'
-  });
-
-  return new Promise((resolve, reject) => {
+  const promise = new Promise((resolve, reject) => {
     const failed = setTimeout(() => {
-      reject();
-    }, 2000);
+      reject('Animation not done!');
+      window.removeEventListener('scroll', scrollHandler);
+    }, 1000);
 
     const scrollHandler = () => {
+      console.log(window.pageYOffset, offsetPosition);
       if (
         window.pageYOffset === Math.round(offsetPosition + offSet) ||
         window.pageYOffset === Math.round(offsetPosition)
       ) {
-        window.removeEventListener('scroll', scrollHandler);
         clearTimeout(failed);
         resolve();
+        window.removeEventListener('scroll', scrollHandler);
       }
     };
 
@@ -44,10 +39,19 @@ export const scrollToTargetAdjusted = (
       clearTimeout(failed);
       resolve();
     } else {
+      scrollHandler();
       window.addEventListener('scroll', scrollHandler);
-      element.getBoundingClientRect();
     }
   });
+
+  setTimeout(function () {
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: 'smooth'
+    });
+  }, 100);
+
+  return promise;
 };
 
 export function ElevationScroll(props) {
