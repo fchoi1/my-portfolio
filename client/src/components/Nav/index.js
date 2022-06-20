@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import logo from 'assets/images/avatar/fabio-logo.png';
 
 //Material UI
 import {
@@ -107,14 +108,22 @@ function NavBar(props) {
                 ref={headerRef}
               >
                 <Grid container spacing={0}>
-                  <Grid item>
+                  <Grid
+                    item
+                    sx={{
+                      display: 'flex',
+                      alignItems: 'center'
+                    }}
+                  >
                     <Box>
                       <IconButton
                         aria-label="menu"
                         size="large"
                         color="inherit"
                         onClick={handleOpenMenu}
-                        sx={{ display: { xs: 'flex', sm: 'none' } }}
+                        sx={{
+                          display: { xs: 'flex', sm: 'none' }
+                        }}
                       >
                         <MenuIcon />
                       </IconButton>
@@ -136,20 +145,12 @@ function NavBar(props) {
                         }
                         onClick={handleClickAway}
                       >
-                        <Box
-                          sx={{
-                            ' &:hover': {
-                              textShadow:
-                                '4px 3px 0px #000, 5px 4px 1px rgba(255,255,255,0.15)'
-                            },
-                            fontSize: {
-                              md: '50px'
-                            },
-                            textShadow:
-                              '3px 2px 1px var(--quinary), 5px 4px 1px rgba(255,255,255,0.15)'
-                          }}
-                        >
-                          Fabio C.
+                        <Box sx={{ height: '60px' }}>
+                          <img
+                            style={{ height: '100%', width: '100%' }}
+                            src={logo}
+                            alt="Fabio-Logo"
+                          />
                         </Box>
                       </HashLink>
                     </Typography>
@@ -179,10 +180,8 @@ function NavBar(props) {
                                 scroll={async (el) => {
                                   try {
                                     await scrollToTargetAdjusted(el, 0, 0);
-                                    console.log('done animation');
                                     setClicked(false);
                                   } catch (err) {
-                                    console.log('error', err)
                                     setClicked(false);
                                   }
                                 }}
