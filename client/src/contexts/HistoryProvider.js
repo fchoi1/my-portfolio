@@ -15,10 +15,10 @@ const HistoryProvider = ({ value = [], ...props }) => {
       startDate: 'Dec 2015',
       endDate: 'Apr 2016',
       description: [
-        'Configured Atlassian suite tools for Jira, Bamboo, and Confluence.',
+        'Configured Atlassian suite tools (Jira, Bamboo, and Confluence)',
         'Programmed Ansible scripts used to automate environment setup and deployment.',
-        ' Used terminal to read logs, debug errors, and restarting applications. ',
-        'Worked with proof-of-concept applications for automatic alerts and log reading: Sumologic, and iMacros'
+        'Utilized terminal to read logs, debug errors, and restart applications. ',
+        'Worked with POC applications for automatic alerts and log reading: Sumologic, and iMacros'
       ]
     },
     {
@@ -57,7 +57,7 @@ const HistoryProvider = ({ value = [], ...props }) => {
       startDate: 'Jan 2018',
       endDate: 'Apr 2018',
       description: [
-        'Focused on proudction efficency by upgrading design on fixtures and jigs.',
+        'Increased proudction efficency with re-design on fixtures and jigs.',
         'Implemented a barcode camera system to improve visibility on barcodes on underside of panels',
         'Modelled new proof of concept ideas for electric charge stations for cars',
         'Designed custom blade holder used to cut insulated paper for solar panel wiring'

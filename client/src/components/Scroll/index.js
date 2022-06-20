@@ -21,7 +21,7 @@ export const scrollToTargetAdjusted = (
     }, 1000);
 
     const scrollHandler = () => {
-      console.log(window.pageYOffset, offsetPosition);
+      // console.log(window.pageYOffset, offsetPosition);
       if (
         window.pageYOffset === Math.round(offsetPosition + offSet) ||
         window.pageYOffset === Math.round(offsetPosition)

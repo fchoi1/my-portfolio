@@ -92,7 +92,7 @@ function History(props) {
         <div className="history-title-container container">
           <div className=" history-name-wrapper section-name-wrapper">
             <h3 className="history-name section-name textRight">
-              02-My Journey
+              My Journey
             </h3>
           </div>
         </div>

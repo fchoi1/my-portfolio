@@ -13,7 +13,7 @@ function About(props) {
       <div className="section-wrapper">
         <div className="about-container container">
           <div className=" about-name-wrapper section-name-wrapper">
-            <h3 className="about-name section-name">01-About me</h3>
+            <h3 className="about-name section-name">About me</h3>
           </div>
 
           <div className="avatar-wrapper">

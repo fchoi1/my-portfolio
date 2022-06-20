@@ -63,7 +63,7 @@ const ProjectProvider = ({ value = [], ...props }) => {
       images: [],
       descriptionShort:
         'This is my first RPG Game created in Java. It uses keyboard controls to play. Contains animated fighting scenes, boss fights and upgradable player.',
-      role: 'This was a solo project from high school. The task was to develop an RPG game that included boss fights, developer cheat codes, and upgradable stats for players. I programmed the game logic and included visuals and animations to the game',
+      role: 'This was a solo project. The task was to develop an RPG game that included boss fights, developer cheat codes, and upgradable stats for players. I programmed the game logic and included visuals and animations to the game',
       roadBlocks:
         'For this project, the minimum requirement was to be able to display static photos. However, I wanted to take it one step further and try to have animations or moving images. At the time, I was inexperienced with Java and using animations was a complex topic.',
       solution:

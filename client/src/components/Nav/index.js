@@ -17,7 +17,7 @@ import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 
-import { useTheme, styled } from '@mui/material/styles';
+import { styled } from '@mui/material/styles';
 
 import { useBreakPoint } from 'contexts/MuiThemeProvider';
 
@@ -121,9 +121,7 @@ function NavBar(props) {
                         size="large"
                         color="inherit"
                         onClick={handleOpenMenu}
-                        sx={{
-                          display: { xs: 'flex', sm: 'none' }
-                        }}
+                        sx={{ display: { xs: 'flex', sm: 'none' } }}
                       >
                         <MenuIcon />
                       </IconButton>
@@ -192,7 +190,9 @@ function NavBar(props) {
                                     ' &:hover': {
                                       textShadow: '3px 3px 0px #03045eFF'
                                     },
+                                    fontFamily: 'Roboto, sans-serif',
                                     minHeight: '10px',
+                                    fontWeight: '400',
                                     fontSize: { md: '20px', sm: '15px' },
                                     textShadow: '3px 3px 0px #00000080'
                                   }}

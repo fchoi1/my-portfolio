@@ -1,33 +1,38 @@
 import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
+import { Button } from '@mui/material';
 import './contactform.css';
+import { isValidForm } from 'utils/helper';
 
 const USER_KEY = process.env.REACT_APP_USER_KEY;
 const TEMPLATE_ID = process.env.REACT_APP_TEMPLATE_ID;
 const SERVICE_ID = process.env.REACT_APP_SERVICE_ID;
 
 function ContactForm(props) {
+  const [showErrorForm, setShowErrorForm] = useState(false);
   const [formState, setFormState] = useState({
     name: '',
     email: '',
     message: ''
   });
 
-  const onNameChange = (event) => {
-    setFormState({ ...formState, name: event.target.value });
-  };
+  console.log(formState);
 
-  const onEmailChange = (event) => {
-    setFormState({ ...formState, email: event.target.value });
-  };
-
-  const onMessageChange = (event) => {
-    setFormState({ ...formState, message: event.target.value });
+  const handleChange = (event) => {
+    setShowErrorForm(false);
+    setFormState({
+      ...formState,
+      [event.currentTarget.name]: event.currentTarget.value
+    });
   };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
+      if (!isValidForm(formState)) {
+        return setShowErrorForm(true);
+      }
+
       const result = await emailjs.send(
         SERVICE_ID,
         TEMPLATE_ID,
@@ -52,20 +57,24 @@ function ContactForm(props) {
       <div className="form-group">
         <label htmlFor="name">Name</label>
         <input
+          id="name"
+          name="name"
           type="text"
           className="form-control"
-          onChange={onNameChange}
+          onChange={handleChange}
           value={formState.name}
         />
       </div>
 
       <div className="form-group">
-        <label htmlFor="exampleInputEmail1">Email address</label>
+        <label htmlFor="email">Email address</label>
         <input
+          name="email"
           type="email"
+          id="email"
           className="form-control"
           aria-describedby="emailHelp"
-          onChange={onEmailChange}
+          onChange={handleChange}
           value={formState.email}
         />
       </div>
@@ -73,15 +82,29 @@ function ContactForm(props) {
       <div className="form-group">
         <label htmlFor="message">Message</label>
         <textarea
+          name="message"
+          id="message"
           className="form-control"
           rows="5"
-          onChange={onMessageChange}
+          onChange={handleChange}
           value={formState.message}
         ></textarea>
       </div>
-      <button type="submit" className="btn btn-primary">
+
+      <Button
+        sx={{ margin: { md: '1% 10%', sm: '1% 0' } }}
+        color="secondary"
+        variant="contained"
+        type="submit"
+        className="btn btn-primary"
+      >
         Submit
-      </button>
+      </Button>
+      {showErrorForm && (
+        <div className="form-error">
+          <span>Make sure there is a valid email, name, and message!</span>
+        </div>
+      )}
     </form>
   );
 }

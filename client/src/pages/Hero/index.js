@@ -11,14 +11,13 @@ function Hero(props) {
           </div>
           <div className="hero-name-wrapper">
             <h1 className="hero-name">Fabio Choi</h1>
-            <h3 className="hero-comment">I build things for the web</h3>
+            <h3 className="hero-comment">I build things for the web.</h3>
           </div>
           <div className="title-wrapper">
             <p className="title">
               I am a web developer, and engineer graduate from University of
               Waterloo. I've always had a passionate for programming and working
-              with new technologies. If you are reading this, I am currently
-              seeking new exciting opportunities.
+              with new technologies.
             </p>
           </div>
         </div>

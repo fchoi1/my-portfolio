@@ -50,7 +50,7 @@
 .tl-branch-wrapper {
   position: relative;
   /* border: 1px solid red; */
-  height: 20%;
+  height: 15%;
 }
 
 .tl-branch::after {
@@ -90,11 +90,9 @@
   border: 3px solid var(--secondary);
 }
 
-/* .tl-content-wrapper:hover {
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
-    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
-    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-} */
+.tl-content-wrapper:hover {
+  border-color: white;
+}
 
 /* Time line content styling*/
 .tl-content-details {
@@ -149,11 +147,16 @@
     --max: 1.5rem;
   }
 
-  .tl-content-title,
+  .tl-content-title {
+    --min: 0.6rem;
+    --val: 2.5vh;
+    --max: 1.3rem;
+  }
+
   .tl-content-position,
   .tl-content-location {
     --min: 0.6rem;
-    --val: 3vh;
+    --val: 2.5vh;
     --max: 1rem;
   }
 
@@ -166,7 +169,7 @@
   .tl-content-description-list span {
     --min: 0.5rem;
     --val: 2vh;
-    --max: 0.6rem;
+    --max: 0.8rem;
     margin: 0;
   }
 }

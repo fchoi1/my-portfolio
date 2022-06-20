@@ -46,6 +46,7 @@ h5,
 h6,
 span,
 p,
+label,
 .section-name {
   font-size: clamp(var(--min), var(--val), var(--max));
   margin: clamp(var(--margin-min), var(--margin-reg), var(--margin-max)) 0;
@@ -110,6 +111,15 @@ h6 {
   --margin-min: 0.1rem;
   --margin-reg: 3vw;
   --margin-max: 0.8rem;
+}
+
+label {
+  --min: 0.8em;
+  --val: 2vw;
+  --max: 1.3em;
+  --margin-min: 0rem;
+  --margin-reg: 4vw;
+  --margin-max: 0rem;
 }
 
 span,

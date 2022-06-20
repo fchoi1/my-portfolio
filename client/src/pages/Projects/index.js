@@ -28,7 +28,7 @@ function Projects(props) {
       <div className="section-wrapper">
         <div className="container projects-container ">
           <div className=" projects-name-wrapper section-name-wrapper">
-            <h3 className="projects-name section-name">03-Projects</h3>
+            <h3 className="projects-name section-name">Projects</h3>
           </div>
           <div className="projects-list-wrapper">
             {projects &&
