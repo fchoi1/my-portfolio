@@ -38,39 +38,53 @@ function About(props) {
 
           <div className="about-content-wrapper">
             <p className="about-content">
-              Hey there! My name is Fabio and I enjoy programming and learning
-              about cool stuff. Since highschool, I've had a passion for both
-              physics and math which is where I took programming and computer
-              engineering courses. After my bachelors in mechanical engineering,
-              I began to pursue my other passion for programming and took a
-              bootcamp course to hone my previous programming skills I developed
-              in my past co-ops.
+              Hey there! I'm Fabio, an ambitious Full Stack Web Developer with a
+              passion for clean code and user-friendly applications. With a
+              background in mechanical engineering and industry experience, I
+              bring a strong foundation in engineering design principles and a
+              solid two years of experience, including six internships. I thrive
+              in agile environments, embrace new technologies, and love
+              collaborating with cross-functional teams. Let's create something
+              extraordinary together!
             </p>
-            <span>Some technologies that I am working with recently:</span>
+            <br />
+            <span>Here are some technologies that I have worked with:</span>
             <ul className="tech-list defaultUL">
               <li className="tech-item">
-                <span>JavaScript (ES6+)</span>
+                <span>TypeScript/JavaScript(ES6+)</span>
               </li>
-              <li>
+              <li className="tech-item">
                 <span>React</span>
               </li>
-              <li>
+              <li className="tech-item">
+                <span>BackboneJS</span>
+              </li>
+              <li className="tech-item">
                 <span>NodeJS</span>
               </li>
-              <li>
+              <li className="tech-item">
+                <span>SQL</span>
+              </li>
+              <li className="tech-item">
+                <span>JQuery</span>
+              </li>
+              <li className="tech-item">
                 <span>MongoDB</span>
               </li>
-              <li>
+              <li className="tech-item">
                 <span>ExpressJS</span>
               </li>
-              <li>
+              <li className="tech-item">
                 <span>Python</span>
               </li>
-              <li>
+              <li className="tech-item">
                 <span>Material UI</span>
               </li>
-              <li>
+              <li className="tech-item">
                 <span>SocketIO</span>
+              </li>
+              <li className="tech-item">
+                <span>Bootstrap</span>
               </li>
             </ul>
           </div>

@@ -209,5 +209,21 @@ let myHistory = [
       'Wrote my first rpg game with custom animations in Java'
     ],
     link: ''
-  }
+  },
+  {
+    name: 'Case IQ',
+    type: 'job',
+    position: 'Software Application Developer',
+    location: 'Ottawa, ON',
+    startDate: 'Jul 2022',
+    endDate: 'Present',
+    description: [
+      'Successfully resolved issues and improved application features from investigating bugs from JIRA',
+      'Developed a limit counter feature to prevent excessive picklist values and fields for a custom form builder',
+      'Created new APIs and added limit validation to the frontend and backend on form publishing',
+      'Utilized Backbone.js for front-end features and SenecaJs to handle the business logic and backend workflow',
+      'Coordinated with QA and other developers to deliver high-quality applications by understanding feature scope'
+    ],
+    link: ''
+   }
 ];
