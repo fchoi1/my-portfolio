@@ -18,19 +18,6 @@ const { typeDefs, resolvers } = include('schemas');
 const PORT = process.env.PORT || 3001;
 const app = express();
 
-// const startServer = async () => {
-//   const server = new ApolloServer({
-//     typeDefs,
-//     resolvers,
-//     context: authMiddleware
-//   });
-
-//   await server.start();
-//   server.applyMiddleware({ app });
-
-//   console.log(`Use GraphQ at http://localhost:${PORT}${server.graphqlPath}`);
-// };
-
 // startServer();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());

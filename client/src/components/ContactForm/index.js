@@ -16,8 +16,6 @@ function ContactForm(props) {
     message: ''
   });
 
-  console.log(formState);
-
   const handleChange = (event) => {
     setShowErrorForm(false);
     setFormState({
@@ -47,7 +45,6 @@ function ContactForm(props) {
         alert('Message was not sent');
       }
     } catch (error) {
-      console.error(error);
       alert('Message was not sent');
     }
   };
