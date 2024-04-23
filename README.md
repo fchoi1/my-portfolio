@@ -10,7 +10,7 @@ npm i
 ## Usage
 Run command 
 ```
-npm run start
+npm run develop
 ```
 
 View on [localhost:3000](http://localhost:3000/)
